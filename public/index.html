@@ -4,16 +4,19 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/box-compass.css">
 
     <title>SocialSight</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(94, 100, 138)">
     <a class="navbar-brand" href="index.html">SocialSight</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -35,14 +38,98 @@
     </div>
 </nav>
 <div class="mx-5 my-3">
-<h1>Welcome to SocialSight</h1>
-<img src="https://miro.medium.com/max/1400/1*DrjvAEwGsuvFhVs7v9BefA.png" class="img-fluid" alt="Placeholder for chart">
+    <h1>Welcome to SocialSight</h1>
+    <div class="card my-3">
+        <div class="card-body">
+            <h2 class="card-title">Social Media Alignment</h2>
+            <div id="diagrams">
+                <div id="axes">
+                    <div class="auth">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="lib">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                    </div>
+                    <!--                TODO: -->
+                    <!--                <div id="userPin" class="pin" style="left: 50%; top: 50%;">-->
+                    <!--                    <i class="material-icons" data-toggle="tooltip" title="" data-original-title="You">my_location</i>-->
+                    <!--                </div>-->
+                    <div class="partyPin pin" style="left: 23%; top: 52.5%;"><i class="material-icons"
+                                                                                data-toggle="tooltip"
+                                                                                title="" data-original-title="Test1">fiber_manual_record</i>
+                    </div>
+                    <div class="partyPin pin" style="left: 52%; top: 43%;"><i class="material-icons"
+                                                                              data-toggle="tooltip"
+                                                                              title="" data-original-title="Test2">fiber_manual_record</i>
+                    </div>
+                    <div class="partyPin pin" style="left: 58.6%; top: 52.1%;"><i class="material-icons"
+                                                                                  data-toggle="tooltip" title=""
+                                                                                  data-original-title="Test3">fiber_manual_record</i>
+                    </div>
+                    <div class="partyPin pin" style="left: 25%; top: 60%;"><i class="material-icons"
+                                                                              data-toggle="tooltip"
+                                                                              title="" data-original-title="Test4">fiber_manual_record</i>
+                    </div>
+                    <div class="partyPin pin" style="left: 45%; top: 4%;"><i class="material-icons"
+                                                                             data-toggle="tooltip"
+                                                                             title="" data-original-title="Test5">fiber_manual_record</i>
+                    </div>
+                </div>
+                <!--            This is an alignment scale if we let user take the survey-->
+                <!--            <div id="scale">-->
+                <!--                <div>-->
+                <!--                    <div id="userBar" class="bar" data-toggle="tooltip" title="" data-original-title="You"-->
+                <!--                         style="top: 50%;"></div>-->
+                <!--                    <div class="partyBar bar" style="top: 9.7%;" data-toggle="tooltip" title=""-->
+                <!--                         data-original-title="Greens"></div>-->
+                <!--                    <div class="partyBar bar" style="top: 50%;" data-toggle="tooltip" title=""-->
+                <!--                         data-original-title="Kiwi"></div>-->
+                <!--                    <div class="partyBar bar" style="top: 32.8%;" data-toggle="tooltip" title=""-->
+                <!--                         data-original-title="Liberals"></div>-->
+                <!--                    <div class="partyBar bar" style="top: 41%;" data-toggle="tooltip" title=""-->
+                <!--                         data-original-title="Labour"></div>-->
+                <!--                    <div class="partyBar bar" style="top: 75%;" data-toggle="tooltip" title=""-->
+                <!--                         data-original-title="Front"></div>-->
+                <!--                </div>-->
+                <!--            </div>-->
+            </div>
+            <br>
+            <!--        These are more results for the user-->
+            <!--        <table class="table table-hover">-->
+            <!--            <tbody>-->
+            <!--            <tr>-->
+            <!--                <td>Economy</td>-->
+            <!--                <td id="xScore" data-toggle="tooltip" title="" data-original-title="0 = left, 100 = right">50</td>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <td>Statism</td>-->
+            <!--                <td id="yScore">50</td>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <td>Progressivism</td>-->
+            <!--                <td id="zScore">50</td>-->
+            <!--            </tr>-->
+            <!--            </tbody>-->
+            <!--        </table>-->
+
+            <!--        <strong>You align closest with: <span id="align">Kiwi, then Liberals, then Labour</span>.</strong>-->
+        </div>
+    </div>
 
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="js/box-compass.js"></script>
 </body>
 </html>

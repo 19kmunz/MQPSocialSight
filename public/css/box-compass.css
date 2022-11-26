@@ -1,0 +1,109 @@
+.btn .material-icons {
+    font-size: 20px;
+    vertical-align: bottom;
+}
+
+#diagrams {
+    margin: auto;
+    width: 727px;
+}
+
+#axes, #scale {
+    position: relative;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    box-sizing: content-box;
+    display: inline-block;
+}
+
+#axes {
+    width: 600px;
+    height: 600px;
+    margin-right: 30px;background-size: 5% 5%;
+    background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
+}
+
+#axes .auth, #axes .lib {
+    height: 300px;
+}
+
+#axes div div {
+    height: 300px;
+    width: 300px;
+    float: left;
+}
+
+.auth .left {
+    background-color: rgba(22, 182, 179, 0.5);
+}
+.auth .right {
+    background-color: rgba(186, 237, 69, 0.5);
+}
+.lib .left {
+    background-color: rgba(252, 139, 74, 0.5);
+}
+.lib .right {
+    background-color: rgba(228, 58, 114, 0.5);
+}
+
+.pin {
+    position: absolute;
+    z-index: 200;
+    margin-left: -15.5px;
+    margin-top: -15px;
+    left: 50%;
+    top: 50%;
+}
+.pin i {
+    font-size: 200%;
+}
+
+.partyPin i {
+    opacity: 0.5;
+}
+
+#scale {
+    background-size: 100% 5%;
+    background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
+}
+
+#scale, #scale > div {
+    height: 600px;
+    width: 90px;
+}
+
+#scale > div {
+    background: linear-gradient(0deg, rgba(0,0,255,0.5) 0%, rgba(0,255,0,0.5) 100%);
+}
+
+.bar {
+    position: absolute;
+    z-index: 200;
+    height: 4px;
+    width: 90px;
+    background: rgba(255, 116, 0, 1);
+    top: 50%;
+    margin-top: -2px;
+}
+
+.partyBar {
+    opacity: 0.5;
+    background: #000;
+}
+
+.tooltip-inner {
+    max-width: 300px;
+}
+
+.card .list-group {
+    counter-reset: q-counter;
+}
+
+.card .list-group li p:before {
+    content: counter(q-counter);
+    counter-increment: q-counter;
+    font-weight: bold;
+    color: rgba(0,0,0,0.5);
+    margin-right: 5px;
+}
+
