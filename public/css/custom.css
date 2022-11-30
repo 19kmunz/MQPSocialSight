@@ -14,3 +14,24 @@
 .bg-main {
     background-color: rgb(94, 100, 138);
 }
+
+.bg-facebook {
+    background-color: #1178f2;
+}
+
+
+.bg-grey {
+    background-color: lightgray;
+}
+
+.bottom {
+    bottom: 0px;
+}
+
+.carousel-indicators .active {
+    background-color: grey;
+}
+
+.carousel-indicators li {
+    background-color: lightgray;
+}
