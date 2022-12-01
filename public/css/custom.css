@@ -46,3 +46,14 @@
 .carousel-indicators li {
     background-color: lightgray;
 }
+
+.card,
+.card::before,
+.card::after {
+    box-sizing: unset; !important;
+}
+
+
+.card-height {
+    max-height: 200px;
+}
