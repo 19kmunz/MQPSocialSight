@@ -1,3 +1,11 @@
+/*TODO: Test dark mode*/
+/*@media (prefers-color-scheme: dark) {*/
+/*    body {*/
+/*        color: #eee;*/
+/*        background: #121212;*/
+/*    }*/
+/*}*/
+
 .bg-accent1 {
     background-color: rgba(22, 182, 179, 0.5);
 }
@@ -19,6 +27,9 @@
     background-color: #1178f2;
 }
 
+.bg-linkedin {
+    background-color: #0274b3;
+}
 
 .bg-grey {
     background-color: lightgray;
