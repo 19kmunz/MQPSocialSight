@@ -27,12 +27,16 @@ for questionIndex in range(numberOfQuestions):
         min = np.amin(rawQuestionData)
         max = np.amax(rawQuestionData)
         median = np.median(rawQuestionData)
-        q3, q1 = np.percentile(rawQuestionData, [75, 25])
+        q3, q1 = np.percentile(rawQuestionData, [75, 25], method='midpoint')
         iqr = q3 - q1
         print(min, q1, median, q3, max, iqr)
+        if not q1.is_integer() or not q3.is_integer():
+            print(rawQuestionData.array)
 
         # Calculate Other Helpful Values
-        total = csvQuestionData.size
+        total = rawQuestionData.size
+        letterTag = questionExportTag[0]
+        numberTag = questionExportTag[0:questionExportTag.index("_")]
 
         questionObject = {
             "questionExportTag": questionExportTag,
@@ -45,6 +49,8 @@ for questionIndex in range(numberOfQuestions):
             "max": max,
             "iqr": iqr,
             "total": total,
+            "letterTag" : letterTag,
+            "numberTag": numberTag
         }
         # Add data for this question to data for the dataframe
         cleanQuestionData.append(questionObject)
