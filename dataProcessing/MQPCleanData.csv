@@ -1,0 +1,313 @@
+questionExportTag,questionText,mediaText,min,q1,median,q3,max,iqr,total,letterTag,numberTag
+C1_1,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",Twitter,1,2.0,2.0,3.0,5,1.0,45,C,C1
+C1_2,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",Instagram,1,2.0,2.0,3.0,6,1.0,75,C,C1
+C1_3,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",Reddit,1,1.5,2.0,3.0,5,1.5,54,C,C1
+C1_4,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",Tumblr,1,1.0,1.0,2.0,5,1.0,9,C,C1
+C1_5,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",Tik Tok,1,2.0,2.0,3.0,5,1.0,44,C,C1
+C1_6,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",BeReal,1,1.0,2.5,3.0,5,2.0,10,C,C1
+C1_7,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",YouTube,1,2.0,3.0,3.0,6,1.0,89,C,C1
+C1_8,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",Snapchat,1,2.0,2.0,3.0,6,1.0,44,C,C1
+C1_9,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",Facebook,1,2.0,2.0,3.0,5,1.0,79,C,C1
+C1_10,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",4Chan,3,3.0,3.0,3.5,5,0.5,6,C,C1
+C1_11,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",LinkedIn,1,1.0,2.5,3.0,5,2.0,50,C,C1
+C1_12,"I see positive conversation (ex. Friendly chit chat, education, humor) on the platform.",Twitch,1,2.0,2.0,3.0,5,1.0,17,C,C1
+C2_1,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",Twitter,1,1.0,1.0,3.0,5,2.0,44,C,C2
+C2_2,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",Instagram,1,2.0,3.0,4.0,6,2.0,75,C,C2
+C2_3,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",Reddit,1,2.0,2.0,3.0,6,1.0,53,C,C2
+C2_4,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",Tumblr,3,3.0,3.0,4.0,6,1.0,9,C,C2
+C2_5,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",Tik Tok,1,2.0,2.0,3.0,6,1.0,43,C,C2
+C2_6,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",BeReal,2,4.0,6.0,6.0,6,2.0,9,C,C2
+C2_7,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",YouTube,1,2.0,3.0,4.0,6,2.0,89,C,C2
+C2_8,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",Snapchat,1,3.0,4.0,5.0,6,2.0,44,C,C2
+C2_9,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",Facebook,1,1.5,2.0,3.0,6,1.5,78,C,C2
+C2_10,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",4Chan,1,1.0,1.0,1.0,1,0.0,6,C,C2
+C2_11,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",LinkedIn,2,4.0,5.0,6.0,6,2.0,51,C,C2
+C2_12,"I see negative conversation (ex. Disputes, name-calling, trolling) on the platform.",Twitch,1,3.0,3.0,4.0,5,1.0,17,C,C2
+C3_1,I see perspectives and opinions that are different from my own on the platform.,Twitter,1,2.0,2.5,3.0,6,1.0,44,C,C3
+C3_2,I see perspectives and opinions that are different from my own on the platform.,Instagram,1,3.0,3.0,4.0,6,1.0,75,C,C3
+C3_3,I see perspectives and opinions that are different from my own on the platform.,Reddit,1,2.0,2.0,3.0,6,1.0,54,C,C3
+C3_4,I see perspectives and opinions that are different from my own on the platform.,Tumblr,1,3.0,3.0,4.0,5,1.0,9,C,C3
+C3_5,I see perspectives and opinions that are different from my own on the platform.,Tik Tok,1,2.0,3.0,4.0,6,2.0,45,C,C3
+C3_6,I see perspectives and opinions that are different from my own on the platform.,BeReal,2,3.0,4.0,6.0,6,3.0,9,C,C3
+C3_7,I see perspectives and opinions that are different from my own on the platform.,YouTube,1,3.0,3.0,4.0,6,1.0,90,C,C3
+C3_8,I see perspectives and opinions that are different from my own on the platform.,Snapchat,1,2.0,4.0,5.0,6,3.0,41,C,C3
+C3_9,I see perspectives and opinions that are different from my own on the platform.,Facebook,1,2.0,2.0,3.0,5,1.0,77,C,C3
+C3_10,I see perspectives and opinions that are different from my own on the platform.,4Chan,1,1.0,1.0,1.0,1,0.0,6,C,C3
+C3_11,I see perspectives and opinions that are different from my own on the platform.,LinkedIn,1,2.0,3.0,4.0,6,2.0,51,C,C3
+C3_12,I see perspectives and opinions that are different from my own on the platform.,Twitch,1,3.0,4.0,5.0,6,2.0,17,C,C3
+C4_1,The platform prioritizes my friends’ posts over other posts.,Twitter,1,2.0,3.0,4.0,6,2.0,46,C,C4
+C4_2,The platform prioritizes my friends’ posts over other posts.,Instagram,1,2.0,2.0,3.0,6,1.0,73,C,C4
+C4_3,The platform prioritizes my friends’ posts over other posts.,Reddit,2,4.0,5.0,6.0,6,2.0,52,C,C4
+C4_4,The platform prioritizes my friends’ posts over other posts.,Tumblr,1,1.5,2.0,3.0,4,1.5,8,C,C4
+C4_5,The platform prioritizes my friends’ posts over other posts.,Tik Tok,1,3.0,4.0,5.0,6,2.0,44,C,C4
+C4_6,The platform prioritizes my friends’ posts over other posts.,BeReal,1,1.0,1.0,1.0,5,0.0,9,C,C4
+C4_7,The platform prioritizes my friends’ posts over other posts.,YouTube,1,3.0,5.0,5.0,6,2.0,88,C,C4
+C4_8,The platform prioritizes my friends’ posts over other posts.,Snapchat,1,1.0,2.0,3.0,5,2.0,43,C,C4
+C4_9,The platform prioritizes my friends’ posts over other posts.,Facebook,1,2.0,3.0,4.0,6,2.0,77,C,C4
+C4_10,The platform prioritizes my friends’ posts over other posts.,4Chan,6,6.0,6.0,6.0,6,0.0,6,C,C4
+C4_11,The platform prioritizes my friends’ posts over other posts.,LinkedIn,1,2.0,2.5,4.0,6,2.0,52,C,C4
+C4_12,The platform prioritizes my friends’ posts over other posts.,Twitch,1,3.5,5.0,5.0,6,1.5,16,C,C4
+C5_1,The platform prioritizes sponsored posts over other posts.,Twitter,1,2.0,3.0,3.0,6,1.0,45,C,C5
+C5_2,The platform prioritizes sponsored posts over other posts.,Instagram,1,1.0,2.0,3.0,6,2.0,79,C,C5
+C5_3,The platform prioritizes sponsored posts over other posts.,Reddit,1,3.0,4.0,5.0,6,2.0,55,C,C5
+C5_4,The platform prioritizes sponsored posts over other posts.,Tumblr,3,3.0,4.0,6.0,6,3.0,8,C,C5
+C5_5,The platform prioritizes sponsored posts over other posts.,Tik Tok,1,2.0,3.0,4.0,6,2.0,45,C,C5
+C5_6,The platform prioritizes sponsored posts over other posts.,BeReal,1,6.0,6.0,6.0,6,0.0,10,C,C5
+C5_7,The platform prioritizes sponsored posts over other posts.,YouTube,1,2.0,3.0,4.0,6,2.0,89,C,C5
+C5_8,The platform prioritizes sponsored posts over other posts.,Snapchat,1,2.0,3.0,5.0,6,3.0,45,C,C5
+C5_9,The platform prioritizes sponsored posts over other posts.,Facebook,1,1.0,2.0,2.0,5,1.0,79,C,C5
+C5_10,The platform prioritizes sponsored posts over other posts.,4Chan,5,6.0,6.0,6.0,6,0.0,6,C,C5
+C5_11,The platform prioritizes sponsored posts over other posts.,LinkedIn,1,2.0,3.0,4.0,6,2.0,53,C,C5
+C5_12,The platform prioritizes sponsored posts over other posts.,Twitch,1,1.0,3.0,4.0,6,3.0,17,C,C5
+C6_1,I see two-way discussion between content creators and audiences on the platform.,Twitter,1,2.0,2.5,3.0,6,1.0,44,C,C6
+C6_2,I see two-way discussion between content creators and audiences on the platform.,Instagram,1,3.0,3.0,4.0,6,1.0,77,C,C6
+C6_3,I see two-way discussion between content creators and audiences on the platform.,Reddit,1,1.0,2.0,3.0,6,2.0,52,C,C6
+C6_4,I see two-way discussion between content creators and audiences on the platform.,Tumblr,1,1.0,1.0,2.0,6,1.0,9,C,C6
+C6_5,I see two-way discussion between content creators and audiences on the platform.,Tik Tok,1,2.0,3.0,4.0,6,2.0,43,C,C6
+C6_6,I see two-way discussion between content creators and audiences on the platform.,BeReal,2,2.0,3.0,6.0,6,4.0,8,C,C6
+C6_7,I see two-way discussion between content creators and audiences on the platform.,YouTube,1,3.0,3.0,4.0,6,1.0,89,C,C6
+C6_8,I see two-way discussion between content creators and audiences on the platform.,Snapchat,1,3.0,4.0,5.0,6,2.0,44,C,C6
+C6_9,I see two-way discussion between content creators and audiences on the platform.,Facebook,1,2.0,2.0,3.0,6,1.0,78,C,C6
+C6_10,I see two-way discussion between content creators and audiences on the platform.,4Chan,1,1.0,3.0,5.5,6,4.5,6,C,C6
+C6_11,I see two-way discussion between content creators and audiences on the platform.,LinkedIn,1,3.0,3.0,4.0,6,1.0,52,C,C6
+C6_12,I see two-way discussion between content creators and audiences on the platform.,Twitch,1,1.0,1.0,2.0,5,1.0,17,C,C6
+C7_1,It is easy to make new friends on the platform.,Twitter,1,3.0,3.0,5.0,6,2.0,43,C,C7
+C7_2,It is easy to make new friends on the platform.,Instagram,1,2.5,4.0,5.0,6,2.5,75,C,C7
+C7_3,It is easy to make new friends on the platform.,Reddit,1,3.0,4.0,5.0,6,2.0,53,C,C7
+C7_4,It is easy to make new friends on the platform.,Tumblr,1,2.0,3.0,3.0,5,1.0,9,C,C7
+C7_5,It is easy to make new friends on the platform.,Tik Tok,1,3.0,4.0,5.0,6,2.0,44,C,C7
+C7_6,It is easy to make new friends on the platform.,BeReal,1,2.0,3.0,5.0,6,3.0,9,C,C7
+C7_7,It is easy to make new friends on the platform.,YouTube,1,4.5,5.0,6.0,6,1.5,88,C,C7
+C7_8,It is easy to make new friends on the platform.,Snapchat,1,2.5,4.0,5.0,6,2.5,43,C,C7
+C7_9,It is easy to make new friends on the platform.,Facebook,1,2.0,3.0,5.0,6,3.0,78,C,C7
+C7_10,It is easy to make new friends on the platform.,4Chan,3,4.5,6.0,6.0,6,1.5,6,C,C7
+C7_11,It is easy to make new friends on the platform.,LinkedIn,1,2.0,3.0,4.5,6,2.5,52,C,C7
+C7_12,It is easy to make new friends on the platform.,Twitch,1,2.0,4.0,5.0,6,3.0,16,C,C7
+S1_1,The users I interact with feel like individual human beings.,Twitter,1,2.0,3.0,3.0,6,1.0,45,S,S1
+S1_2,The users I interact with feel like individual human beings.,Instagram,1,2.0,3.0,3.0,6,1.0,79,S,S1
+S1_3,The users I interact with feel like individual human beings.,Reddit,1,2.0,3.0,3.5,6,1.5,54,S,S1
+S1_4,The users I interact with feel like individual human beings.,Tumblr,1,2.0,2.0,3.0,4,1.0,9,S,S1
+S1_5,The users I interact with feel like individual human beings.,Tik Tok,1,2.0,3.0,4.0,6,2.0,45,S,S1
+S1_6,The users I interact with feel like individual human beings.,BeReal,1,1.0,1.0,1.0,6,0.0,9,S,S1
+S1_7,The users I interact with feel like individual human beings.,YouTube,1,2.0,3.0,4.0,6,2.0,90,S,S1
+S1_8,The users I interact with feel like individual human beings.,Snapchat,1,1.0,2.0,2.0,6,1.0,44,S,S1
+S1_9,The users I interact with feel like individual human beings.,Facebook,1,2.0,2.0,3.0,6,1.0,79,S,S1
+S1_10,The users I interact with feel like individual human beings.,4Chan,1,1.0,2.0,3.0,6,2.0,6,S,S1
+S1_11,The users I interact with feel like individual human beings.,LinkedIn,1,2.0,2.0,3.0,6,1.0,52,S,S1
+S1_12,The users I interact with feel like individual human beings.,Twitch,1,2.0,2.0,3.0,5,1.0,17,S,S1
+S2_1,The platform encourages me to present an identity.,Twitter,1,2.0,3.0,4.0,6,2.0,45,S,S2
+S2_2,The platform encourages me to present an identity.,Instagram,1,1.0,2.0,3.0,6,2.0,73,S,S2
+S2_3,The platform encourages me to present an identity.,Reddit,1,3.0,4.0,5.0,6,2.0,53,S,S2
+S2_4,The platform encourages me to present an identity.,Tumblr,1,2.0,3.0,5.0,6,3.0,9,S,S2
+S2_5,The platform encourages me to present an identity.,Tik Tok,1,2.0,3.0,4.0,6,2.0,43,S,S2
+S2_6,The platform encourages me to present an identity.,BeReal,1,1.0,1.0,2.0,6,1.0,10,S,S2
+S2_7,The platform encourages me to present an identity.,YouTube,1,3.0,4.5,5.0,6,2.0,88,S,S2
+S2_8,The platform encourages me to present an identity.,Snapchat,1,2.0,3.0,4.0,5,2.0,44,S,S2
+S2_9,The platform encourages me to present an identity.,Facebook,1,2.0,2.0,3.0,6,1.0,77,S,S2
+S2_10,The platform encourages me to present an identity.,4Chan,2,2.0,3.5,5.5,6,3.5,6,S,S2
+S2_11,The platform encourages me to present an identity.,LinkedIn,1,1.0,1.0,2.0,6,1.0,52,S,S2
+S2_12,The platform encourages me to present an identity.,Twitch,1,3.0,4.0,5.0,6,2.0,17,S,S2
+S3_1,The persona I present on the platform is authentic.,Twitter,1,1.5,2.0,3.0,6,1.5,43,S,S3
+S3_2,The persona I present on the platform is authentic.,Instagram,1,1.5,2.0,3.0,6,1.5,75,S,S3
+S3_3,The persona I present on the platform is authentic.,Reddit,1,2.0,2.0,3.0,6,1.0,51,S,S3
+S3_4,The persona I present on the platform is authentic.,Tumblr,1,1.0,2.0,4.5,6,3.5,8,S,S3
+S3_5,The persona I present on the platform is authentic.,Tik Tok,1,2.0,2.0,3.0,6,1.0,43,S,S3
+S3_6,The persona I present on the platform is authentic.,BeReal,1,1.0,1.5,2.0,5,1.0,8,S,S3
+S3_7,The persona I present on the platform is authentic.,YouTube,1,2.0,2.0,4.0,6,2.0,83,S,S3
+S3_8,The persona I present on the platform is authentic.,Snapchat,1,2.0,2.0,2.0,6,0.0,41,S,S3
+S3_9,The persona I present on the platform is authentic.,Facebook,1,1.0,2.0,2.0,5,1.0,78,S,S3
+S3_10,The persona I present on the platform is authentic.,4Chan,1,3.5,4.0,4.0,6,0.5,6,S,S3
+S3_11,The persona I present on the platform is authentic.,LinkedIn,1,1.0,2.0,2.0,6,1.0,53,S,S3
+S3_12,The persona I present on the platform is authentic.,Twitch,1,2.0,2.0,3.0,4,1.0,15,S,S3
+S4_1,The platform enables me to customize my profile.,Twitter,1,2.0,2.0,3.0,6,1.0,45,S,S4
+S4_2,The platform enables me to customize my profile.,Instagram,1,1.0,2.0,2.5,5,1.5,75,S,S4
+S4_3,The platform enables me to customize my profile.,Reddit,1,2.0,3.0,3.0,5,1.0,52,S,S4
+S4_4,The platform enables me to customize my profile.,Tumblr,1,1.0,1.5,2.0,6,1.0,8,S,S4
+S4_5,The platform enables me to customize my profile.,Tik Tok,1,2.0,3.0,3.0,5,1.0,41,S,S4
+S4_6,The platform enables me to customize my profile.,BeReal,1,1.5,2.5,3.5,5,2.0,8,S,S4
+S4_7,The platform enables me to customize my profile.,YouTube,1,2.0,3.0,4.0,6,2.0,87,S,S4
+S4_8,The platform enables me to customize my profile.,Snapchat,1,2.0,2.0,4.0,6,2.0,43,S,S4
+S4_9,The platform enables me to customize my profile.,Facebook,1,1.0,2.0,2.0,6,1.0,75,S,S4
+S4_10,The platform enables me to customize my profile.,4Chan,5,6.0,6.0,6.0,6,0.0,6,S,S4
+S4_11,The platform enables me to customize my profile.,LinkedIn,1,1.0,1.0,2.0,6,1.0,52,S,S4
+S4_12,The platform enables me to customize my profile.,Twitch,1,2.0,3.0,4.0,5,2.0,17,S,S4
+S5_1,I spend time viewing and curating my own profile.,Twitter,1,3.0,5.0,5.0,6,2.0,46,S,S5
+S5_2,I spend time viewing and curating my own profile.,Instagram,1,2.5,4.5,5.0,6,2.5,76,S,S5
+S5_3,I spend time viewing and curating my own profile.,Reddit,1,5.0,5.5,6.0,6,1.0,54,S,S5
+S5_4,I spend time viewing and curating my own profile.,Tumblr,2,3.0,3.5,5.0,6,2.0,8,S,S5
+S5_5,I spend time viewing and curating my own profile.,Tik Tok,1,4.0,5.0,6.0,6,2.0,44,S,S5
+S5_6,I spend time viewing and curating my own profile.,BeReal,2,2.5,3.5,4.5,6,2.0,8,S,S5
+S5_7,I spend time viewing and curating my own profile.,YouTube,2,5.0,6.0,6.0,6,1.0,89,S,S5
+S5_8,I spend time viewing and curating my own profile.,Snapchat,2,4.0,5.0,6.0,6,2.0,43,S,S5
+S5_9,I spend time viewing and curating my own profile.,Facebook,1,3.0,4.0,5.0,6,2.0,78,S,S5
+S5_10,I spend time viewing and curating my own profile.,4Chan,6,6.0,6.0,6.0,6,0.0,6,S,S5
+S5_11,I spend time viewing and curating my own profile.,LinkedIn,1,1.0,2.0,3.0,6,2.0,53,S,S5
+S5_12,I spend time viewing and curating my own profile.,Twitch,1,3.0,5.0,6.0,6,3.0,17,S,S5
+D1_1,I see posts by small creators.,Twitter,1,2.0,3.0,3.0,5,1.0,45,D,D1
+D1_2,I see posts by small creators.,Instagram,1,2.0,3.0,4.0,6,2.0,75,D,D1
+D1_3,I see posts by small creators.,Reddit,1,1.0,2.0,3.0,6,2.0,54,D,D1
+D1_4,I see posts by small creators.,Tumblr,1,1.0,2.0,2.0,4,1.0,9,D,D1
+D1_5,I see posts by small creators.,Tik Tok,1,2.0,2.0,3.0,5,1.0,43,D,D1
+D1_6,I see posts by small creators.,BeReal,1,1.0,1.5,4.5,6,3.5,8,D,D1
+D1_7,I see posts by small creators.,YouTube,1,2.5,3.0,4.0,6,1.5,88,D,D1
+D1_8,I see posts by small creators.,Snapchat,1,2.0,4.0,6.0,6,4.0,44,D,D1
+D1_9,I see posts by small creators.,Facebook,1,2.0,3.0,3.5,6,1.5,78,D,D1
+D1_10,I see posts by small creators.,4Chan,1,1.0,2.0,3.0,6,2.0,6,D,D1
+D1_11,I see posts by small creators.,LinkedIn,1,2.0,3.0,4.0,6,2.0,50,D,D1
+D1_12,I see posts by small creators.,Twitch,1,2.0,3.0,4.0,5,2.0,17,D,D1
+D2_1,"On average, how long do you spend in a single session on the platform?",Twitter,1,1.0,1.0,2.0,4,1.0,47,D,D2
+D2_2,"On average, how long do you spend in a single session on the platform?",Instagram,1,1.0,1.0,2.0,3,1.0,77,D,D2
+D2_3,"On average, how long do you spend in a single session on the platform?",Reddit,1,1.0,2.0,2.0,4,1.0,55,D,D2
+D2_4,"On average, how long do you spend in a single session on the platform?",Tumblr,1,2.0,2.0,2.0,4,0.0,9,D,D2
+D2_5,"On average, how long do you spend in a single session on the platform?",Tik Tok,1,1.0,3.0,4.0,4,3.0,44,D,D2
+D2_6,"On average, how long do you spend in a single session on the platform?",BeReal,1,1.0,1.0,1.0,1,0.0,10,D,D2
+D2_7,"On average, how long do you spend in a single session on the platform?",YouTube,1,2.0,2.0,3.0,4,1.0,91,D,D2
+D2_8,"On average, how long do you spend in a single session on the platform?",Snapchat,1,1.0,1.0,1.0,4,0.0,44,D,D2
+D2_9,"On average, how long do you spend in a single session on the platform?",Facebook,1,1.0,2.0,2.0,4,1.0,78,D,D2
+D2_10,"On average, how long do you spend in a single session on the platform?",4Chan,1,1.0,1.0,1.0,3,0.0,6,D,D2
+D2_11,"On average, how long do you spend in a single session on the platform?",LinkedIn,1,1.0,1.0,1.0,4,0.0,53,D,D2
+D2_12,"On average, how long do you spend in a single session on the platform?",Twitch,1,3.0,3.0,4.0,4,1.0,17,D,D2
+D3_1,This platform prioritizes ______ content.,Twitter,2,3.0,3.0,3.0,4,0.0,46,D,D3
+D3_2,This platform prioritizes ______ content.,Instagram,1,2.0,2.0,2.0,4,0.0,79,D,D3
+D3_3,This platform prioritizes ______ content.,Reddit,2,3.0,3.0,4.0,4,1.0,55,D,D3
+D3_4,This platform prioritizes ______ content.,Tumblr,2,3.0,4.0,4.0,4,1.0,9,D,D3
+D3_5,This platform prioritizes ______ content.,Tik Tok,1,1.0,1.0,1.0,3,0.0,46,D,D3
+D3_6,This platform prioritizes ______ content.,BeReal,2,2.0,2.0,2.0,2,0.0,9,D,D3
+D3_7,This platform prioritizes ______ content.,YouTube,1,1.0,1.0,1.0,3,0.0,90,D,D3
+D3_8,This platform prioritizes ______ content.,Snapchat,1,1.0,2.0,2.0,4,1.0,45,D,D3
+D3_9,This platform prioritizes ______ content.,Facebook,1,2.0,2.0,3.5,4,1.5,80,D,D3
+D3_10,This platform prioritizes ______ content.,4Chan,2,2.0,2.5,3.0,3,1.0,6,D,D3
+D3_11,This platform prioritizes ______ content.,LinkedIn,2,3.0,3.0,3.0,4,0.0,52,D,D3
+D3_12,This platform prioritizes ______ content.,Twitch,1,1.0,1.0,1.0,1,0.0,17,D,D3
+D4_1,It is easy to create my own content.,Twitter,1,1.0,2.0,3.0,6,2.0,44,D,D4
+D4_2,It is easy to create my own content.,Instagram,1,2.0,2.0,2.0,6,0.0,77,D,D4
+D4_3,It is easy to create my own content.,Reddit,1,1.0,2.0,2.5,6,1.5,54,D,D4
+D4_4,It is easy to create my own content.,Tumblr,1,1.0,1.5,3.0,5,2.0,8,D,D4
+D4_5,It is easy to create my own content.,Tik Tok,1,2.0,2.0,3.0,5,1.0,44,D,D4
+D4_6,It is easy to create my own content.,BeReal,1,1.0,1.0,1.0,3,0.0,9,D,D4
+D4_7,It is easy to create my own content.,YouTube,1,2.0,3.0,5.0,6,3.0,89,D,D4
+D4_8,It is easy to create my own content.,Snapchat,1,1.0,2.0,3.0,5,2.0,43,D,D4
+D4_9,It is easy to create my own content.,Facebook,1,1.0,2.0,2.0,6,1.0,79,D,D4
+D4_10,It is easy to create my own content.,4Chan,1,1.0,1.5,2.0,3,1.0,6,D,D4
+D4_11,It is easy to create my own content.,LinkedIn,1,2.0,2.0,3.0,6,1.0,55,D,D4
+D4_12,It is easy to create my own content.,Twitch,2,2.0,3.0,5.0,6,3.0,16,D,D4
+D5_1,I am entertained by the content on the platform.,Twitter,1,2.0,3.0,3.0,5,1.0,45,D,D5
+D5_2,I am entertained by the content on the platform.,Instagram,1,2.0,3.0,3.0,6,1.0,78,D,D5
+D5_3,I am entertained by the content on the platform.,Reddit,1,2.0,2.0,3.0,6,1.0,55,D,D5
+D5_4,I am entertained by the content on the platform.,Tumblr,1,1.0,1.0,3.0,5,2.0,9,D,D5
+D5_5,I am entertained by the content on the platform.,Tik Tok,1,1.0,2.0,2.0,6,1.0,45,D,D5
+D5_6,I am entertained by the content on the platform.,BeReal,1,2.0,3.0,3.5,4,1.5,10,D,D5
+D5_7,I am entertained by the content on the platform.,YouTube,1,1.0,2.0,2.0,6,1.0,88,D,D5
+D5_8,I am entertained by the content on the platform.,Snapchat,2,2.5,3.0,4.5,6,2.0,44,D,D5
+D5_9,I am entertained by the content on the platform.,Facebook,1,2.0,3.0,3.0,6,1.0,79,D,D5
+D5_10,I am entertained by the content on the platform.,4Chan,1,2.0,2.5,3.5,5,1.5,6,D,D5
+D5_11,I am entertained by the content on the platform.,LinkedIn,1,3.0,4.0,5.0,6,2.0,52,D,D5
+D5_12,I am entertained by the content on the platform.,Twitch,1,1.0,2.0,3.0,4,2.0,17,D,D5
+D6_1,I am educated by the content on the platform.,Twitter,1,3.0,3.0,4.0,6,1.0,46,D,D6
+D6_2,I am educated by the content on the platform.,Instagram,1,3.0,4.0,5.0,6,2.0,77,D,D6
+D6_3,I am educated by the content on the platform.,Reddit,1,2.0,2.0,3.0,6,1.0,53,D,D6
+D6_4,I am educated by the content on the platform.,Tumblr,2,3.0,3.0,4.0,6,1.0,9,D,D6
+D6_5,I am educated by the content on the platform.,Tik Tok,1,2.0,3.0,3.5,6,1.5,44,D,D6
+D6_6,I am educated by the content on the platform.,BeReal,1,6.0,6.0,6.0,6,0.0,9,D,D6
+D6_7,I am educated by the content on the platform.,YouTube,1,2.0,2.0,3.0,6,1.0,89,D,D6
+D6_8,I am educated by the content on the platform.,Snapchat,2,4.0,5.0,6.0,6,2.0,43,D,D6
+D6_9,I am educated by the content on the platform.,Facebook,1,3.0,3.0,4.0,6,1.0,77,D,D6
+D6_10,I am educated by the content on the platform.,4Chan,2,4.0,5.0,5.5,6,1.5,6,D,D6
+D6_11,I am educated by the content on the platform.,LinkedIn,1,2.0,3.0,3.0,5,1.0,51,D,D6
+D6_12,I am educated by the content on the platform.,Twitch,1,4.0,4.0,5.0,6,1.0,17,D,D6
+D7_1,I feel bored/unsatisfied after viewing content on the platform,Twitter,1,2.0,3.0,3.0,6,1.0,44,D,D7
+D7_2,I feel bored/unsatisfied after viewing content on the platform,Instagram,1,2.0,3.0,4.0,5,2.0,75,D,D7
+D7_3,I feel bored/unsatisfied after viewing content on the platform,Reddit,1,3.0,3.0,4.0,6,1.0,53,D,D7
+D7_4,I feel bored/unsatisfied after viewing content on the platform,Tumblr,2,4.0,4.0,5.0,5,1.0,8,D,D7
+D7_5,I feel bored/unsatisfied after viewing content on the platform,Tik Tok,1,3.0,4.0,5.0,6,2.0,45,D,D7
+D7_6,I feel bored/unsatisfied after viewing content on the platform,BeReal,2,3.0,5.0,5.0,6,2.0,9,D,D7
+D7_7,I feel bored/unsatisfied after viewing content on the platform,YouTube,1,3.0,4.0,5.0,6,2.0,88,D,D7
+D7_8,I feel bored/unsatisfied after viewing content on the platform,Snapchat,1,2.0,2.0,3.0,6,1.0,41,D,D7
+D7_9,I feel bored/unsatisfied after viewing content on the platform,Facebook,1,2.0,3.0,3.0,6,1.0,77,D,D7
+D7_10,I feel bored/unsatisfied after viewing content on the platform,4Chan,1,2.0,3.0,4.0,5,2.0,6,D,D7
+D7_11,I feel bored/unsatisfied after viewing content on the platform,LinkedIn,1,2.0,3.0,4.0,6,2.0,53,D,D7
+D7_12,I feel bored/unsatisfied after viewing content on the platform,Twitch,1,3.0,4.0,4.5,6,1.5,16,D,D7
+D8_1,Misinformation is spread through the platform.,Twitter,1,1.0,2.0,2.0,5,1.0,46,D,D8
+D8_2,Misinformation is spread through the platform.,Instagram,1,2.0,2.0,3.0,4,1.0,78,D,D8
+D8_3,Misinformation is spread through the platform.,Reddit,1,2.0,2.0,3.0,5,1.0,55,D,D8
+D8_4,Misinformation is spread through the platform.,Tumblr,2,2.0,3.0,4.0,5,2.0,8,D,D8
+D8_5,Misinformation is spread through the platform.,Tik Tok,1,1.0,2.0,3.0,5,2.0,46,D,D8
+D8_6,Misinformation is spread through the platform.,BeReal,3,4.0,6.0,6.0,6,2.0,9,D,D8
+D8_7,Misinformation is spread through the platform.,YouTube,1,2.0,2.0,3.0,5,1.0,90,D,D8
+D8_8,Misinformation is spread through the platform.,Snapchat,1,2.0,3.0,4.0,5,2.0,44,D,D8
+D8_9,Misinformation is spread through the platform.,Facebook,1,1.0,2.0,2.0,4,1.0,79,D,D8
+D8_10,Misinformation is spread through the platform.,4Chan,1,1.0,1.0,1.0,2,0.0,6,D,D8
+D8_11,Misinformation is spread through the platform.,LinkedIn,1,3.0,4.0,4.0,6,1.0,53,D,D8
+D8_12,Misinformation is spread through the platform.,Twitch,1,3.0,3.5,4.0,5,1.0,16,D,D8
+A1_1,I can control what I see on the platform.,Twitter,1,2.0,3.0,4.0,6,2.0,46,A,A1
+A1_2,I can control what I see on the platform.,Instagram,1,2.0,3.0,4.0,6,2.0,79,A,A1
+A1_3,I can control what I see on the platform.,Reddit,1,1.0,2.0,3.0,6,2.0,55,A,A1
+A1_4,I can control what I see on the platform.,Tumblr,1,1.0,1.0,2.0,4,1.0,9,A,A1
+A1_5,I can control what I see on the platform.,Tik Tok,1,2.0,3.0,4.0,6,2.0,45,A,A1
+A1_6,I can control what I see on the platform.,BeReal,1,1.0,1.0,2.0,5,1.0,9,A,A1
+A1_7,I can control what I see on the platform.,YouTube,1,2.0,2.0,3.0,6,1.0,91,A,A1
+A1_8,I can control what I see on the platform.,Snapchat,1,2.0,3.0,5.0,6,3.0,44,A,A1
+A1_9,I can control what I see on the platform.,Facebook,1,3.0,3.0,5.0,6,2.0,79,A,A1
+A1_10,I can control what I see on the platform.,4Chan,2,3.5,5.5,6.0,6,2.5,6,A,A1
+A1_11,I can control what I see on the platform.,LinkedIn,1,2.0,3.0,4.0,6,2.0,54,A,A1
+A1_12,I can control what I see on the platform.,Twitch,1,1.0,2.0,3.0,4,2.0,17,A,A1
+A2_1,I can control the quantity and types of advertisements I see.,Twitter,1,3.5,6.0,6.0,7,2.5,44,A,A2
+A2_2,I can control the quantity and types of advertisements I see.,Instagram,1,4.0,5.0,6.0,7,2.0,78,A,A2
+A2_3,I can control the quantity and types of advertisements I see.,Reddit,1,4.0,6.0,6.0,7,2.0,55,A,A2
+A2_4,I can control the quantity and types of advertisements I see.,Tumblr,2,3.5,4.0,5.5,7,2.0,8,A,A2
+A2_5,I can control the quantity and types of advertisements I see.,Tik Tok,1,3.0,5.0,6.0,7,3.0,44,A,A2
+A2_6,I can control the quantity and types of advertisements I see.,BeReal,1,1.0,1.0,4.0,7,3.0,9,A,A2
+A2_7,I can control the quantity and types of advertisements I see.,YouTube,2,5.0,6.0,7.0,7,2.0,89,A,A2
+A2_8,I can control the quantity and types of advertisements I see.,Snapchat,1,5.0,6.0,7.0,7,2.0,43,A,A2
+A2_9,I can control the quantity and types of advertisements I see.,Facebook,1,4.0,6.0,7.0,7,3.0,80,A,A2
+A2_10,I can control the quantity and types of advertisements I see.,4Chan,1,4.5,6.0,6.5,7,2.0,6,A,A2
+A2_11,I can control the quantity and types of advertisements I see.,LinkedIn,1,3.5,5.0,6.0,7,2.5,54,A,A2
+A2_12,I can control the quantity and types of advertisements I see.,Twitch,1,5.0,6.0,7.0,7,2.0,17,A,A2
+A3_1,The platform recommends me content that aligns with my previous interests.,Twitter,1,2.0,3.0,3.0,6,1.0,45,A,A3
+A3_2,The platform recommends me content that aligns with my previous interests.,Instagram,1,2.0,2.5,3.0,5,1.0,74,A,A3
+A3_3,The platform recommends me content that aligns with my previous interests.,Reddit,1,2.0,2.0,3.0,6,1.0,55,A,A3
+A3_4,The platform recommends me content that aligns with my previous interests.,Tumblr,1,2.0,3.0,4.0,6,2.0,9,A,A3
+A3_5,The platform recommends me content that aligns with my previous interests.,Tik Tok,1,1.0,2.0,3.0,6,2.0,45,A,A3
+A3_6,The platform recommends me content that aligns with my previous interests.,BeReal,1,3.0,6.0,6.0,6,3.0,9,A,A3
+A3_7,The platform recommends me content that aligns with my previous interests.,YouTube,1,1.0,2.0,3.0,6,2.0,89,A,A3
+A3_8,The platform recommends me content that aligns with my previous interests.,Snapchat,1,3.0,4.5,5.5,6,2.5,42,A,A3
+A3_9,The platform recommends me content that aligns with my previous interests.,Facebook,1,2.0,3.0,3.0,6,1.0,76,A,A3
+A3_10,The platform recommends me content that aligns with my previous interests.,4Chan,5,6.0,6.0,6.0,6,0.0,6,A,A3
+A3_11,The platform recommends me content that aligns with my previous interests.,LinkedIn,1,2.0,3.0,4.0,6,2.0,52,A,A3
+A3_12,The platform recommends me content that aligns with my previous interests.,Twitch,2,3.0,3.0,4.0,6,1.0,18,A,A3
+A4_1,I find content on the platform that I wish I had not seen.,Twitter,1,2.0,3.0,3.5,5,1.5,44,A,A4
+A4_2,I find content on the platform that I wish I had not seen.,Instagram,1,3.0,3.5,4.0,6,1.0,74,A,A4
+A4_3,I find content on the platform that I wish I had not seen.,Reddit,1,3.0,3.0,4.0,6,1.0,53,A,A4
+A4_4,I find content on the platform that I wish I had not seen.,Tumblr,2,3.0,4.0,4.0,5,1.0,9,A,A4
+A4_5,I find content on the platform that I wish I had not seen.,Tik Tok,1,2.0,3.0,4.0,6,2.0,43,A,A4
+A4_6,I find content on the platform that I wish I had not seen.,BeReal,2,5.0,6.0,6.0,6,1.0,9,A,A4
+A4_7,I find content on the platform that I wish I had not seen.,YouTube,1,3.0,4.0,5.0,6,2.0,89,A,A4
+A4_8,I find content on the platform that I wish I had not seen.,Snapchat,1,2.0,3.0,4.0,6,2.0,43,A,A4
+A4_9,I find content on the platform that I wish I had not seen.,Facebook,1,2.0,3.0,4.0,6,2.0,77,A,A4
+A4_10,I find content on the platform that I wish I had not seen.,4Chan,1,1.0,1.0,1.5,2,0.5,6,A,A4
+A4_11,I find content on the platform that I wish I had not seen.,LinkedIn,3,4.0,5.0,5.0,6,1.0,51,A,A4
+A4_12,I find content on the platform that I wish I had not seen.,Twitch,3,4.0,5.0,5.0,6,1.0,17,A,A4
+A5_1,The platform fosters a safe environment for all users.,Twitter,1,3.0,5.0,6.0,6,3.0,47,A,A5
+A5_2,The platform fosters a safe environment for all users.,Instagram,1,2.0,3.0,4.0,6,2.0,77,A,A5
+A5_3,The platform fosters a safe environment for all users.,Reddit,1,3.0,4.0,5.0,6,2.0,56,A,A5
+A5_4,The platform fosters a safe environment for all users.,Tumblr,1,2.0,3.0,3.5,4,1.5,8,A,A5
+A5_5,The platform fosters a safe environment for all users.,Tik Tok,2,3.0,3.5,4.0,6,1.0,46,A,A5
+A5_6,The platform fosters a safe environment for all users.,BeReal,1,1.0,2.0,2.5,6,1.5,10,A,A5
+A5_7,The platform fosters a safe environment for all users.,YouTube,1,2.0,3.0,4.5,6,2.5,90,A,A5
+A5_8,The platform fosters a safe environment for all users.,Snapchat,1,3.0,4.0,5.0,6,2.0,45,A,A5
+A5_9,The platform fosters a safe environment for all users.,Facebook,1,3.0,4.0,5.0,6,2.0,78,A,A5
+A5_10,The platform fosters a safe environment for all users.,4Chan,5,5.5,6.0,6.0,6,0.5,6,A,A5
+A5_11,The platform fosters a safe environment for all users.,LinkedIn,1,2.0,2.0,3.0,6,1.0,53,A,A5
+A5_12,The platform fosters a safe environment for all users.,Twitch,2,2.0,3.0,3.0,5,1.0,17,A,A5
+A6_1,I revisit content on the platform.,Twitter,1,3.0,3.0,5.0,6,2.0,45,A,A6
+A6_2,I revisit content on the platform.,Instagram,1,3.0,3.0,5.0,6,2.0,75,A,A6
+A6_3,I revisit content on the platform.,Reddit,1,2.0,3.0,5.0,6,3.0,55,A,A6
+A6_4,I revisit content on the platform.,Tumblr,1,1.0,2.0,3.0,5,2.0,9,A,A6
+A6_5,I revisit content on the platform.,Tik Tok,1,2.0,3.0,5.0,6,3.0,44,A,A6
+A6_6,I revisit content on the platform.,BeReal,2,3.0,5.0,5.0,6,2.0,9,A,A6
+A6_7,I revisit content on the platform.,YouTube,1,1.0,2.0,3.0,6,2.0,88,A,A6
+A6_8,I revisit content on the platform.,Snapchat,1,4.5,5.0,6.0,6,1.5,46,A,A6
+A6_9,I revisit content on the platform.,Facebook,1,2.0,3.0,5.0,6,3.0,78,A,A6
+A6_10,I revisit content on the platform.,4Chan,1,2.5,4.0,5.5,6,3.0,6,A,A6
+A6_11,I revisit content on the platform.,LinkedIn,1,3.0,4.5,5.0,6,2.0,52,A,A6
+A6_12,I revisit content on the platform.,Twitch,1,2.0,2.5,5.0,5,3.0,16,A,A6
