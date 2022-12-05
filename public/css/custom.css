@@ -1,0 +1,63 @@
+/*TODO: Test dark mode*/
+/*@media (prefers-color-scheme: dark) {*/
+/*    body {*/
+/*        color: #eee;*/
+/*        background: #121212;*/
+/*    }*/
+/*}*/
+
+.bg-accent1 {
+    background-color: rgba(22, 182, 179, 0.5);
+}
+.bg-accent2 {
+    background-color: rgba(186, 237, 69, 0.5);
+}
+.bg-accent3 {
+    background-color: rgba(252, 139, 74, 0.5);
+}
+.bg-accent4 {
+    background-color: rgba(228, 58, 114, 0.5);
+}
+
+.bg-main {
+    background-color: rgb(94, 100, 138);
+}
+
+.bg-facebook {
+    background-color: #1178f2;
+}
+
+.bg-linkedin {
+    background-color: #0274b3;
+}
+
+.bg-grey {
+    background-color: lightgray;
+}
+
+.bottom {
+    bottom: 0px;
+}
+
+.carousel-indicators .active {
+    background-color: grey;
+}
+
+.carousel-indicators li {
+    background-color: lightgray;
+}
+
+.card,
+.card::before,
+.card::after {
+    box-sizing: unset; !important;
+}
+
+
+.card-height {
+    height: 200px;
+}
+
+.card-img-width {
+    width: 250px;
+}

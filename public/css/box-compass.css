@@ -33,19 +33,6 @@
     float: left;
 }
 
-.auth .left {
-    background-color: rgba(22, 182, 179, 0.5);
-}
-.auth .right {
-    background-color: rgba(186, 237, 69, 0.5);
-}
-.lib .left {
-    background-color: rgba(252, 139, 74, 0.5);
-}
-.lib .right {
-    background-color: rgba(228, 58, 114, 0.5);
-}
-
 .pin {
     position: absolute;
     z-index: 200;
