@@ -1,5 +1,5 @@
 const mongodb = require("mongodb");
-const uri = "mongodb+srv://socialsights:hx8mTypacXhEWICD@cluster0.tpmvmkv.mongodb.net/?retryWrites=true&w=majority"
+const uri = "mongodb+srv://"+process.env.DBUSER+":"+process.env.DBPASS+"@cluster0."+process.env.DBROUTE+".mongodb.net/?retryWrites=true&w=majority"
 class DAO {
     constructor() {
         this.client = new mongodb.MongoClient(uri, {
