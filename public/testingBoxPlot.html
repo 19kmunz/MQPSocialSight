@@ -16,149 +16,122 @@
 <p id="media">My first paragraph.</p>
 <!-- Create a div where the boxplots will live -->
 <div id="summaryplot"></div>
-<div id="boxplots" ></div>
+<div id="boxplots" >
+    <div id="C">
+        <div class="summary"></div>
+        <div class="content"></div>
+    </div>
+    <div id="S">
+        <div class="summary"></div>
+        <div class="content"></div>
+    </div>
+    <div id="D">
+        <div class="summary"></div>
+        <div class="content"></div>
+    </div>
+    <div id="A">
+        <div class="summary"></div>
+        <div class="content"></div>
+    </div>
+</div>
 <script>
-    const media = "4Chan"
+    const media = "Facebook"
     const p = d3.select("#media").text(media)
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 50, left: 70},
         width = 460 - margin.left - margin.right,
         height = 200 - margin.top - margin.bottom;
 
-    // Select the boxplot containter
-
-    // SINGLE SUMMARY
-    d3.csv("MQPResponsesA.csv", function(dataA) {
-        d3.csv("MQPResponsesC.csv", function(dataC){
-            d3.csv("MQPResponsesD.csv", function(dataD){
-                d3.csv("MQPResponsesS.csv", function(dataS){
-                    // Select the boxplot container
-                    const boxplots = d3.select("#summaryplot").style("outline", "5px dotted green")
-
-                    // Format data to questionExportTag: [numeric answers, ...]
-                    let bigData = {}
-                    let keys = ["A", "C", "D", "S"]
-                    let datas = { "A": dataA, "C": dataC, "D": dataD, "S": dataS }
-                    keys.forEach(function(key){
-                        let keysX = Object.keys(datas[key][0]);
-                        let cleanNumericDataX = cleanTheData(keysX, datas[key], mediaToNumber(media))
-                        console.log(cleanNumericDataX)
-
-                        // Filter by media
-                        bigData[key] = d3.merge(Object.values(cleanNumericDataX)).sort(d3.ascending)
-                    })
-                    console.log("Big Data:")
-                    console.log(bigData)
-                    // Compute summary statistics
-                    var sumstat = Object.keys(bigData).map(key => {
-                        // For each question
-                        // Compute the boxplot summary statistics
-                        let q1 = d3.quantile(bigData[key],.25)
-                        let median = d3.quantile(bigData[key],.5)
-                        let q3 = d3.quantile(bigData[key],.75)
-                        let interQuantileRange = q3 - q1
-                        let min = d3.max([q1 - 1.5 * interQuantileRange, d3.min(bigData[key])])
-                        let max = d3.min([q3 + 1.5 * interQuantileRange, d3.max(bigData[key])])
-                        let minOutliers = bigData[key].filter( d => d < min)
-                        let maxOutliers = bigData[key].filter( d => d > max)
-                        let outliers = minOutliers.concat(maxOutliers)
-                        let total = bigData[key].length
-
-                        return {
-                            'key' : key,
-                            value: { questionText: key, q1: q1, median: median, q3: q3, interQuantileRange: interQuantileRange, min: min, max: max, outliers: outliers, total: total, points: bigData[key] }
-                        }
-                    })
-                    console.log("Sumstat:")
-                    console.log(sumstat)
-
-                    // Create the html boxplots
-                    displayBoxplots(sumstat, boxplots)
-                })
-            })
-        })
-    })
-
-    // For all questions
-
-    d3.csv("MQPResponsesD.csv", function(data) {
-        // Select the boxplot containter
-        const boxplots = d3.select("#boxplots")
-
-        // Format data to questionExportTag: [numeric answers, ...]
-        let keys = Object.keys(data[0]);
-        let cleanNumericData = cleanTheData(keys, data)
-        // Get the question text from the full data
-        var sumtext = Object.keys(cleanNumericData).map(key => {
-            let questionTextFull = data[0][key]
-
-            let indOfSeperator = questionTextFull.indexOf(" - ")
-            let questionText = questionTextFull.substring(0, indOfSeperator)
-            let media = questionTextFull.slice(indOfSeperator + 3)
-            let questionTag = key.substring(0, key.indexOf("_"))
-            return {
-                'key': key,
-                value: {
-                    questionText: questionText, media: media, questionTag: questionTag
-                }
+    // For current media
+        // For each human tag
+    let humanTags = ["C", "S", "D", "A"]
+    const boxplots = d3.select("#boxplots")
+    humanTags.forEach(function(human) {
+        fetch('/questions?media='+media+'&human='+human, {
+            method:'GET',
+            headers:{
+                "Content-Type": "application/json"
             }
         })
-        var sumtextobj = sumtext.reduce(
-            (obj, item) => Object.assign(obj, { [item.key]: item.value }), {});
+            .then( function(response) {
+                return response.json()
+            })
+            .then( function(json) {
+                let data = json.questions
+                let overall = [computeOverallData(data)]
 
-        // Compute summary statistics
-        // NOTE: uses both cleanNumericData AND original data to get, respectively, numerics and te
-        var sumstat = Object.keys(cleanNumericData).map(key => {
+                //data.append(computeOverallData(data))
+                // Select the boxplot containter
+                const humanDiv = boxplots.select("#"+human)
+
+                var topsumstat = computeSummaryStatistics(overall)
+                displayBoxplots(topsumstat, humanDiv.select(".summary"))
+
+                const contentsDiv = humanDiv.select(".content")
+                // Compute summary statistics
+                var sumstat = computeSummaryStatistics(data)
+                // Create the html boxplots
+                displayBoxplots(sumstat, contentsDiv)
+            })
+    })
+
+    function computeOverallData(data) {
+        let summary = {
+            "_id" : data[0].human+"_Summary",
+            "qTag" : data[0].human+"_Summary",
+            "mediaText" : data[0].mediaText,
+            "title": data[0].human +" Summary",
+        }
+        let points = []
+        data.forEach(question => {
+            points.push(question.points)
+        })
+        points = d3.merge(points).sort(d3.ascending)
+        summary.points = points;
+        summary.total = points.length;
+        return summary;
+    }
+    function computeSummaryStatistics(data) {
+        return data.map(question => {
             // For each question
             // Get the question text from the full data
-            let textInfo = sumtextobj[key]
+            let questionText = question.title
+            let media = question.mediaText
+            let questionTag = question.qTag
 
             // Compute the boxplot summary statistics
-            let q1 = d3.quantile(cleanNumericData[key],.25)
-            let median = d3.quantile(cleanNumericData[key],.5)
-            let q3 = d3.quantile(cleanNumericData[key],.75)
+            let q1 = d3.quantile(question.points, .25)
+            let median = d3.quantile(question.points, .5)
+            let q3 = d3.quantile(question.points, .75)
             let interQuantileRange = q3 - q1
-            let min = d3.max([q1 - 1.5 * interQuantileRange, d3.min(cleanNumericData[key])])
-            let max = d3.min([q3 + 1.5 * interQuantileRange, d3.max(cleanNumericData[key])])
-            let minOutliers = cleanNumericData[key].filter( d => d < min)
-            let maxOutliers = cleanNumericData[key].filter( d => d > max)
+            let min = d3.max([q1 - 1.5 * interQuantileRange, d3.min(question.points)])
+            let max = d3.min([q3 + 1.5 * interQuantileRange, d3.max(question.points)])
+            let minOutliers = question.points.filter(d => d < min)
+            let maxOutliers = question.points.filter(d => d > max)
             let outliers = minOutliers.concat(maxOutliers)
-            let total = cleanNumericData[key].length
+            let total = question.points.length
 
             return {
-                'key' : key,
-                value: { questionText: textInfo.questionText, media: textInfo.media, questionTag: textInfo.questionTag, q1: q1, median: median, q3: q3, interQuantileRange: interQuantileRange, min: min, max: max, outliers: outliers, total: total, points: cleanNumericData[key] }
+                'key': question.qTag,
+                value: {
+                    questionText: questionText,
+                    media: media,
+                    questionTag: questionTag,
+                    q1: q1,
+                    median: median,
+                    q3: q3,
+                    interQuantileRange: interQuantileRange,
+                    min: min,
+                    max: max,
+                    outliers: outliers,
+                    total: total,
+                    points: question.points
+                }
             }
-        })
-
-        // Create the html boxplots
-        displayBoxplots(sumstat, boxplots)
-    })
-
-
-    function cleanTheData(keys, data, mediaFilter = null) {
-        let  cleanData = {}
-        keys.forEach(function(key) {
-            if(key === "Q4")
-                return;
-            // filter by media num
-            if(mediaFilter !== null) {
-                let num = parseInt(key.slice(key.indexOf('_') + 1))
-                if (num !== mediaFilter) return;
-            }
-            // clean the data
-            cleanData[key] = data
-                .map(d => { return d[key] })
-                .slice(2) // Ignore text and import id
-                .map(p => { return phraseToNumber(p) })
-                .filter(n => { return n != null })
-                .sort(d3.ascending)
-        })
-        return cleanData
+        });
     }
-
     function displayBoxplots(sumstat, boxplots) {
-        console.log("herehereher")
+        console.log("Sumstat: ")
         console.log(sumstat)
         // From sumstat: key, questionText, min, max, q1, q3, median, outliers, total
         // Define positions

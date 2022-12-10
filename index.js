@@ -5,6 +5,7 @@ const dao = new DAO();
 
 app.get('/question', (req, res) => {
     let questionTag = req.query.questionTag;
+    console.log("Question query: " + JSON.stringify(req.query))
     try {
         dao.getQuestion(questionTag).then( question => {
             if (question) {
@@ -19,7 +20,7 @@ app.get('/question', (req, res) => {
         })
     } catch (e) {
         err(res, JSON.stringify({
-            error: e
+            error: e.toString()
         }))
     }
 })
@@ -27,10 +28,11 @@ app.get('/question', (req, res) => {
 app.get('/questions', (req, res) => {
     let mediaText = req.query.media
     let human = req.query.human
+    console.log("QuestionS query: " + JSON.stringify(req.query))
     try {
         if (mediaText) {
             if(human) {
-                dao.getQuestionsForMediaAndHumanTag(mediaText, human).then(questions => {
+                dao.getQuestionsForMediaAndHumanTag(mediaText, human).toArray().then(questions => {
                     if(questions) {
                         ok(res, JSON.stringify({
                             questions: questions
@@ -42,7 +44,7 @@ app.get('/questions', (req, res) => {
                     }
                 })
             } else {
-                dao.getQuestionsForMedia(mediaText).then(questions => {
+                dao.getQuestionsForMedia(mediaText).toArray().then(questions => {
                     if (questions) {
                         ok(res, JSON.stringify({
                             questions: questions
@@ -55,7 +57,7 @@ app.get('/questions', (req, res) => {
                 })
             }
         } else {
-            dao.getAllQuestions().then(questions => {
+            dao.getAllQuestions().toArray().then( questions => {
                 if(questions) {
                     ok(res, JSON.stringify({
                         questions: questions
@@ -69,7 +71,7 @@ app.get('/questions', (req, res) => {
         }
     } catch (e) {
         err(res, JSON.stringify({
-            error: e
+            error: e.toString()
         }))
     }
 })
@@ -86,6 +88,7 @@ function err(res, body) {
 
 app.use(express.static("./public/"));
 
-const listener = app.listen(process.env.PORT, () => {
+// TODO: change to process.env.PORT
+const listener = app.listen(3000, () => {
     console.log(`Example app listening on port ${listener.address().port}`)
 })
