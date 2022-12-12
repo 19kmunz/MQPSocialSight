@@ -3,6 +3,24 @@ var margin = {top: 10, right: 30, bottom: 50, left: 70},
     width = 460 - margin.left - margin.right,
     height = 200 - margin.top - margin.bottom;
 
+function generateBoxplotsForHuman(json, human) {
+    let data = json.questions
+    let overall = [computeOverallData(data)]
+
+    //data.append(computeOverallData(data))
+    // Select the boxplot containter
+    const humanDiv = boxplots.select("#"+human)
+
+    var topsumstat = computeSummaryStatistics(overall)
+    displayBoxplots(topsumstat, humanDiv.select(".summary"))
+
+    const contentsDiv = humanDiv.select(".children")
+    // Compute summary statistics
+    var sumstat = computeSummaryStatistics(data)
+    // Create the html boxplots
+    displayBoxplots(sumstat, contentsDiv)
+    contentsDiv.classed("collapse", true)
+}
 function computeOverallData(data) {
     let summary = {
         "_id" : data[0].human+"_Summary",
@@ -75,6 +93,9 @@ function displayBoxplots(sumstat, boxplots) {
     // Make boxplot container, margin, and scale for each question
     displayContainersMargin(sumstat, boxplots)
 
+    //Make captions for boxplots
+    displayCaptions(sumstat, boxplots)
+
     // Show axis labels
     displayAxis(sumstat, boxplots, xText)
 
@@ -101,14 +122,25 @@ function displayContainersMargin(sumstat, boxplots) {
         .selectAll("boxplot") // No boxplots
         .data(sumstat) // Link to boxplot data
         .enter() // Create empties linked with data
-        .append("svg") // container svg
+        .append("div") // container div
         .attr("id", function(d) { return d.key;})
+        .classed("row", true)
+        .classed("boxplot-row", true)
+        .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
+        .classed("col", true)
         .append("g") // margin
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")")
         .classed("margin", true)
+}
+function displayCaptions(sumstat, boxplots) {
+    boxplots
+        .selectAll(".boxplot-row")
+        .append("p")
+        .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus arcu aliquet, suscipit nunc vitae, euismod augue. Ut condimentum nisl mi, nec rutrum urna imperdiet at. Quisque eget nibh ipsum. Curabitur vel dui id turpis suscipit dictum ac sed massa. In dictum feugiat condimentum. Vivamus fermentum odio nisi, vel imperdiet dui pulvinar eu. Mauris sit amet finibus magna. Sed ultricies ut odio sit amet luctus. Maecenas et odio sed ipsum pellentesque eleifend.")
+        .classed("col", true)
 }
 function displayAxis(sumstat, boxplots, scale){
     boxplots
@@ -131,7 +163,7 @@ function displayTitle(sumstat, boxplots) {
         .text(function (d) {
             return d.value.questionText + ((d.value.media) ? " - " + d.value.media : "")
         })
-        .call(wrap, width)
+        .call(wrap, width) // TODO fix dx by sending text element
 }
 function displayRange(sumstat, boxplots, xScale, y, yBandwidth) {
     boxplots

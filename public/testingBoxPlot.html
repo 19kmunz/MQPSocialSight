@@ -2,8 +2,13 @@
 <html lang="eng">
 <head>
     <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Bootstrap JS   -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>     <title>SocialSight</title>
 
 
     <!-- Load d3.js -->
@@ -18,27 +23,30 @@
 <!-- Create a div where the boxplots will live -->
 <div id="summaryplot"></div>
 <div id="boxplots" >
-    <div id="C">
+    <div id="C" class="row">
         <div class="summary"></div>
-        <div class="content"></div>
+        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#cChildren" aria-expanded="false">▲</button>
+        <div id="cChildren" class="children"></div>
     </div>
-    <div id="S">
+    <div id="S" class="row">
         <div class="summary"></div>
-        <div class="content"></div>
+        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#sChildren" aria-expanded="false">▲</button>
+        <div id="sChildren" class="children"></div>
     </div>
-    <div id="D">
+    <div id="D" class="row">
         <div class="summary"></div>
-        <div class="content"></div>
+        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#dChildren" aria-expanded="false">▲</button>
+        <div id="dChildren" class="children"></div>
     </div>
-    <div id="A">
+    <div id="A" class="row">
         <div class="summary"></div>
-        <div class="content"></div>
+        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#aChildren" aria-expanded="false">▲</button>
+        <div id="aChildren" class="children"></div>
     </div>
 </div>
 <script>
+    const p = d3.select("#media").text("Facebook")
     const media = "Facebook"
-    const p = d3.select("#media").text(media)
-
     // For current media
         // For each human tag
     let humanTags = ["C", "S", "D", "A"]
@@ -50,26 +58,12 @@
                 "Content-Type": "application/json"
             }
         })
-            .then( function(response) {
-                return response.json()
-            })
-            .then( function(json) {
-                let data = json.questions
-                let overall = [computeOverallData(data)]
-
-                //data.append(computeOverallData(data))
-                // Select the boxplot containter
-                const humanDiv = boxplots.select("#"+human)
-
-                var topsumstat = computeSummaryStatistics(overall)
-                displayBoxplots(topsumstat, humanDiv.select(".summary"))
-
-                const contentsDiv = humanDiv.select(".content")
-                // Compute summary statistics
-                var sumstat = computeSummaryStatistics(data)
-                // Create the html boxplots
-                displayBoxplots(sumstat, contentsDiv)
-            })
+        .then( function(response) {
+            return response.json()
+        })
+        .then( function(json) {
+            generateBoxplotsForHuman(json, human)
+        })
     })
 </script>
 </body>
