@@ -5,7 +5,7 @@
 
 #diagrams {
     margin: auto;
-    width: 727px;
+    /*width: 727px;*/
 }
 
 #axes, #scale {
@@ -19,7 +19,9 @@
 #axes {
     width: 600px;
     height: 600px;
-    margin-right: 30px;background-size: 5% 5%;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-size: 5% 5%;
     background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
 }
 
@@ -45,8 +47,9 @@
     font-size: 200%;
 }
 
-.partyPin i {
-    opacity: 0.5;
+.pin a {
+    color: #000000;
+    text-decoration: none;
 }
 
 #scale {
