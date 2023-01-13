@@ -37,88 +37,154 @@
         </ul>
     </div>
 </nav>
-<div class="mx-5 my-3">
-    <h1>Welcome to SocialSight</h1>
-    <div class="card my-3">
-        <div class="card-body">
-            <h2 class="card-title">Social Media Alignment</h2>
-            <div id="diagrams">
-                <div id="axes">
-                    <div>
-                        <div class="bg-accent1"></div>
-                        <div class="bg-accent2"></div>
-                    </div>
-                    <div>
-                        <div class="bg-accent3"></div>
-                        <div class="bg-accent4"></div>
-                    </div>
-                    <!--                TODO: -->
-                    <!--                <div id="userPin" class="pin" style="left: 50%; top: 50%;">-->
-                    <!--                    <i class="material-icons" data-toggle="tooltip" title="" data-original-title="You">my_location</i>-->
-                    <!--                </div>-->
-                    <div class="partyPin pin" style="left: 23%; top: 52.5%;"><i class="material-icons"
-                                                                                data-toggle="tooltip"
-                                                                                title="" data-original-title="Test1">fiber_manual_record</i>
-                    </div>
-                    <div class="partyPin pin" style="left: 52%; top: 43%;"><i class="material-icons"
-                                                                              data-toggle="tooltip"
-                                                                              title="" data-original-title="Test2">fiber_manual_record</i>
-                    </div>
-                    <div class="partyPin pin" style="left: 58.6%; top: 52.1%;"><i class="material-icons"
-                                                                                  data-toggle="tooltip" title=""
-                                                                                  data-original-title="Test3">fiber_manual_record</i>
-                    </div>
-                    <div class="partyPin pin" style="left: 25%; top: 60%;"><i class="material-icons"
-                                                                              data-toggle="tooltip"
-                                                                              title="" data-original-title="Test4">fiber_manual_record</i>
-                    </div>
-                    <div class="partyPin pin" style="left: 45%; top: 4%;"><i class="material-icons"
-                                                                             data-toggle="tooltip"
-                                                                             title="" data-original-title="Test5">fiber_manual_record</i>
-                    </div>
-                </div>
-                <!--            This is an alignment scale if we let user take the survey-->
-                <!--            <div id="scale">-->
-                <!--                <div>-->
-                <!--                    <div id="userBar" class="bar" data-toggle="tooltip" title="" data-original-title="You"-->
-                <!--                         style="top: 50%;"></div>-->
-                <!--                    <div class="partyBar bar" style="top: 9.7%;" data-toggle="tooltip" title=""-->
-                <!--                         data-original-title="Greens"></div>-->
-                <!--                    <div class="partyBar bar" style="top: 50%;" data-toggle="tooltip" title=""-->
-                <!--                         data-original-title="Kiwi"></div>-->
-                <!--                    <div class="partyBar bar" style="top: 32.8%;" data-toggle="tooltip" title=""-->
-                <!--                         data-original-title="Liberals"></div>-->
-                <!--                    <div class="partyBar bar" style="top: 41%;" data-toggle="tooltip" title=""-->
-                <!--                         data-original-title="Labour"></div>-->
-                <!--                    <div class="partyBar bar" style="top: 75%;" data-toggle="tooltip" title=""-->
-                <!--                         data-original-title="Front"></div>-->
-                <!--                </div>-->
-                <!--            </div>-->
-            </div>
-            <br>
-            <!--        These are more results for the user-->
-            <!--        <table class="table table-hover">-->
-            <!--            <tbody>-->
-            <!--            <tr>-->
-            <!--                <td>Economy</td>-->
-            <!--                <td id="xScore" data-toggle="tooltip" title="" data-original-title="0 = left, 100 = right">50</td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <td>Statism</td>-->
-            <!--                <td id="yScore">50</td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <td>Progressivism</td>-->
-            <!--                <td id="zScore">50</td>-->
-            <!--            </tr>-->
-            <!--            </tbody>-->
-            <!--        </table>-->
-
-            <!--        <strong>You align closest with: <span id="align">Kiwi, then Liberals, then Labour</span>.</strong>-->
+<div class="mx-5 my-3" id="grid">
+    <div class="row justify-content-between">
+        <div class="col-lg-0">
+            <h1>Welcome to SocialSight</h1>
+        </div>
+        <div class="col-sm-0">
+            <a class="btn btn-secondary" href="#definitions">View Definitions</a>
         </div>
     </div>
+    <div>
+        <div class="d-flex justify-content-center align-items-center"><h5 class="my-0">Community</h5></div>
+        <div id="diagrams" class="d-flex justify-content-center">
+            <div class="d-flex align-items-center flex-col justify-content-end"><h5 class="my-0">Agency</h5></div>
+            <div id="axes" class="justify-content-center">
+                <div>
+                    <div class="bg-accent1 grid-top-left d-flex align-items-center justify-content-center"><p>
+                        Community-Agency</p></div>
+                    <div class="bg-accent2 grid-top-right d-flex align-items-center justify-content-center"><p>
+                        Community-Discovery</p></div>
+                </div>
+                <div>
+                    <div class="bg-accent3 grid-bottom-left d-flex align-items-center justify-content-center"><p>
+                        Self-Agency</p></div>
+                    <div class="bg-accent4 grid-bottom-right d-flex align-items-center justify-content-center"><p>
+                        Self-Discovery</p></div>
+                </div>
+                <!--                TODO: -->
+                <!--                <div id="userPin" class="pin" style="left: 50%; top: 50%;">-->
+                <!--                    <i class="material-icons" data-toggle="tooltip" title="" data-original-title="You">my_location</i>-->
+                <!--                </div>-->
+            </div>
+            <div class="d-flex align-items-center flex-col"><h5 class="my-0">Discovery</h5></div>
+            <!--            This is an alignment scale if we let user take the survey-->
+            <!--            <div id="scale">-->
+            <!--                <div>-->
+            <!--                    <div id="userBar" class="bar" data-toggle="tooltip" title="" data-original-title="You"-->
+            <!--                         style="top: 50%;"></div>-->
+            <!--                    <div class="partyBar bar" style="top: 9.7%;" data-toggle="tooltip" title=""-->
+            <!--                         data-original-title="Greens"></div>-->
+            <!--                    <div class="partyBar bar" style="top: 50%;" data-toggle="tooltip" title=""-->
+            <!--                         data-original-title="Kiwi"></div>-->
+            <!--                    <div class="partyBar bar" style="top: 32.8%;" data-toggle="tooltip" title=""-->
+            <!--                         data-original-title="Liberals"></div>-->
+            <!--                    <div class="partyBar bar" style="top: 41%;" data-toggle="tooltip" title=""-->
+            <!--                         data-original-title="Labour"></div>-->
+            <!--                    <div class="partyBar bar" style="top: 75%;" data-toggle="tooltip" title=""-->
+            <!--                         data-original-title="Front"></div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+        <div class="d-flex justify-content-center align-items-center"><h5 class="my-0">Self</h5></div>
+        <br>
+        <!--        These are more results for the user-->
+        <!--        <table class="table table-hover">-->
+        <!--            <tbody>-->
+        <!--            <tr>-->
+        <!--                <td>Economy</td>-->
+        <!--                <td id="xScore" data-toggle="tooltip" title="" data-original-title="0 = left, 100 = right">50</td>-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td>Statism</td>-->
+        <!--                <td id="yScore">50</td>-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td>Progressivism</td>-->
+        <!--                <td id="zScore">50</td>-->
+        <!--            </tr>-->
+        <!--            </tbody>-->
+        <!--        </table>-->
 
+        <!--        <strong>You align closest with: <span id="align">Kiwi, then Liberals, then Labour</span>.</strong>-->
+    </div>
 </div>
+<div id="definitions" class="mx-5 my-3">
+    <div class="row justify-content-between">
+        <div class="col-lg-0">
+            <h1></h1>
+        </div>
+        <div class="col-sm-0">
+            <a class="btn btn-secondary" href="#grid">View Grid</a>
+        </div>
+    </div>
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Community</h5>
+            <div class="row" name="boxplot1">
+                <div class="col">
+                    <img class="float-right mw-100"
+                         src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png">
+                </div>
+                <div class="col mx-3">
+                    <p>Description of the box plot! In ultricies fermentum aliquet. Pellentesque dui magna, condimentum
+                        non ullamcorper at, cursus in sem. Nunc condimentum, purus ac sagittis ultricies, metus leo
+                        pharetra mi, non vehicula felis elit et nisi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Self</h5>
+            <div class="row" name="boxplot2">
+                <div class="col">
+                    <img class="float-right mw-100"
+                         src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png">
+                </div>
+                <div class="col mx-3">
+                    <p>Description of the box plot! In ultricies fermentum aliquet. Pellentesque dui magna, condimentum
+                        non ullamcorper at, cursus in sem. Nunc condimentum, purus ac sagittis ultricies, metus leo
+                        pharetra mi, non vehicula felis elit et nisi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Agency</h5>
+            <div class="row" name="boxplot3">
+                <div class="col">
+                    <img class="float-right mw-100"
+                         src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png">
+                </div>
+                <div class="col mx-3">
+                    <p>Description of the box plot! In ultricies fermentum aliquet. Pellentesque dui magna, condimentum
+                        non ullamcorper at, cursus in sem. Nunc condimentum, purus ac sagittis ultricies, metus leo
+                        pharetra mi, non vehicula felis elit et nisi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Discovery</h5>
+            <div class="row" name="boxplot4">
+                <div class="col">
+                    <img class="float-right mw-100"
+                         src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png">
+                </div>
+                <div class="col mx-3">
+                    <p>Description of the box plot! In ultricies fermentum aliquet. Pellentesque dui magna, condimentum
+                        non ullamcorper at, cursus in sem. Nunc condimentum, purus ac sagittis ultricies, metus leo
+                        pharetra mi, non vehicula felis elit et nisi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
