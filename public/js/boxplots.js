@@ -1,7 +1,9 @@
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 50, left: 70},
-    width = 460 - margin.left - margin.right,
-    height = 200 - margin.top - margin.bottom;
+    width = 400 - margin.left - margin.right,
+    chunk = width/7,
+    height = 200 - margin.top - margin.bottom,
+    jitterWidth = height / 4;
 
 function generateBoxplotsForHuman(json, human) {
     let data = json.questions
@@ -14,7 +16,9 @@ function generateBoxplotsForHuman(json, human) {
     var topsumstat = computeSummaryStatistics(overall)
     displayBoxplots(topsumstat, humanDiv.select(".summary"))
 
-    const contentsDiv = humanDiv.select(".children")
+    const contentsDiv = humanDiv
+        .select(".children")
+        .attr("style", "padding-left: 50px;")
     // Compute summary statistics
     var sumstat = computeSummaryStatistics(data)
     // Create the html boxplots
@@ -26,7 +30,8 @@ function computeOverallData(data) {
         "_id" : data[0].human+"_Summary",
         "qTag" : data[0].human+"_Summary",
         "mediaText" : data[0].mediaText,
-        "title": data[0].human +" Summary",
+        "title": humanTagToWord(data[0].human) +" Summary",
+        "scale": ["STR A", "A", "SLI A", "SLI D", "D", "STR D"]
     }
     let points = []
     data.forEach(question => {
@@ -71,7 +76,11 @@ function computeSummaryStatistics(data) {
                 max: max,
                 outliers: outliers,
                 total: total,
-                points: question.points
+                points: question.points,
+                scale: question.scale,
+                xScale : d3.scaleLinear()
+                    .domain([1, question.scale.length])
+                    .range([0, width])
             }
         }
     });
@@ -83,9 +92,6 @@ function displayBoxplots(sumstat, boxplots) {
     // Define positions
     var y = height / 2
     var yBandwidth = height / 4;
-    var xText = d3.scalePoint()
-        .domain(["SA", "A", "LA", "LD", "D", "SD", "NoAd"])
-        .range([0, width])
     var x = d3.scaleLinear()
         .domain([1, 7])
         .range([0, width])
@@ -97,7 +103,7 @@ function displayBoxplots(sumstat, boxplots) {
     displayCaptions(sumstat, boxplots)
 
     // Show axis labels
-    displayAxis(sumstat, boxplots, xText)
+    displayAxis(sumstat, boxplots)
 
     // Show title
     displayTitle(sumstat, boxplots)
@@ -142,14 +148,22 @@ function displayCaptions(sumstat, boxplots) {
         .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus arcu aliquet, suscipit nunc vitae, euismod augue. Ut condimentum nisl mi, nec rutrum urna imperdiet at. Quisque eget nibh ipsum. Curabitur vel dui id turpis suscipit dictum ac sed massa. In dictum feugiat condimentum. Vivamus fermentum odio nisi, vel imperdiet dui pulvinar eu. Mauris sit amet finibus magna. Sed ultricies ut odio sit amet luctus. Maecenas et odio sed ipsum pellentesque eleifend.")
         .classed("col", true)
 }
-function displayAxis(sumstat, boxplots, scale){
+function displayAxis(sumstat, boxplots, scaleOld){
     boxplots
         .selectAll(".margin")
         .data(sumstat)
         .append("g") // bottom axis
         .attr("transform", "translate(0," + height + ")")
         .classed("bottomAxis", true)
-        .call(d3.axisBottom(scale).ticks(7)) // TODO: dynamically set the axis labels
+        .each(function(s){
+            let scale = d3.scalePoint()
+                .domain(s.value.scale)
+                .range([0, width])
+                .align(0)
+                .padding(0)
+            d3.select(this)
+                .call(d3.axisBottom(scale).ticks(7))
+        }) // TODO: dynamically set the axis labels
         .select(".domain").remove()
 }
 function displayTitle(sumstat, boxplots) {
@@ -171,10 +185,10 @@ function displayRange(sumstat, boxplots, xScale, y, yBandwidth) {
         .data(sumstat)
         .append("line")
         .attr("x1", function (d) {
-            return xScale(d.value.min)
+            return d.value.xScale(d.value.min)
         })
         .attr("x2", function (d) {
-            return xScale(d.value.max)
+            return d.value.xScale(d.value.max)
         })
         .attr("y1", y + yBandwidth / 2)
         .attr("y2", y + yBandwidth / 2)
@@ -188,10 +202,10 @@ function displayBox(sumstat, boxplots, xScale, y, yBandwidth) {
         .data(sumstat)
         .append("rect")
         .attr("x", function (d) {
-            return xScale(d.value.q1)
+            return d.value.xScale(d.value.q1)
         })
         .attr("width", function (d) {
-            return (xScale(d.value.q3) - xScale(d.value.q1))
+            return (d.value.xScale(d.value.q3) - d.value.xScale(d.value.q1))
         })
         .attr("y", y)
         .attr("height", yBandwidth)
@@ -208,10 +222,10 @@ function displayMedian(sumstat, boxplots, xScale, y, yBandwidth) {
         .attr("y1", y)
         .attr("y2", y + yBandwidth)
         .attr("x1", function (d) {
-            return (xScale(d.value.median))
+            return (d.value.xScale(d.value.median))
         })
         .attr("x2", function (d) {
-            return (xScale(d.value.median))
+            return (d.value.xScale(d.value.median))
         })
         .attr("stroke", "black")
         .style("width", 80)
@@ -223,15 +237,15 @@ function displayOutliers(sumstat, boxplots, xScale, y, yBandwidth) {
         .data(sumstat)
         .append("g")
         .classed("outliers", true)
-        .each(function (d) {
+        .each(function (t) {
             d3.select(this).selectAll('circles')
-                .data(d.value.outliers)
+                .data(t.value.outliers)
                 .enter()
                 .append('circle')
                 .attr("cx", function (d) {
-                    return xScale(d)
+                    return t.value.xScale(d)
                 })
-                .attr("cy", y + yBandwidth / 2)
+                .attr("cy", function() { return y + (jitterWidth * Math.random()) })
                 .attr("r", 3)
                 .attr("opacity", 0.2)
         })
@@ -419,5 +433,18 @@ function questionToScale(question){
             return["10 minutes or Less", "About 30 minutes", "About an hour", "More than an hour or multiple hours"]
         default:
             return ["Strongly agree", "Agree", "Slightly agree", "Slightly disagree", "Disagree", "Strongly disagree"]
+    }
+}
+
+function humanTagToWord(tag) {
+    switch (tag) {
+        case "D":
+            return "Discovery: Creativity and Satisfaction"
+        case "C":
+            return "Culture: Community and Connection"
+        case "S":
+            return "Self: Identity and Ego"
+        case "A":
+            return "Control: Agency and Comfort"
     }
 }

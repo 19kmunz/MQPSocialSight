@@ -2,6 +2,22 @@ import pandas as pd
 from pymongo import MongoClient
 from dotenv import dotenv_values
 
+
+def question_to_scale(question):
+    match question:
+        case "C1" | "C2" | "C3" | "C6" | "D1" | "D5" | "D6" | "D7" | "D8" | "A3" | "A4":
+            return ["VF", "F", "O", "R", "VR", "N"]
+        case "A2":
+            return ["STR A", "A", "SLI A", "SLI D", "D", "STR D",
+                    "NO AD"]
+        case "D3":
+            return ["Video", "Image", "Text", "No Priority"]
+        case "D2":
+            return ["<10 Min", "~30 Min", "~1 Hr", ">1 Hr"]
+        case _:
+            return ["STR A", "A", "SLI A", "SLI D", "D", "STR D"]
+
+
 # Setup MySQL.
 config = dotenv_values(".env")
 
@@ -42,7 +58,8 @@ for questionIndex in range(numberOfQuestions):
             "mediaText": mediaText,
             "human": letterTag,
             "total": total,
-            "points": arrQuestionData
+            "points": arrQuestionData,
+            "scale": question_to_scale(questionExportTag[:2])
         }
         print(questionObject)
         cleanQuestionData.append(questionObject)
