@@ -92,9 +92,6 @@ function displayBoxplots(sumstat, boxplots) {
     // Define positions
     var y = height / 2
     var yBandwidth = height / 4;
-    var x = d3.scaleLinear()
-        .domain([1, 7])
-        .range([0, width])
 
     // Make boxplot container, margin, and scale for each question
     displayContainersMargin(sumstat, boxplots)
@@ -109,33 +106,45 @@ function displayBoxplots(sumstat, boxplots) {
     displayTitle(sumstat, boxplots)
 
     // Show the range line
-    displayRange(sumstat, boxplots, x, y, yBandwidth)
+    displayRange(sumstat, boxplots, y, yBandwidth)
 
     // Show the rectangle for the q1, q3 box
-    displayBox(sumstat, boxplots, x, y, yBandwidth)
+    displayBox(sumstat, boxplots, y, yBandwidth)
 
     // Show the median line
-    displayMedian(sumstat, boxplots, x, y, yBandwidth)
+    displayMedian(sumstat, boxplots, y, yBandwidth)
 
     // Show the outliers
-    displayOutliers(sumstat, boxplots, x, y, yBandwidth)
+    displayOutliers(sumstat, boxplots, y, yBandwidth)
 
     // Show the totals
     displayTotals(sumstat, boxplots)
 }
 function displayContainersMargin(sumstat, boxplots) {
-    boxplots
-        .selectAll("boxplot") // No boxplots
-        .data(sumstat) // Link to boxplot data
-        .enter() // Create empties linked with data
-        .append("div") // container div
-        .attr("id", function(d) { return d.key;})
-        .classed("row", true)
-        .classed("boxplot-row", true)
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .classed("col", true)
+
+    let bound = boxplots
+        .selectAll("div")
+        .data(sumstat, function(d) { return d ? d.key : this.id; }) // Link to boxplot data
+    let svgContainer = bound
+        .join(enter =>
+             enter.append("div") // container div
+                    .attr("id", function(d) {return d.key;})
+                    .classed("row", true)
+                    .classed("boxplot-row", true)
+            ,
+            update => update
+                    //.attr("style", function(d) { console.log("update " + d.key); return "background-color: purple;"; }) // comment
+        )
+    if(svgContainer.selectAll("svg").empty()) {
+        svgContainer.append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .classed("col-md-auto", true)
+    } else {
+        svgContainer.selectAll("svg").html(null)
+    }
+    svgContainer
+        .selectAll("svg")
         .append("g") // margin
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")")
@@ -144,11 +153,16 @@ function displayContainersMargin(sumstat, boxplots) {
 function displayCaptions(sumstat, boxplots) {
     boxplots
         .selectAll(".boxplot-row")
-        .append("p")
-        .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus arcu aliquet, suscipit nunc vitae, euismod augue. Ut condimentum nisl mi, nec rutrum urna imperdiet at. Quisque eget nibh ipsum. Curabitur vel dui id turpis suscipit dictum ac sed massa. In dictum feugiat condimentum. Vivamus fermentum odio nisi, vel imperdiet dui pulvinar eu. Mauris sit amet finibus magna. Sed ultricies ut odio sit amet luctus. Maecenas et odio sed ipsum pellentesque eleifend.")
-        .classed("col", true)
+        .each(function () {
+            let p = d3.select(this).select("p")
+            if(p.empty()) {
+                d3.select(this).append("p")
+                    .text("We haven't written a summary for this boxplot yet! Coming Soon!")
+                    .classed("col", true)
+            }
+        })
 }
-function displayAxis(sumstat, boxplots, scaleOld){
+function displayAxis(sumstat, boxplots){
     boxplots
         .selectAll(".margin")
         .data(sumstat)
@@ -179,7 +193,7 @@ function displayTitle(sumstat, boxplots) {
         })
         .call(wrap, width) // TODO fix dx by sending text element
 }
-function displayRange(sumstat, boxplots, xScale, y, yBandwidth) {
+function displayRange(sumstat, boxplots, y, yBandwidth) {
     boxplots
         .selectAll(".margin")
         .data(sumstat)
@@ -196,7 +210,7 @@ function displayRange(sumstat, boxplots, xScale, y, yBandwidth) {
         .style("width", 40)
         .classed("range", true)
 }
-function displayBox(sumstat, boxplots, xScale, y, yBandwidth) {
+function displayBox(sumstat, boxplots, y, yBandwidth) {
     boxplots
         .selectAll(".margin")
         .data(sumstat)
@@ -214,7 +228,7 @@ function displayBox(sumstat, boxplots, xScale, y, yBandwidth) {
         .style("opacity", 0.3)
         .classed("box", true)
 }
-function displayMedian(sumstat, boxplots, xScale, y, yBandwidth) {
+function displayMedian(sumstat, boxplots, y, yBandwidth) {
     boxplots
         .selectAll(".margin")
         .data(sumstat)
@@ -231,7 +245,7 @@ function displayMedian(sumstat, boxplots, xScale, y, yBandwidth) {
         .style("width", 80)
         .classed("median", true)
 }
-function displayOutliers(sumstat, boxplots, xScale, y, yBandwidth) {
+function displayOutliers(sumstat, boxplots, y) {
     boxplots
         .selectAll(".margin")
         .data(sumstat)
