@@ -135,7 +135,7 @@ function displayContainersMargin(sumstat, boxplots) {
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
-        .classed("col", true)
+        .classed("col-md-auto", true)
         .append("g") // margin
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")")
@@ -302,7 +302,8 @@ function wrap(text, width) {
         }
         // Compute the real text length and center for leftover
         let length = tspan.node().getComputedTextLength()
-        tspan.attr("dx", (width - length)/2)
+        // tspan.attr("dx", (width - length)/2)
+        tspan.attr("dx", 0)
     });
 }
 

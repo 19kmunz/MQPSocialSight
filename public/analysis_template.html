@@ -4,37 +4,38 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Custom CSS-->
     <link rel="stylesheet" href="css/custom.css">
     <!-- Bootstrap JS   -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>     <title>SocialSight</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- D3 and Custom Code -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="js/boxplots.js"></script>
     <title>SocialSight</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-main">
-    <a class="navbar-brand" href="index.html">SocialSight</a>
+    <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="social-media.html">Social Media <span class="sr-only">(current)</span></a>
+                <a class="nav-link active" href="social-media.html">Social Media <span class="sr-only"></span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Methodology <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Methodology <span class="sr-only"></span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Future Recommendations <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Future Recommendations <span class="sr-only"></span></a>
             </li>
         </ul>
     </div>
@@ -46,9 +47,24 @@
                  alt="Placeholder" style="width: 200px; height: 200px;" class="img-thumbnail">
         </div>
         <div class="col">
-            <h4>Social Media
-                <button class="btn bg-facebook text-light btn-sm float-right">+ Compare</button>
-            </h4>
+            <div class="row">
+                <div class="col">
+                    <h4>Social Media</h4>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="compareButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            Compare
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="compareButton">
+                            <li><a class="dropdown-item" href="#">Social media 1</a></li>
+                            <li><a class="dropdown-item" href="#">Social media 2</a></li>
+                            <li><a class="dropdown-item" href="#">Social media 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <h5><i>Five Word Tagline</i></h5>
             <p>Users: 0n<br>Annual Revenue: $0<br>Daily Posts: 0</p>
         </div>
@@ -83,20 +99,19 @@
     <div class="row">
         <div class="col">
             <h4>Design Overview</h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
             <p>Text description here
             </p>
         </div>
         <div class="col">
-            <div id="designCard" class="carousel slide" data-ride="carousel">
-                <ol class="bottom carousel-indicators">
-                    <li data-target="#designCard" data-slide-to="0" class="active"></li>
-                    <li data-target="#designCard" data-slide-to="1" class=""></li>
-                    <li data-target="#designCard" data-slide-to="2" class=""></li>
-                </ol>
+            <div id="designCard" class="carousel carousel-dark slide" data-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="card card-height">
@@ -152,43 +167,95 @@
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#designCard" role="button" data-slide="prev">
-                    <span class="bg-grey carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#designCard" role="button" data-slide="next">
-                    <span class="bg-grey carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <button class="carousel-control-prev" type="button" data-bs-target="#designCard" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#designCard" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </div>
     <br>
-    <div class="row">
-        <div class="col">
-            <h4>Analysis</h4>
-            <p>Analysis and box plots go here!</p>
-            <div class="row" name="boxplot1">
-                <div class="col">
-                    <img class="float-right"
-                         src="https://www.isixsigma.com/wp-content/uploads/2018/11/basic_box_plot-400x190.png">
-                </div>
-                <div class="col mx-3">
-                    <p>Description of the box plot</p>
+    <div class="accordion" id="boxplots">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Community
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div id="C" class="row">
+                        <div class="summary"></div>
+                        <div id="cChildren" class="children"></div>
+                    </div>
                 </div>
             </div>
-            <div class="row" name="boxplot2">
-                <div class="col">
-                    <img class="float-right"
-                         src="https://www.isixsigma.com/wp-content/uploads/2018/11/basic_box_plot-400x190.png">
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Self
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div id="S" class="row">
+                        <div class="summary"></div>
+                        <div id="sChildren" class="children"></div>
+                    </div>
+
                 </div>
-                <div class="col mx-3">
-                    <p>Description of the box plot</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Discovery
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div id="D" class="row">
+                        <div class="summary"></div>
+                        <div id="dChildren" class="children"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Agency
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div id="A" class="row">
+                        <div class="summary"></div>
+                        <div id="aChildren" class="children"></div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
     </div>
+
 </div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -197,8 +264,26 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
 </body>
+<script>
+    const media = "LinkedIn"
+    // For current media
+    // For each human tag
+    let humanTags = ["C", "S", "D", "A"]
+    const boxplots = d3.select("#boxplots")
+    humanTags.forEach(function (human) {
+        fetch('/questions?media=' + media + '&human=' + human, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (json) {
+                generateBoxplotsForHuman(json, human)
+            })
+    })
+</script>
 </html>
