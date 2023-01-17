@@ -1,9 +1,20 @@
+//TODO: Get this from Mongo
+//[0] -> A number from agency (0) to discovery (100)
+//[1] -> A number from community (0) to self (100)
+
 const social_media = {
-    "Test1": [23, 52.5, 9.7],
-    "Test2": [52, 43, 50],
-    "Test3": [58.6, 52.1, 32.8],
-    "Test4": [25, 60, 41],
-    "Test5": [45, 4, 75],
+    "BeReal": [5, 5],
+    "Facebook": [70, 10],
+    "Instagram": [23, 52.5],
+    "LinkedIn": [52, 43],
+    "Reddit": [58.6, 52.1],
+    "Snapchat": [10, 10],
+    "TikTok": [20, 20],
+    "Tumblr": [30, 30],
+    "Twitch": [40, 40],
+    "Twitter": [50, 50],
+    "YouTube": [60, 60],
+    "4Chan": [70, 70],
 };
 
 
@@ -72,23 +83,23 @@ function closestMedia(xScore, yScore, zScore, excludes) {
 for (var media in social_media) {
     var scores = social_media[media];
     var pin = $("<div/>")
-        .addClass("mediaPin pin")
+        .addClass("pin")
         .css("left", "" + scores[0] + "%")
         .css("top", "" + scores[1] + "%");
 
     var i = $("<i/>")
         .addClass("material-icons")
         .attr("data-toggle", "tooltip")
-        .attr("title", media)
+        .attr("title", media);
+
+    mediaNoInt = media.replace(/[0-9]/g, '');
+    var a = $("<a/>")
+        .addClass(mediaNoInt.toLowerCase())
+        .attr("href", media.toLowerCase() + ".html")
         .text("fiber_manual_record");
+
+    i.append(a)
 
     pin.append(i);
     $("#axes").append(pin);
-
-    var scalePin = $("<div/>")
-        .addClass("mediaBar bar")
-        .css("top", "" + scores[2] + "%")
-        .attr("data-toggle", "tooltip")
-        .attr("title", media);
-    $("#scale > div").append(scalePin);
 }

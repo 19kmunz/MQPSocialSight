@@ -121,7 +121,6 @@ function displayBoxplots(sumstat, boxplots) {
     displayTotals(sumstat, boxplots)
 }
 function displayContainersMargin(sumstat, boxplots) {
-
     let bound = boxplots
         .selectAll("div")
         .data(sumstat, function(d) { return d ? d.key : this.id; }) // Link to boxplot data
@@ -316,7 +315,8 @@ function wrap(text, width) {
         }
         // Compute the real text length and center for leftover
         let length = tspan.node().getComputedTextLength()
-        tspan.attr("dx", (width - length)/2)
+        // tspan.attr("dx", (width - length)/2)
+        tspan.attr("dx", 0)
     });
 }
 

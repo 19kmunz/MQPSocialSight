@@ -6,6 +6,10 @@
 /*    }*/
 /*}*/
 
+.flex-col {
+    flex-basis: 10%;
+}
+
 .bg-accent1 {
     background-color: rgba(22, 182, 179, 0.5);
 }
@@ -19,16 +23,124 @@
     background-color: rgba(228, 58, 114, 0.5);
 }
 
+.grid-top-left {
+    border-right: black solid 2px;
+    border-bottom: black solid 2px;
+}
+
+.grid-top-right {
+    border-left: black solid 2px;
+    border-bottom: black solid 2px;
+}
+
+.grid-bottom-left {
+    border-right: black solid 2px;
+    border-top: black solid 2px;
+}
+
+.grid-bottom-right {
+    border-left: black solid 2px;
+    border-top: black solid 2px;
+}
+
 .bg-main {
     background-color: rgb(94, 100, 138);
+}
+
+.bg-bereal {
+    background-color: #000000;
+}
+
+.bereal {
+    color: #000000 !important;
 }
 
 .bg-facebook {
     background-color: #1178f2;
 }
 
+.facebook {
+    color: #1178f2 !important;
+}
+
+.bg-instagram {
+    background-color: #C13584;
+}
+
+.instagram {
+    color: #C13584 !important;
+}
+
 .bg-linkedin {
     background-color: #0274b3;
+}
+
+.linkedin {
+    color: #0274b3 !important;
+}
+
+.bg-reddit {
+    background-color: #FF4301;
+}
+
+.reddit {
+    color: #FF4301 !important;
+}
+
+.bg-snapchat {
+    background-color: #FFFC00;
+}
+
+.snapchat {
+    color: #FFFC00 !important;
+}
+
+.bg-tiktok {
+    background-color: #ff0050;
+}
+
+.tiktok {
+    color: #ff0050 !important;
+}
+
+.bg-tumblr {
+    background-color: #34526f;
+}
+
+.tumblr {
+    color: #34526f  !important;
+}
+
+.bg-twitch {
+    background-color: #9146FF;
+}
+
+.twitch {
+    color: #9146FF !important;
+}
+
+.bg-twitter {
+    background-color: #1DA1F2;
+}
+
+.twitter {
+    color: #1DA1F2 !important;
+}
+
+.bg-youtube {
+    background-color: #FF0000;
+}
+
+.youtube {
+    color: #FF0000 !important;
+}
+
+.bg-chan {
+    background-color: #6cad51;
+}
+
+.chan {
+    color: #6cad51 !important;
 }
 
 .bg-grey {
