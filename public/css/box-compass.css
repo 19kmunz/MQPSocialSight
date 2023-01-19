@@ -49,6 +49,12 @@
     font-size: 200%;
 }
 
+.icon-pin {
+    border-radius: 25px;
+    width: 25px;
+    height: 25px;
+}
+
 .pin a {
     color: #000000;
     text-decoration: none;

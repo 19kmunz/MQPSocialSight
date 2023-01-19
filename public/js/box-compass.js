@@ -3,18 +3,18 @@
 //[1] -> A number from community (0) to self (100)
 
 const social_media = {
-    "BeReal": [5, 5],
-    "Facebook": [70, 10],
-    "Instagram": [23, 52.5],
-    "LinkedIn": [52, 43],
-    "Reddit": [58.6, 52.1],
-    "Snapchat": [10, 10],
-    "TikTok": [20, 20],
-    "Tumblr": [30, 30],
-    "Twitch": [40, 40],
-    "Twitter": [50, 50],
-    "YouTube": [60, 60],
-    "4Chan": [70, 70],
+    "BeReal": [5, 5, "https://upload.wikimedia.org/wikipedia/en/4/40/BeReal_logo.png"],
+    "Facebook": [70, 10, "https://play-lh.googleusercontent.com/ccWDU4A7fX1R24v-vvT480ySh26AYp97g1VrIB_FIdjRcuQB2JP2WdY7h_wVVAeSpg=w240-h480"],
+    "Instagram": [23, 52.5, "https://play-lh.googleusercontent.com/LM9vBt64KdRxLFRPMpNM6OvnGTGoUFSXYV-w-cGVeUxhgFWkCsfsPSJ5GYh7x9qKqw=w240-h480"],
+    "LinkedIn": [52, 43, "https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw=w240-h480"],
+    "Reddit": [58.6, 52.1, "https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_reddit-512.png"],
+    "Snapchat": [10, 10, "https://play-lh.googleusercontent.com/KxeSAjPTKliCErbivNiXrd6cTwfbqUJcbSRPe_IBVK_YmwckfMRS1VIHz-5cgT09yMo=w240-h480"],
+    "TikTok": [20, 20, "https://play-lh.googleusercontent.com/OS-MhSWOPtlUZLt0_UP5TI4juSf0XhyHxGfJa6pA-UIYkZ1BB6QHTZwaMEzZDPqYsmk=w240-h480"],
+    "Tumblr": [30, 30, "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Tumblr.svg/2048px-Tumblr.svg.png"],
+    "Twitch": [40, 40, "https://nordgamesllc.com/wp-content/uploads/2020/12/app-icons-twitch.png"],
+    "Twitter": [50, 50, "https://e7.pngegg.com/pngimages/804/985/png-clipart-social-media-logo-computer-icons-information-twitter-logo-media.png"],
+    "YouTube": [60, 60, "https://play-lh.googleusercontent.com/lMoItBgdPPVDJsNOVtP26EKHePkwBg-PkuY9NOrc-fumRtTFP4XhpUNk_22syN4Datc=w240-h480"],
+    "4Chan": [70, 70, "https://www.betterinternetforkids.eu/documents/167024/f518af98-d19e-462f-acca-83d217f0e208"],
 };
 
 
@@ -95,9 +95,14 @@ for (var media in social_media) {
     mediaNoInt = media.replace(/[0-9]/g, '');
     var a = $("<a/>")
         .addClass(mediaNoInt.toLowerCase())
-        .attr("href", media.toLowerCase() + ".html")
-        .text("fiber_manual_record");
+        .attr("href", media.toLowerCase() + ".html");
+        // .text("fiber_manual_record");
 
+    var img = $("<img/>")
+        .addClass("icon-pin")
+        .attr("src", scores[2])
+        .attr("alt", media);
+    a.append(img)
     i.append(a)
 
     pin.append(i);
