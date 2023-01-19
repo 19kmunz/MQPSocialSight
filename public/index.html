@@ -48,7 +48,7 @@
 <div class="mx-5 my-3" id="grid">
     <div class="row justify-content-between">
         <div class="col-8">
-            <h1>Welcome to SocialSight</h1>
+            <h2>Welcome to SocialSight</h2>
         </div>
         <div class="col-2 text-end">
             <a class="btn btn-secondary" href="#definitions">View Details</a>
@@ -200,9 +200,28 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
 <script src="js/box-compass.js"></script>
+
 </body>
+<!--<script>-->
+<!--    const media = "LinkedIn"-->
+<!--    // For current media-->
+<!--    // For each human tag-->
+<!--    let humanTags = ["C", "S", "D", "A"]-->
+<!--    const boxplots = d3.select("#boxplots")-->
+<!--    humanTags.forEach(function (human) {-->
+<!--        fetch('/questions?media=' + media + '&human=' + human, {-->
+<!--            method: 'GET',-->
+<!--            headers: {-->
+<!--                "Content-Type": "application/json"-->
+<!--            }-->
+<!--        })-->
+<!--            .then(function (response) {-->
+<!--                return response.json()-->
+<!--            })-->
+<!--            .then(function (json) {-->
+<!--                generateBoxplotsForHuman(json, human)-->
+<!--            })-->
+<!--    })-->
+<!--</script>-->
 </html>
