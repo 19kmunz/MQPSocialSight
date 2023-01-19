@@ -1,29 +1,20 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 50, left: 70},
+var margin = {top: 10, right: 30, bottom: 50, left: 30},
     width = 400 - margin.left - margin.right,
     chunk = width/7,
     height = 200 - margin.top - margin.bottom,
     jitterWidth = height / 4;
 
 function generateBoxplotsForHuman(json, human) {
+    const humanDiv = boxplots.select("#"+human+"Summary")
     let data = json.questions
     let overall = [computeOverallData(data)]
-
-    //data.append(computeOverallData(data))
-    // Select the boxplot containter
-    const humanDiv = boxplots.select("#"+human)
-
     var topsumstat = computeSummaryStatistics(overall)
-    displayBoxplots(topsumstat, humanDiv.select(".summary"))
+    displayBoxplots(topsumstat, humanDiv)
 
-    const contentsDiv = humanDiv
-        .select(".children")
-        .attr("style", "padding-left: 50px;")
-    // Compute summary statistics
+    const contentsDiv = boxplots.select("#"+human+"Children")
     var sumstat = computeSummaryStatistics(data)
-    // Create the html boxplots
     displayBoxplots(sumstat, contentsDiv)
-    contentsDiv.classed("collapse", true)
 }
 function computeOverallData(data) {
     let summary = {
@@ -85,9 +76,20 @@ function computeSummaryStatistics(data) {
         }
     });
 }
+
+function displayHorizontalLine(sumstat, boxplots) {
+    boxplots
+        .selectAll(".boxplot-row")
+        .each(function(b, i) {
+            if(i!==0) {
+                boxplots.insert("hr", "#" + b.key)
+            }
+        })
+}
+
 function displayBoxplots(sumstat, boxplots) {
-    console.log("Sumstat: ")
-    console.log(sumstat)
+    //console.log("Sumstat: ")
+    //console.log(sumstat)
     // From sumstat: key, questionText, min, max, q1, q3, median, outliers, total
     // Define positions
     var y = height / 2
@@ -119,6 +121,9 @@ function displayBoxplots(sumstat, boxplots) {
 
     // Show the totals
     displayTotals(sumstat, boxplots)
+
+    // Add lines in between
+    displayHorizontalLine(sumstat, boxplots)
 }
 function displayContainersMargin(sumstat, boxplots) {
     let bound = boxplots
@@ -134,6 +139,13 @@ function displayContainersMargin(sumstat, boxplots) {
             update => update
                     //.attr("style", function(d) { console.log("update " + d.key); return "background-color: purple;"; }) // comment
         )
+        .sort(function(a, b) {
+            if(a.key[1] === b.key[1]) {
+                return 0;
+            } else {
+                return a.key[1] < b.key[1] ? -1 : 1;
+            }
+        })
     if(svgContainer.selectAll("svg").empty()) {
         svgContainer.append("svg")
             .attr("width", width + margin.left + margin.right)
@@ -188,7 +200,7 @@ function displayTitle(sumstat, boxplots) {
         .attr("y", margin.top)
         .classed("title", true)
         .text(function (d) {
-            return d.value.questionText + ((d.value.media) ? " - " + d.value.media : "")
+            return d.value.questionText //+ ((d.value.media) ? " - " + d.value.media : "")
         })
         .call(wrap, width) // TODO fix dx by sending text element
 }
@@ -296,13 +308,13 @@ function wrap(text, width) {
             line.push(word);
             tspan.text(line.join(" "));
             // If this word creates overflow
-            if (tspan.node().getComputedTextLength() > width) {
+            if (getLength(tspan) > width) {
                 // Remove the overflow word
                 line.pop();
                 // Set the real text
                 tspan.text(line.join(" "));
                 // Compute the real text length and center
-                let length = tspan.node().getComputedTextLength()
+                let length = getLength(tspan)
                 tspan.attr("dx", (width - length)/2)
                 // Prepare the next tspan for the rest of the words
                 line = [word];
@@ -314,10 +326,26 @@ function wrap(text, width) {
             }
         }
         // Compute the real text length and center for leftover
-        let length = tspan.node().getComputedTextLength()
-        // tspan.attr("dx", (width - length)/2)
-        tspan.attr("dx", 0)
+        let length = getLength(tspan)
+        tspan.attr("dx", (width - length)/2)
+        //tspan.attr("dx", 0)
     });
+}
+function getLength(tspan) {
+    let length = tspan.node().getComputedTextLength()
+    return (length === 0) ? getSimulatedLength(tspan) : length
+}
+function getSimulatedLength(tspan){
+    let nothingBurger = d3.select("#nothingBurger")
+    let text = nothingBurger
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("text")
+    let fakeText = text.append(() => tspan.clone(true).node())
+    let simLength = fakeText.node().getComputedTextLength()
+    nothingBurger.html(null)
+    return simLength
 }
 
 function phraseToNumber(phrase) {
