@@ -7,12 +7,12 @@ const social_media = {
     "Facebook": [70, 10, "https://play-lh.googleusercontent.com/ccWDU4A7fX1R24v-vvT480ySh26AYp97g1VrIB_FIdjRcuQB2JP2WdY7h_wVVAeSpg=w240-h480"],
     "Instagram": [23, 52.5, "https://play-lh.googleusercontent.com/LM9vBt64KdRxLFRPMpNM6OvnGTGoUFSXYV-w-cGVeUxhgFWkCsfsPSJ5GYh7x9qKqw=w240-h480"],
     "LinkedIn": [52, 43, "https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw=w240-h480"],
-    "Reddit": [58.6, 52.1, "https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_reddit-512.png"],
+    "Reddit": [58.6, 52.1, "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Reddit_icon.svg/2048px-Reddit_icon.svg.png"],
     "Snapchat": [10, 10, "https://play-lh.googleusercontent.com/KxeSAjPTKliCErbivNiXrd6cTwfbqUJcbSRPe_IBVK_YmwckfMRS1VIHz-5cgT09yMo=w240-h480"],
     "TikTok": [20, 20, "https://play-lh.googleusercontent.com/OS-MhSWOPtlUZLt0_UP5TI4juSf0XhyHxGfJa6pA-UIYkZ1BB6QHTZwaMEzZDPqYsmk=w240-h480"],
     "Tumblr": [30, 30, "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Tumblr.svg/2048px-Tumblr.svg.png"],
     "Twitch": [40, 40, "https://nordgamesllc.com/wp-content/uploads/2020/12/app-icons-twitch.png"],
-    "Twitter": [50, 50, "https://e7.pngegg.com/pngimages/804/985/png-clipart-social-media-logo-computer-icons-information-twitter-logo-media.png"],
+    "Twitter": [50, 50, "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Twitter2.svg/2048px-Twitter2.svg.png"],
     "YouTube": [60, 60, "https://play-lh.googleusercontent.com/lMoItBgdPPVDJsNOVtP26EKHePkwBg-PkuY9NOrc-fumRtTFP4XhpUNk_22syN4Datc=w240-h480"],
     "4Chan": [70, 70, "https://www.betterinternetforkids.eu/documents/167024/f518af98-d19e-462f-acca-83d217f0e208"],
 };
@@ -59,16 +59,16 @@ function closestMedia(xScore, yScore, zScore, excludes) {
     var smallestMediaDistance = 1000;
     var closestMedia = excludes;
 
-    for (var media in social_media) {
-        if (closestMedia.indexOf(media) > -1) {
+    for (var mediaData in social_media) {
+        if (closestMedia.indexOf(mediaData) > -1) {
             continue;
         }
-        var scores = social_media[media];
+        var scores = social_media[mediaData];
         var d = Math.sqrt(Math.abs(Math.pow(xScore - scores[0], 2) + Math.pow(yScore - scores[1], 2) + Math.pow(zScore - scores[2], 2)));
 
         if (d < smallestMediaDistance) {
             smallestMediaDistance = d;
-            smallestMedia = media;
+            smallestMedia = mediaData;
         }
     }
 
@@ -80,8 +80,8 @@ function closestMedia(xScore, yScore, zScore, excludes) {
     }
 }
 
-for (var media in social_media) {
-    var scores = social_media[media];
+for (var mediaData in social_media) {
+    var scores = social_media[mediaData];
     var pin = $("<div/>")
         .addClass("pin")
         .css("left", "" + scores[0] + "%")
@@ -90,18 +90,18 @@ for (var media in social_media) {
     var i = $("<i/>")
         .addClass("material-icons")
         .attr("data-toggle", "tooltip")
-        .attr("title", media);
+        .attr("title", mediaData);
 
-    mediaNoInt = media.replace(/[0-9]/g, '');
+    mediaNoInt = mediaData.replace(/[0-9]/g, '');
     var a = $("<a/>")
         .addClass(mediaNoInt.toLowerCase())
-        .attr("href", media.toLowerCase() + ".html");
+        .attr("href", mediaData.toLowerCase() + ".html");
         // .text("fiber_manual_record");
 
     var img = $("<img/>")
         .addClass("icon-pin")
         .attr("src", scores[2])
-        .attr("alt", media);
+        .attr("alt", mediaData);
     a.append(img)
     i.append(a)
 
