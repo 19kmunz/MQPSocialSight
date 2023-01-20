@@ -54,9 +54,9 @@
             <a class="btn btn-secondary" href="#definitions">View Details</a>
         </div>
     </div>
-    <div>
+    <div id="diagrams">
         <div class="d-flex justify-content-center align-items-center"><h5 class="my-0">Community</h5></div>
-        <div id="diagrams" class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
             <div class="d-flex align-items-center flex-col justify-content-end"><h5 class="my-0">Agency</h5></div>
             <div id="axes" class="justify-content-center">
                 <div>
@@ -123,7 +123,7 @@
             <div class="col-8">
             </div>
             <div class="col-2 text-end">
-                <a class="btn btn-secondary" href="#definitions">View Table</a>
+                <a class="btn btn-secondary" href="#diagrams">View Table</a>
             </div>
         </div>
     <div class="card my-3">
@@ -203,25 +203,26 @@
 <script src="js/box-compass.js"></script>
 
 </body>
-<!--<script>-->
-<!--    const media = "LinkedIn"-->
-<!--    // For current media-->
-<!--    // For each human tag-->
-<!--    let humanTags = ["C", "S", "D", "A"]-->
-<!--    const boxplots = d3.select("#boxplots")-->
-<!--    humanTags.forEach(function (human) {-->
-<!--        fetch('/questions?media=' + media + '&human=' + human, {-->
-<!--            method: 'GET',-->
-<!--            headers: {-->
-<!--                "Content-Type": "application/json"-->
-<!--            }-->
-<!--        })-->
-<!--            .then(function (response) {-->
-<!--                return response.json()-->
-<!--            })-->
-<!--            .then(function (json) {-->
-<!--                generateBoxplotsForHuman(json, human)-->
-<!--            })-->
-<!--    })-->
-<!--</script>-->
+<script>
+    const media = "LinkedIn"
+    // For current media
+    // For each human tag
+    let humanTags = ["C", "S", "D", "A"]
+    const boxplots = d3.select("#boxplots")
+    humanTags.forEach(function (human) {
+        fetch('/questions?media=' + media + '&human=' + human, {
+        // fetch('/questions?human=' + human, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (json) {
+                console.log(json)
+            })
+    })
+</script>
 </html>
