@@ -177,3 +177,9 @@
 .boxplot-summary {
     padding: 20px
 }
+
+.total {
+    font-size: small;
+    text-align: center;
+    width: 200px;
+}
