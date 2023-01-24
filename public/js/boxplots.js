@@ -18,7 +18,7 @@ function generateBoxplotsForHuman(json, human) {
 }
 function computeOverallData(data) {
     let summary = {
-        "_id" : data[0].human+"_Summary",
+        "_id" : data[0].human+"_Summary"+"_"+mediaToNumber(data[0].mediaText),
         "qTag" : data[0].human+"_Summary",
         "mediaText" : data[0].mediaText,
         "title": humanTagToWord(data[0].human) +" Summary",
@@ -40,6 +40,7 @@ function computeSummaryStatistics(data) {
         let questionText = question.title
         let media = question.mediaText
         let questionTag = question.qTag
+        let id = question._id
 
         // Compute the boxplot summary statistics
         let q1 = d3.quantile(question.points, .25)
@@ -54,7 +55,7 @@ function computeSummaryStatistics(data) {
         let total = question.points.length
 
         return {
-            'key': question.qTag,
+            'key': id,
             value: {
                 questionText: questionText,
                 media: media,
@@ -99,7 +100,7 @@ function displayBoxplots(sumstat, boxplots) {
     displayContainersMargin(sumstat, boxplots)
 
     //Make captions for boxplots
-    displayCaptions(sumstat, boxplots)
+    //displayCaptions(sumstat, boxplots)
 
     // Show axis labels
     displayAxis(sumstat, boxplots)
@@ -123,7 +124,7 @@ function displayBoxplots(sumstat, boxplots) {
     displayTotals(sumstat, boxplots)
 
     // Add lines in between
-    displayHorizontalLine(sumstat, boxplots)
+    //displayHorizontalLine(sumstat, boxplots)
 }
 function displayContainersMargin(sumstat, boxplots) {
     let bound = boxplots
@@ -200,7 +201,7 @@ function displayTitle(sumstat, boxplots) {
         .attr("y", margin.top)
         .classed("title", true)
         .text(function (d) {
-            return d.value.questionText //+ ((d.value.media) ? " - " + d.value.media : "")
+            return d.value.questionText + ((d.value.media) ? " - " + d.value.media : "")
         })
         .call(wrap, width) // TODO fix dx by sending text element
 }
