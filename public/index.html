@@ -120,12 +120,12 @@
 </div>
 <div id="definitions" class="mx-5 my-3">
     <div class="row justify-content-between">
-            <div class="col-8">
-            </div>
-            <div class="col-2 text-end">
-                <a class="btn btn-secondary" href="#diagrams">View Table</a>
-            </div>
+        <div class="col-8">
         </div>
+        <div class="col-2 text-end">
+            <a class="btn btn-secondary" href="#diagrams">View Table</a>
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <h4>Analysis</h4>
@@ -207,6 +207,7 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
 <script src="js/box-compass.js"></script>
+<script src="js/boxplots.js"></script>
 
 </body>
 <script>
@@ -227,7 +228,7 @@
             })
             .then(function (json) {
                 console.log(json)
-                // generateBoxplotsForHuman(json, human.toLocaleLowerCase())
+                generateBoxplotsForCombinedHuman(json, human.toLocaleLowerCase())
 
                 //TODO: Generate box plots
             })

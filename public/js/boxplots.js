@@ -16,6 +16,19 @@ function generateBoxplotsForHuman(json, human) {
     var sumstat = computeSummaryStatistics(data)
     displayBoxplots(sumstat, contentsDiv)
 }
+
+function generateBoxplotsForCombinedHuman(json, human) {
+    const humanDiv = boxplots.select("#"+human+"Summary")
+    let data = json.questions
+    let overall = [computeOverallData(data)]
+    var topsumstat = computeSummaryStatistics(overall)
+    displayBoxplots(topsumstat, humanDiv)
+
+    const contentsDiv = boxplots.select("#"+human+"Children")
+    var sumstat = computeCombinedSummaryStatistics(data)
+    console.log(sumstat)
+    displayBoxplots(sumstat, contentsDiv)
+}
 function computeOverallData(data) {
     let summary = {
         "_id" : data[0].human+"_Summary",
@@ -76,7 +89,85 @@ function computeSummaryStatistics(data) {
         }
     });
 }
+function computeCombinedSummaryStatistics(data) {
+    let newData = new Map();
+    data.forEach(question => {
+        // For each question
+        // Get the question text from the full data
+        let questionText = question.title;
+        let questionTag = question.qTag;
+        let media = "All Media";
+        if (newData.has(questionTag)) {
+            let oldPoints = newData.get(questionTag).points;
+            // Compute the boxplot summary statistics
+            let q1 = d3.quantile(question.points.concat(oldPoints), .25)
+            let median = d3.quantile(question.points.concat(oldPoints), .5)
+            let q3 = d3.quantile(question.points.concat(oldPoints), .75)
+            let interQuantileRange = q3 - q1
+            let min = d3.max([q1 - 1.5 * interQuantileRange, d3.min(question.points.concat(oldPoints))])
+            let max = d3.min([q3 + 1.5 * interQuantileRange, d3.max(question.points.concat(oldPoints))])
+            let minOutliers = (question.points.concat(oldPoints)).filter(d => d < min)
+            let maxOutliers = (question.points.concat(oldPoints)).filter(d => d > max)
+            let outliers = minOutliers.concat(maxOutliers)
+            let total = question.points.length + oldPoints.length;
 
+            newData.set (questionTag, {
+                questionText: questionText,
+                media: media,
+                questionTag: questionTag,
+                q1: q1,
+                median: median,
+                q3: q3,
+                interQuantileRange: interQuantileRange,
+                min: min,
+                max: max,
+                outliers: outliers,
+                total: total,
+                points: question.points.concat(oldPoints),
+                scale: question.scale,
+                xScale: d3.scaleLinear()
+                    .domain([1, question.scale.length])
+                    .range([0, width])
+            });
+        }
+        else {
+            // Compute the boxplot summary statistics
+            let q1 = d3.quantile(question.points, .25)
+            let median = d3.quantile(question.points, .5)
+            let q3 = d3.quantile(question.points, .75)
+            let interQuantileRange = q3 - q1
+            let min = d3.max([q1 - 1.5 * interQuantileRange, d3.min(question.points)])
+            let max = d3.min([q3 + 1.5 * interQuantileRange, d3.max(question.points)])
+            let minOutliers = question.points.filter(d => d < min)
+            let maxOutliers = question.points.filter(d => d > max)
+            let outliers = minOutliers.concat(maxOutliers)
+            let total = question.points.length
+
+            newData.set (questionTag, {
+                    questionText: questionText,
+                    media: media,
+                    questionTag: questionTag,
+                    q1: q1,
+                    median: median,
+                    q3: q3,
+                    interQuantileRange: interQuantileRange,
+                    min: min,
+                    max: max,
+                    outliers: outliers,
+                    total: total,
+                    points: question.points,
+                    scale: question.scale,
+                    xScale: d3.scaleLinear()
+                        .domain([1, question.scale.length])
+                        .range([0, width])
+                });
+            }
+        });
+    const dataArr = Array.from(newData, function (entry) {
+        return { key: entry[0], value: entry[1] };
+    });
+    return dataArr;
+}
 function displayHorizontalLine(sumstat, boxplots) {
     boxplots
         .selectAll(".boxplot-row")
@@ -131,13 +222,13 @@ function displayContainersMargin(sumstat, boxplots) {
         .data(sumstat, function(d) { return d ? d.key : this.id; }) // Link to boxplot data
     let svgContainer = bound
         .join(enter =>
-             enter.append("div") // container div
+                enter.append("div") // container div
                     .attr("id", function(d) {return d.key;})
                     .classed("row", true)
                     .classed("boxplot-row", true)
             ,
             update => update
-                    //.attr("style", function(d) { console.log("update " + d.key); return "background-color: purple;"; }) // comment
+            //.attr("style", function(d) { console.log("update " + d.key); return "background-color: purple;"; }) // comment
         )
         .sort(function(a, b) {
             if(a.key[1] === b.key[1]) {
