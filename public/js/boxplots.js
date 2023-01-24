@@ -10,6 +10,7 @@ function generateBoxplotsForHuman(json, human) {
     let data = json.questions
     let overall = [computeOverallData(data)]
     var topsumstat = computeSummaryStatistics(overall)
+    console.log(humanDiv)
     displayBoxplots(topsumstat, humanDiv)
 
     const contentsDiv = boxplots.select("#"+human+"Children")
@@ -134,7 +135,7 @@ function displayContainersMargin(sumstat, boxplots) {
         .join(enter =>
              enter.append("div") // container div
                     .attr("id", function(d) {return d.key;})
-                    .classed("row", true)
+                    //.classed("row", true)
                     .classed("boxplot-row", true)
             ,
             update => update

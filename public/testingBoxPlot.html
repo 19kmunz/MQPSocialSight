@@ -17,12 +17,14 @@
     <title>boxplots</title>
 </head>
 <body>
-<h1>SocialSight</h1>
 <h2 id="#questionId"></h2>
-<div id="container" >
-</div>
+<div id="cSummary" ></div>
+<br>
+<div id="cChildren" ></div>
 <script>
-    const boxplots = d3.select("#container")
+    const summary = d3.select("#cSummary")
+    const children = d3.select("#cChildren")
+    const boxplots = d3
     let question = "C1"
     d3.select("#questionId").text(question)
     fetch('/questionForAllMedia?questionTag='+question, {
@@ -36,13 +38,15 @@
     })
     .then( function(json) {
         console.log(json)
-        var sumstat = computeSummaryStatistics(json.questions)
-        console.log(sumstat)
-        displayBoxplots(sumstat, boxplots)
-        boxplots
+        generateBoxplotsForHuman(json, 'c')
+        summary
             .style('display', 'inline-block')
-        boxplots.selectAll(".boxplot-row")
             .style('width', 'fit-content')
+        children
+            .style('display', 'inline-block')
+            .style('width', 'fit-content')
+        children
+            .selectAll(".boxplot-row")
             .style('display', 'inline-block')
     })
 </script>
