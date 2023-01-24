@@ -13,7 +13,7 @@
     <!-- Bootstrap JS   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- D3 and Custom Code -->
-    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="js/boxplots.js"></script>
     <link rel="stylesheet" href="css/box-compass.css">
     <title>SocialSight</title>
@@ -204,13 +204,13 @@
 
 </body>
 <script>
-    const media = "LinkedIn"
+    // const media = "LinkedIn"
     // For current media
     // For each human tag
     let humanTags = ["C", "S", "D", "A"]
     const boxplots = d3.select("#boxplots")
     humanTags.forEach(function (human) {
-        fetch('/questions?media=' + media + '&human=' + human, {
+        fetch('/questions?' + 'human=' + human, {
         // fetch('/questions?human=' + human, {
             method: 'GET',
             headers: {
@@ -222,6 +222,9 @@
             })
             .then(function (json) {
                 console.log(json)
+                // generateBoxplotsForHuman(json, human.toLocaleLowerCase())
+
+                //TODO: Generate box plots
             })
     })
 </script>
