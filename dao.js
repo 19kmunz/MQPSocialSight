@@ -21,6 +21,9 @@ class DAO {
     getQuestion(questionTag) {
         return this.client.db("socialSight").collection("questions").findOne( {_id: questionTag} );
     }
+    getQuestionForAllMedia(questionTag) {
+        return this.client.db("socialSight").collection("questions").find( { qTag: questionTag });
+    }
     getAllQuestions() {
         return this.client.db("socialSight").collection("questions").find({});
     }

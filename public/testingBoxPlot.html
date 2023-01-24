@@ -12,58 +12,38 @@
 
 
     <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="js/boxplots.js"></script>
     <title>boxplots</title>
 </head>
 <body>
-
 <h1>SocialSight</h1>
-<p id="media">My first paragraph.</p>
-<!-- Create a div where the boxplots will live -->
-<div id="summaryplot"></div>
-<div id="boxplots" >
-    <div id="C" class="row">
-        <div class="summary"></div>
-        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#cChildren" aria-expanded="false">▲</button>
-        <div id="cChildren" class="children"></div>
-    </div>
-    <div id="S" class="row">
-        <div class="summary"></div>
-        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#sChildren" aria-expanded="false">▲</button>
-        <div id="sChildren" class="children"></div>
-    </div>
-    <div id="D" class="row">
-        <div class="summary"></div>
-        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#dChildren" aria-expanded="false">▲</button>
-        <div id="dChildren" class="children"></div>
-    </div>
-    <div id="A" class="row">
-        <div class="summary"></div>
-        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#aChildren" aria-expanded="false">▲</button>
-        <div id="aChildren" class="children"></div>
-    </div>
+<h2 id="#questionId"></h2>
+<div id="container" >
 </div>
 <script>
-    const p = d3.select("#media").text("Facebook")
-    const media = "Facebook"
-    // For current media
-        // For each human tag
-    let humanTags = ["C", "S", "D", "A"]
-    const boxplots = d3.select("#boxplots")
-    humanTags.forEach(function(human) {
-        fetch('/questions?media='+media+'&human='+human, {
-            method:'GET',
-            headers:{
-                "Content-Type": "application/json"
-            }
-        })
-        .then( function(response) {
-            return response.json()
-        })
-        .then( function(json) {
-            generateBoxplotsForHuman(json, human)
-        })
+    const boxplots = d3.select("#container")
+    let question = "C1"
+    d3.select("#questionId").text(question)
+    fetch('/questionForAllMedia?questionTag='+question, {
+        method:'GET',
+        headers:{
+            "Content-Type": "application/json"
+        }
+    })
+    .then( function(response) {
+        return response.json()
+    })
+    .then( function(json) {
+        console.log(json)
+        var sumstat = computeSummaryStatistics(json.questions)
+        console.log(sumstat)
+        displayBoxplots(sumstat, boxplots)
+        boxplots
+            .style('display', 'inline-block')
+        boxplots.selectAll(".boxplot-row")
+            .style('width', 'fit-content')
+            .style('display', 'inline-block')
     })
 </script>
 </body>

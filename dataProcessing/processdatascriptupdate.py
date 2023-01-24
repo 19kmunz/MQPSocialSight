@@ -53,7 +53,7 @@ for questionIndex in range(numberOfQuestions):
 
         questionObject = {
             "_id": questionExportTag,
-            "qTag": questionExportTag,
+            "qTag": questionExportTag[:2],
             "title": questionText,
             "mediaText": mediaText,
             "human": letterTag,
