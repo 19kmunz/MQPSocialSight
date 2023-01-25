@@ -3,12 +3,12 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
     <!-- Custom CSS-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link href="css/custom.css" rel="stylesheet">
     <!-- Bootstrap JS   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- D3 and Custom Code -->
@@ -19,8 +19,8 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-main">
     <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -47,7 +47,9 @@
     <div class="row">
         <div class="col-auto">
             <img alt="Facebook app logo"
-                 class="img-thumbnail" src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" style="width: 200px; height: 200px;">
+                 class="img-thumbnail"
+                 src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png"
+                 style="width: 200px; height: 200px;">
         </div>
         <div class="col">
             <div class="row">
@@ -56,11 +58,11 @@
                 </div>
                 <div class="col">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="compareButton"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                id="compareButton" type="button">
                             Compare
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="compareButton">
+                        <ul aria-labelledby="compareButton" class="dropdown-menu">
                             <li><a class="dropdown-item" href="facebook-linkedin.html">LinkedIn</a></li>
                             <li><a class="dropdown-item" href="#">Social media 2</a></li>
                             <li><a class="dropdown-item" href="#">Social media 3</a></li>
@@ -119,14 +121,14 @@
             </p>
         </div>
         <div class="col">
-            <div id="designCard" class="carousel carousel-dark slide" data-ride="carousel">
+            <div class="carousel carousel-dark slide" data-ride="carousel" id="designCard">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+                    <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                            data-bs-target="#designCard" type="button"></button>
+                    <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#designCard"
+                            type="button"></button>
+                    <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#designCard"
+                            type="button"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -135,9 +137,11 @@
                                 <div class="col-sm-5">
                                     <a href="https://about.fb.com/news/2022/07/home-and-feeds-on-facebook/"
                                        target="_blank">
-                                        <video alt="Facebook home page" autoplay class="card-img align-center card-height" loop
+                                        <video alt="Facebook home page" autoplay
+                                               class="card-img align-center card-height" loop
                                                muted
-                                               src="https://about.fb.com/wp-content/uploads/2022/07/FB-Home-and-Feeds.mp4?_=1" type="video/mp4"></video>
+                                               src="https://about.fb.com/wp-content/uploads/2022/07/FB-Home-and-Feeds.mp4?_=1"
+                                               type="video/mp4"></video>
                                     </a>
                                 </div>
                                 <div class="col-sm-6">
@@ -198,12 +202,12 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#designCard" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#designCard" type="button">
+                    <span aria-hidden="true" class="carousel-control-prev-icon"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#designCard" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#designCard" type="button">
+                    <span aria-hidden="true" class="carousel-control-next-icon"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
@@ -216,62 +220,66 @@
             <p>Analysis and box plots go here!</p>
             <div class="accordion" id="boxplots">
                 <div class="accordion-item">
-                    <div id="cSummary" class="boxplot-summary h5"></div>
+                    <div class="boxplot-summary h5" id="cSummary"></div>
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button aria-controls="collapseOne" aria-expanded="true" class="accordion-button collapsed"
+                                data-bs-target="#collapseOne" data-bs-toggle="collapse" type="button">
                             Community
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample"
+                         id="collapseOne">
                         <div class="accordion-body">
-                            <div id="cChildren" class="boxplot-children"></div>
+                            <div class="boxplot-children" id="cChildren"></div>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <div class="boxplot-summary h5" id="sSummary"></div>
                     <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button aria-controls="collapseTwo" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseTwo" data-bs-toggle="collapse" type="button">
                             Self
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample"
+                         id="collapseTwo">
                         <div class="accordion-body">
-                            <div id="sChildren" class="boxplot-children"></div>
+                            <div class="boxplot-children" id="sChildren">
+                                <div class="row boxplot-row" id="S1_9">
+                                    <p class="col">Our First Written Captions!</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <div id="dSummary" class="boxplot-summary h5"></div>
+                    <div class="boxplot-summary h5" id="dSummary"></div>
                     <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button aria-controls="collapseThree" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseThree" data-bs-toggle="collapse" type="button">
                             Discovery
                         </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample"
+                         id="collapseThree">
                         <div class="accordion-body">
-                            <div id="dChildren" class="boxplot-children"></div>
+                            <div class="boxplot-children" id="dChildren"></div>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <div id="aSummary" class="boxplot-summary h5"></div>
+                    <div class="boxplot-summary h5" id="aSummary"></div>
                     <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <button aria-controls="collapseFour" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseFour" data-bs-toggle="collapse" type="button">
                             Agency
                         </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample"
+                         id="collapseFour">
                         <div class="accordion-body">
-                            <div id="aChildren" class="boxplot-children"></div>
+                            <div class="boxplot-children" id="aChildren"></div>
                         </div>
                     </div>
                 </div>
@@ -282,15 +290,15 @@
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<script crossorigin="anonymous"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script crossorigin="anonymous"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 </body>
 <script>
     const media = "Facebook"
@@ -298,17 +306,17 @@
     // For each human tag
     let humanTags = ["C", "S", "D", "A"]
     const boxplots = d3.select("#boxplots")
-    humanTags.forEach(function(human) {
-        fetch('/questions?media='+media+'&human='+human, {
-            method:'GET',
-            headers:{
+    humanTags.forEach(function (human) {
+        fetch('/questions?media=' + media + '&human=' + human, {
+            method: 'GET',
+            headers: {
                 "Content-Type": "application/json"
             }
         })
-            .then( function(response) {
+            .then(function (response) {
                 return response.json()
             })
-            .then( function(json) {
+            .then(function (json) {
                 generateBoxplotsForHuman(json, human.toLocaleLowerCase())
             })
     })
