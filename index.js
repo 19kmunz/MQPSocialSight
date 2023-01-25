@@ -98,6 +98,28 @@ app.get('/questionForAllMedia', (req, res) => {
     }
 })
 
+app.get('/questionsForAllMedia', (req, res) => {
+    let human = req.query.human;
+    console.log("Question  for all mediaquery: " + JSON.stringify(req.query))
+    try {
+        dao.getQuestionsForAllMediaAndHumanTag(human).toArray().then( questions => {
+            if (questions) {
+                ok(res, JSON.stringify({
+                    questions: questions
+                }))
+            } else {
+                err(res, JSON.stringify({
+                    error: "No questions found for tag '" + questionTag + "'"
+                }))
+            }
+        })
+    } catch (e) {
+        err(res, JSON.stringify({
+            error: e.toString()
+        }))
+    }
+})
+
 function ok(res, body) {
     res.writeHead(200, "OK", {'Content-Type': 'text/plain'})
     res.end(body)
