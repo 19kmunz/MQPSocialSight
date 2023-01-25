@@ -53,6 +53,7 @@ function computeSummaryStatistics(data) {
         let questionText = question.title
         let media = question.mediaText
         let questionTag = question.qTag
+        let id = question._id
 
         // Compute the boxplot summary statistics
         let q1 = d3.quantile(question.points, .25)
@@ -67,7 +68,7 @@ function computeSummaryStatistics(data) {
         let total = question.points.length
 
         return {
-            'key': question.qTag,
+            'key': id,
             value: {
                 questionText: questionText,
                 media: media,
