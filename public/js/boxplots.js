@@ -148,7 +148,7 @@ function displayContainersMargin(sumstat, boxplots) {
             }
         })
     if(svgContainer.selectAll("svg").empty()) {
-        svgContainer.append("svg")
+        svgContainer.insert("svg",":first-child")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .classed("col-md-auto", true)
