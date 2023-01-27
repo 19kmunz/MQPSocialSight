@@ -2,19 +2,35 @@
 // set the dimensions and margins of the graph
 var margin = {top: 30, right: 30, bottom: 70, left: 60},
     width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    height = 300 - margin.top - margin.bottom;
+    titleMargin = 65;
+    chartHeight = height - titleMargin;
 
 function generateBarchartsForHuman(json, human) {
     // const humanDiv = barcharts.select("#"+human+"Summary")
     // let data = json.questions
-    const humanDiv = barcharts.select("#" + human + "Summary")
     let data = json.questions;
     let overall = [computeOverallData(data)]
     var topsumstat = computeSummaryStatistics(overall)
+    var sumstat = computeSummaryStatistics(data)
+    let maxMaxCount = d3.max(sumstat.map(d => d.value.maxCount))
+    // This makes it so the y Axis is the same within all the children
+    topsumstat[0].value.yAxis = d3.scaleLinear()
+        .domain([0, topsumstat[0].value.maxCount])
+        .range([chartHeight, 0]);
+
+    sumstat = sumstat.map(entry => {
+        entry.value.maxCount = maxMaxCount;
+        entry.value.yAxis = d3.scaleLinear()
+            .domain([0, maxMaxCount])
+            .range([chartHeight, 0]);
+        return entry;
+    });
+
+    const humanDiv = barcharts.select("#" + human + "Summary")
     displayBarcharts(topsumstat, humanDiv)
 
     const contentsDiv = barcharts.select("#" + human + "Children")
-    var sumstat = computeSummaryStatistics(data)
     displayBarcharts(sumstat, contentsDiv)
     // const contentsDiv = barcharts.select("#"+human+"Children")
     // var sumstat = computeSummaryStatistics(data)
@@ -31,7 +47,6 @@ function generateBarchartsForCombinedHuman(json, human) {
 
     const contentsDiv = barcharts.select("#" + human + "Children")
     var sumstat = computeCombinedSummaryStatistics(data)
-    console.log(sumstat)
     displayBarcharts(sumstat, contentsDiv)
 }
 
@@ -63,16 +78,8 @@ function computeSummaryStatistics(data) {
         let id = question._id
 
         // Compute the barchart summary statistics
-        let counts = d3.rollup(question.points, v=> v.length, d => d)
-        let q1 = d3.quantile(question.points, .25)
-        let median = d3.quantile(question.points, .5)
-        let q3 = d3.quantile(question.points, .75)
-        let interQuantileRange = q3 - q1
-        let min = d3.max([q1 - 1.5 * interQuantileRange, d3.min(question.points)])
-        let max = d3.min([q3 + 1.5 * interQuantileRange, d3.max(question.points)])
-        let minOutliers = question.points.filter(d => d < min)
-        let maxOutliers = question.points.filter(d => d > max)
-        let outliers = minOutliers.concat(maxOutliers)
+        let counts = d3.flatRollup(question.points, v=> v.length, d => d)
+        let maxCount = d3.max(counts.map(d => d[1]))
         let total = question.points.length
 
         return {
@@ -81,19 +88,15 @@ function computeSummaryStatistics(data) {
                 questionText: questionText,
                 media: media,
                 questionTag: questionTag,
-                q1: q1,
-                median: median,
-                q3: q3,
-                interQuantileRange: interQuantileRange,
-                min: min,
-                max: max,
-                outliers: outliers,
+                counts: counts,
+                maxCount: maxCount,
                 total: total,
                 points: question.points,
                 scale: question.scale,
-                xScale: d3.scaleLinear()
-                    .domain([1, question.scale.length])
+                xScale: d3.scaleBand()
+                    .domain([...Array(question.scale.length).keys()].map(v => v+1))
                     .range([0, width])
+                    .padding(0.2)
             }
         }
     });
@@ -178,6 +181,31 @@ function computeCombinedSummaryStatistics(data) {
     return dataArr;
 }
 
+function displayBarcharts(sumstat, barcharts) {
+
+    // Make barchart container, margin, and scale for each question
+    displayContainersMargin(sumstat, barcharts)
+
+    //Make captions for barcharts
+    displayCaptions(sumstat, barcharts)
+
+    // Show axis labels
+    displayXAxis(sumstat, barcharts)
+    displayYAxis(sumstat, barcharts)
+
+    // Show title
+    displayTitle(sumstat, barcharts)
+
+    // Show barchart
+    displayBars(sumstat, barcharts)
+
+    // Show the totals
+    displayTotals(sumstat, barcharts)
+
+    // Add lines in between
+    displayHorizontalLine(sumstat, barcharts)
+}
+
 function displayHorizontalLine(sumstat, barcharts) {
     barcharts
         .selectAll(".barchart-row")
@@ -188,43 +216,26 @@ function displayHorizontalLine(sumstat, barcharts) {
         })
 }
 
-function displayBarcharts(sumstat, barcharts) {
-    //console.log("Sumstat: ")
-    //console.log(sumstat)
-    // From sumstat: key, questionText, min, max, q1, q3, median, outliers, total
-    // Define positions
-    var y = height / 2
-    var yBandwidth = height / 4;
-
-    // Make barchart container, margin, and scale for each question
-    displayContainersMargin(sumstat, barcharts)
-
-    //Make captions for barcharts
-    displayCaptions(sumstat, barcharts)
-
-    // Show axis labels
-    displayAxis(sumstat, barcharts)
-
-    // Show title
-    displayTitle(sumstat, barcharts)
-
-    // Show the range line
-    // displayRange(sumstat, barcharts, y, yBandwidth)
-
-    // Show the rectangle for the q1, q3 box
-    //displayBox(sumstat, barcharts, y, yBandwidth)
-
-    // Show the median line
-    // displayMedian(sumstat, barcharts, y, yBandwidth)
-
-    // Show the outliers
-    // displayOutliers(sumstat, barcharts, y, yBandwidth)
-
-    // Show the totals
-    displayTotals(sumstat, barcharts)
-
-    // Add lines in between
-    // displayHorizontalLine(sumstat, barcharts)
+function displayBars(sumstat, barcharts) {
+    //d.value.xScale(d.value.q1)
+    // Bars
+    barcharts.selectAll(".margin")
+        .append("g")
+        .classed("bars", true)
+        .attr("transform", "translate(0," + titleMargin + ")")
+        .data(sumstat)
+        .each(function (p, i) {
+            d3.select(this)
+                .selectAll("mybar")
+                .data(p.value.counts)
+                .enter()
+                .append("rect")
+                .attr("x", function(d) { return p.value.xScale(d[0]); })
+                .attr("y", function(d) { return p.value.yAxis(d[1]); })
+                .attr("width", p.value.xScale.bandwidth())
+                .attr("height", function(d) { return chartHeight - p.value.yAxis(d[1]); })
+                .attr("fill", "#69b3a2")
+        })
 }
 
 function displayContainersMargin(sumstat, barcharts) {
@@ -281,7 +292,7 @@ function displayCaptions(sumstat, barcharts) {
         })
 }
 
-function displayAxis(sumstat, barcharts) {
+function displayXAxis(sumstat, barcharts) {
     barcharts
         .selectAll(".margin")
         .data(sumstat)
@@ -289,15 +300,25 @@ function displayAxis(sumstat, barcharts) {
         .attr("transform", "translate(0," + height + ")")
         .classed("bottomAxis", true)
         .each(function (s) {
-            let scale = d3.scalePoint()
+            let scale = d3.scaleBand()
                 .domain(s.value.scale)
                 .range([0, width])
-                .align(0)
-                .padding(0)
+                .padding(0.2)
             d3.select(this)
                 .call(d3.axisBottom(scale).ticks(7))
-        }) // TODO: dynamically set the axis labels
-        .select(".domain").remove()
+        })
+}
+
+function displayYAxis(sumstat, barcharts, y) {
+    barcharts
+        .selectAll(".margin")
+        .append("g")
+        .classed("leftAxis", true)
+        .attr("transform", "translate(0," + titleMargin + ")")
+        .each(function (s) {
+            d3.select(this)
+                .call(d3.axisLeft(s.value.yAxis).ticks(8))
+        })
 }
 
 function displayTitle(sumstat, barcharts) {
@@ -314,114 +335,6 @@ function displayTitle(sumstat, barcharts) {
         .call(wrap, width) // TODO fix dx by sending text element
 }
 
-// function displayRange(sumstat, barcharts, y, yBandwidth) {
-//     barcharts
-//         .selectAll(".margin")
-//         .data(sumstat)
-//         .append("line")
-//         .attr("x1", function (d) {
-//             return d.value.xScale(d.value.min)
-//         })
-//         .attr("x2", function (d) {
-//             return d.value.xScale(d.value.max)
-//         })
-//         .attr("y1", y + yBandwidth / 2)
-//         .attr("y2", y + yBandwidth / 2)
-//         .attr("stroke", "black")
-//         .style("width", 40)
-//         .classed("range", true)
-// }
-function displayBox(sumstat, barcharts, y, yBandwidth) {
-    barcharts
-        .selectAll(".margin")
-        .data(sumstat)
-        .append("rect")
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
-
-    var x = d3.scaleBand()
-        .range([0, width])
-        .domain(sumstat.map(function (d) {
-            return d.key;
-        }))
-        .padding(0.2);
-    barcharts.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x))
-        .selectAll("text")
-        .attr("transform", "translate(-10,0)rotate(-45)")
-        .style("text-anchor", "end");
-
-// Add Y axis
-    var y = d3.scaleLinear()
-        .domain([0, 13000])
-        .range([height, 0]);
-    barcharts
-        .selectAll(".margin")
-        .data(sumstat)
-        .append("g")
-        .call(d3.axisLeft(y));
-
-    console.log(sumstat)
-// Bars
-    barcharts
-        .selectAll("mybar")
-        .data(sumstat)
-        .enter()
-        .append("rect")
-        .attr("x", function (d) {
-            return x(d.scale);
-        })
-        .attr("y", function (d) {
-            return y(d.Value);
-        })
-        .attr("width", x.bandwidth())
-        .attr("height", function (d) {
-            return height - y(d.Value);
-        })
-        .attr("fill", "#69b3a2")
-}
-
-// function displayMedian(sumstat, barcharts, y, yBandwidth) {
-//     barcharts
-//         .selectAll(".margin")
-//         .data(sumstat)
-//         .append("line")
-//         .attr("y1", y)
-//         .attr("y2", y + yBandwidth)
-//         .attr("x1", function (d) {
-//             return (d.value.xScale(d.value.median))
-//         })
-//         .attr("x2", function (d) {
-//             return (d.value.xScale(d.value.median))
-//         })
-//         .attr("stroke", "black")
-//         .style("width", 80)
-//         .classed("median", true)
-// }
-// function displayOutliers(sumstat, barcharts, y) {
-//     barcharts
-//         .selectAll(".margin")
-//         .data(sumstat)
-//         .append("g")
-//         .classed("outliers", true)
-//         .each(function (t) {
-//             d3.select(this).selectAll('circles')
-//                 .data(t.value.outliers)
-//                 .enter()
-//                 .append('circle')
-//                 .attr("cx", function (d) {
-//                     return t.value.xScale(d)
-//                 })
-//                 .attr("cy", function() { return y + (jitterWidth * Math.random()) })
-//                 .attr("r", 3)
-//                 .attr("opacity", 0.2)
-//         })
-// }
 function displayTotals(sumstat, barcharts) {
     barcharts
         .selectAll(".margin")
@@ -497,139 +410,6 @@ function getSimulatedLength(tspan) {
     let simLength = fakeText.node().getComputedTextLength()
     nothingBurger.html(null)
     return simLength
-}
-
-function phraseToNumber(phrase) {
-    switch (phrase) {
-        case "Strongly agree":
-        case "Very Frequently":
-        case "10 minutes or Less":
-        case "Video":
-            return 1;
-        case "Agree":
-        case "Frequently":
-        case "About 30 minutes":
-        case "Image":
-            return 2;
-        case "Slightly agree":
-        case "Occasionally":
-        case "About an hour":
-        case "Text":
-            return 3;
-        case "Slightly disagree":
-        case "Rarely":
-        case "More than an hour or multiple hours":
-        case "No priority":
-            return 4;
-        case "Disagree":
-        case "Very Rarely":
-            return 5;
-        case "Strongly disagree":
-        case "Never":
-            return 6;
-        case "There are no advertisements":
-            return 7;
-        case "":
-            return null;
-        default:
-            throw new Error("Phrase '" + phrase + "' not supported")
-        /*
-        Strongly disagree, Disagree, Slightly disagree, Slightly agree, Agree, Strongly agree
-        Never, Very Rarely, Rarely, Occasionally, Frequently, Very Frequently
-        There are no advertisements
-        10 minutes or Less, About 30 minutes, About an hour, More than an hour or multiple hours
-        Video, Image, Text, No Priority
-         */
-    }
-}
-
-function numberToMedia(number) {
-    switch (number) {
-        case 1:
-            return "Twitter";
-        case 2:
-            return "Instagram";
-        case 3:
-            return "Reddit";
-        case 4:
-            return "Tumblr";
-        case 5:
-            return "Tik Tok";
-        case 6:
-            return "BeReal";
-        case 7:
-            return "YouTube";
-        case 8:
-            return "Snapchat";
-        case 9:
-            return "Facebook";
-        case 10:
-            return "4Chan";
-        case 11:
-            return "LinkedIn";
-        case 12:
-            return "Twitch";
-        default:
-            throw new Error("Media num '" + number + "' not supported")
-
-    }
-}
-
-function mediaToNumber(media) {
-
-    switch (media) {
-        case "Twitter":
-            return 1;
-        case "Instagram":
-            return 2;
-        case "Reddit":
-            return 3;
-        case "Tumblr":
-            return 4;
-        case "Tik Tok":
-            return 5;
-        case "BeReal":
-            return 6;
-        case "YouTube":
-            return 7;
-        case "Snapchat":
-            return 8;
-        case "Facebook":
-            return 9;
-        case "4Chan":
-            return 10;
-        case "LinkedIn":
-            return 11;
-        case "Twitch":
-            return 12;
-        default:
-            throw new Error("Media '" + media + "' not supported")
-    }
-}
-
-function questionToScale(question) {
-    switch (question) {
-        case "C1":
-        case "C2":
-        case "C3":
-        case "C6":
-        case "D1":
-        case "D5":
-        case "D6":
-        case "D7":
-        case "D8":
-        case "A3":
-        case "A4":
-            return ["Very Frequently", "Frequently", "Occasionally", "Rarely", "Very Rarely", "Never"]
-        case "A2":
-            return ["Strongly agree", "Agree", "Slightly agree", "Slightly disagree", "Disagree", "Strongly disagree", "There are no advertisements"]
-        case "D3":
-            return ["Video", "Image", "Text", "No Priority"]
-        case "D2":
-            return ["10 minutes or Less", "About 30 minutes", "About an hour", "More than an hour or multiple hours"]
-        default:
-            return ["Strongly agree", "Agree", "Slightly agree", "Slightly disagree", "Disagree", "Strongly disagree"]
-    }
 }
 
 function humanTagToWord(tag) {
