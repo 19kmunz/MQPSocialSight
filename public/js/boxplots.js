@@ -220,7 +220,7 @@ function displayBoxplots(sumstat, boxplots) {
 function displayContainersMargin(sumstat, boxplots) {
     let bound = boxplots
         .selectAll("div")
-        .data(sumstat, function(d) { return d ? d.key : this.id; }) // Link to boxplot data
+        .data(sumstat) // Link to boxplot data
     let svgContainer = bound
         .join(enter =>
                 enter.append("div") // container div
