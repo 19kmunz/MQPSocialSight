@@ -63,6 +63,7 @@ function computeSummaryStatistics(data) {
         let id = question._id
 
         // Compute the barchart summary statistics
+        let counts = d3.rollup(question.points, v=> v.length, d => d)
         let q1 = d3.quantile(question.points, .25)
         let median = d3.quantile(question.points, .5)
         let q3 = d3.quantile(question.points, .75)
@@ -202,7 +203,7 @@ function displayBarcharts(sumstat, barcharts) {
     displayCaptions(sumstat, barcharts)
 
     // Show axis labels
-    // displayAxis(sumstat, barcharts)
+    displayAxis(sumstat, barcharts)
 
     // Show title
     displayTitle(sumstat, barcharts)
@@ -211,7 +212,7 @@ function displayBarcharts(sumstat, barcharts) {
     // displayRange(sumstat, barcharts, y, yBandwidth)
 
     // Show the rectangle for the q1, q3 box
-    displayBox(sumstat, barcharts, y, yBandwidth)
+    //displayBox(sumstat, barcharts, y, yBandwidth)
 
     // Show the median line
     // displayMedian(sumstat, barcharts, y, yBandwidth)
