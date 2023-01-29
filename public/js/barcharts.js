@@ -203,7 +203,7 @@ function displayBarcharts(sumstat, barcharts) {
     displayTotals(sumstat, barcharts)
 
     // Add lines in between
-    displayHorizontalLine(sumstat, barcharts)
+    //displayHorizontalLine(sumstat, barcharts)
 }
 
 function displayHorizontalLine(sumstat, barcharts) {

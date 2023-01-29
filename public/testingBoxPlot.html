@@ -13,7 +13,7 @@
 
     <!-- Load d3.js -->
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script src="js/boxplots.js"></script>
+    <script src="js/barcharts.js"></script>
     <title>boxplots</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
 <script>
     const summary = d3.select("#cSummary")
     const children = d3.select("#cChildren")
-    const boxplots = d3
+    const barcharts = d3
     let question = "C1"
     d3.select("#questionId").text(question)
     fetch('/questionForAllMedia?questionTag='+question, {
@@ -38,7 +38,7 @@
     })
     .then( function(json) {
         console.log(json)
-        generateBoxplotsForHuman(json, 'c')
+        generateBarchartsForHuman(json, 'c')
         summary
             .style('display', 'inline-block')
             .style('width', 'fit-content')
