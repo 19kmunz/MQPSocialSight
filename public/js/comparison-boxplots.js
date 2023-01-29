@@ -2,20 +2,8 @@
 const margin = {top: 10, right: 30, bottom: 50, left: 30},
     width = 400 - margin.left - margin.right,
     chunk = width / 7,
-    height = 200 - margin.top - margin.bottom,
+    height = 400 - margin.top - margin.bottom,
     jitterWidth = height / 4;
-
-function generateBoxplotsForHuman(json, human) {
-    const humanDiv = boxplots.select("#"+human+"Summary")
-    let data = json.questions
-    let overall = [computeOverallData(data)]
-    var topsumstat = computeSummaryStatistics(overall)
-    displayBoxplots(topsumstat, humanDiv)
-
-    const contentsDiv = boxplots.select("#"+human+"Children")
-    var sumstat = computeSummaryStatistics(data)
-    displayBoxplots(sumstat, contentsDiv)
-}
 
 function generateBoxplotsForComparison(jsonFirst, jsonSecond, human) {
     const humanDiv = boxplots.select("#"+human+"Summary")
@@ -32,18 +20,6 @@ function generateBoxplotsForComparison(jsonFirst, jsonSecond, human) {
     var sumstatSecond = computeSummaryStatistics(jsonSecond.questions)
     let sumstat = computeComparisonSummaryStatistics(jsonFirst.questions, jsonSecond.questions)
     displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, contentsDiv)
-}
-
-function generateBoxplotsForCombinedHuman(json, human) {
-    const humanDiv = boxplots.select("#"+human+"Summary")
-    let data = json.questions
-    let overall = [computeOverallData(data)]
-    var topsumstat = computeSummaryStatistics(overall)
-    displayBoxplots(topsumstat, humanDiv)
-
-    const contentsDiv = boxplots.select("#"+human+"Children")
-    var sumstat = computeCombinedSummaryStatistics(data)
-    displayBoxplots(sumstat, contentsDiv)
 }
 function computeOverallData(data) {
     let summary = {
@@ -185,87 +161,6 @@ function computeComparisonSummaryStatistics(dataFirst, dataSecond) {
     });
     return dataArr;
 }
-
-
-function computeCombinedSummaryStatistics(data) {
-    let newData = new Map();
-    data.forEach(question => {
-        // For each question
-        // Get the question text from the full data
-        let questionText = question.title;
-        let questionTag = question.qTag;
-        let media = "All Media";
-        if (newData.has(questionTag)) {
-            let oldPoints = newData.get(questionTag).points;
-            // Compute the boxplot summary statistics
-            let q1 = d3.quantile(question.points.concat(oldPoints), .25)
-            let median = d3.quantile(question.points.concat(oldPoints), .5)
-            let q3 = d3.quantile(question.points.concat(oldPoints), .75)
-            let interQuantileRange = q3 - q1
-            let min = d3.max([q1 - 1.5 * interQuantileRange, d3.min(question.points.concat(oldPoints))])
-            let max = d3.min([q3 + 1.5 * interQuantileRange, d3.max(question.points.concat(oldPoints))])
-            let minOutliers = (question.points.concat(oldPoints)).filter(d => d < min)
-            let maxOutliers = (question.points.concat(oldPoints)).filter(d => d > max)
-            let outliers = minOutliers.concat(maxOutliers)
-            let total = question.points.length + oldPoints.length;
-
-            newData.set (questionTag, {
-                questionText: questionText,
-                media: media,
-                questionTag: questionTag,
-                q1: q1,
-                median: median,
-                q3: q3,
-                interQuantileRange: interQuantileRange,
-                min: min,
-                max: max,
-                outliers: outliers,
-                total: total,
-                points: question.points.concat(oldPoints),
-                scale: question.scale,
-                xScale: d3.scaleLinear()
-                    .domain([1, question.scale.length])
-                    .range([0, width])
-            });
-        }
-        else {
-            // Compute the boxplot summary statistics
-            let q1 = d3.quantile(question.points, .25)
-            let median = d3.quantile(question.points, .5)
-            let q3 = d3.quantile(question.points, .75)
-            let interQuantileRange = q3 - q1
-            let min = d3.max([q1 - 1.5 * interQuantileRange, d3.min(question.points)])
-            let max = d3.min([q3 + 1.5 * interQuantileRange, d3.max(question.points)])
-            let minOutliers = question.points.filter(d => d < min)
-            let maxOutliers = question.points.filter(d => d > max)
-            let outliers = minOutliers.concat(maxOutliers)
-            let total = question.points.length
-
-            newData.set (questionTag, {
-                    questionText: questionText,
-                    media: media,
-                    questionTag: questionTag,
-                    q1: q1,
-                    median: median,
-                    q3: q3,
-                    interQuantileRange: interQuantileRange,
-                    min: min,
-                    max: max,
-                    outliers: outliers,
-                    total: total,
-                    points: question.points,
-                    scale: question.scale,
-                    xScale: d3.scaleLinear()
-                        .domain([1, question.scale.length])
-                        .range([0, width])
-                });
-            }
-        });
-    const dataArr = Array.from(newData, function (entry) {
-        return { key: entry[0], value: entry[1] };
-    });
-    return dataArr;
-}
 function displayHorizontalLine(sumstat, boxplots) {
     boxplots
         .selectAll(".boxplot-row")
@@ -274,46 +169,6 @@ function displayHorizontalLine(sumstat, boxplots) {
                 boxplots.insert("hr", "#" + b.key)
             }
         })
-}
-
-function displayBoxplots(sumstat, boxplots) {
-    //console.log("Sumstat: ")
-    //console.log(sumstat)
-    // From sumstat: key, questionText, min, max, q1, q3, median, outliers, total
-    // Define positions
-    var y = height / 2;
-    var yBandwidth = height / 4;
-    let fill = "#69b3a2";
-
-    // Make boxplot container, margin, and scale for each question
-    displayContainersMargin(sumstat, boxplots)
-
-    //Make captions for boxplots
-    displayCaptions(sumstat, boxplots)
-
-    // Show axis labels
-    displayAxis(sumstat, boxplots)
-
-    // Show title
-    displayTitle(sumstat, boxplots)
-
-    // Show the range line
-    displayRange(sumstat, boxplots, y, yBandwidth)
-
-    // Show the rectangle for the q1, q3 box
-    displayBox(fill, sumstat, boxplots, y, yBandwidth)
-
-    // Show the median line
-    displayMedian(sumstat, boxplots, y, yBandwidth)
-
-    // Show the outliers
-    displayOutliers(sumstat, boxplots, y, yBandwidth)
-
-    // Show the totals
-    displayTotals(sumstat, boxplots)
-
-    // Add lines in between
-    displayHorizontalLine(sumstat, boxplots)
 }
 function displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, boxplots) {
     //console.log("Sumstat: ")
@@ -366,7 +221,6 @@ function displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, boxplots) {
     // Add lines in between
     displayHorizontalLine(sumstatFirst, boxplots)
 }
-
 function displayContainersMargin(sumstat, boxplots) {
     let bound = boxplots
         .selectAll("div")
@@ -528,7 +382,6 @@ function displayTotals(sumstat, boxplots) {
         .attr("x", 0)
         .attr("y", height + 35)
 }
-
 function displayCombinedTotals(sumstatFirst, sumstatSecond, boxplots) {
     // console.log(sumstatFirst)
     // for (let i = 0; i < sumstatFirst.length && i < sumstatSecond.length; i++) {
@@ -615,7 +468,7 @@ function getSimulatedLength(tspan){
     nothingBurger.html(null)
     return simLength
 }
-
+2
 function phraseToNumber(phrase) {
     switch (phrase) {
         case "Strongly agree":
