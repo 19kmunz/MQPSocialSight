@@ -187,7 +187,7 @@ function displayBarcharts(sumstat, barcharts) {
     displayContainersMargin(sumstat, barcharts)
 
     //Make captions for barcharts
-    displayCaptions(sumstat, barcharts)
+    //displayCaptions(sumstat, barcharts)
 
     // Show axis labels
     displayXAxis(sumstat, barcharts)
@@ -250,7 +250,7 @@ function displayContainersMargin(sumstat, barcharts) {
                     .attr("id", function (d) {
                         return d.key;
                     })
-                    .classed("row", true)
+                    //.classed("row", true)
                     .classed("barchart-row", true)
             ,
             update => update
@@ -330,7 +330,7 @@ function displayTitle(sumstat, barcharts) {
         .attr("y", margin.top)
         .classed("title", true)
         .text(function (d) {
-            return d.value.questionText //+ ((d.value.media) ? " - " + d.value.media : "")
+            return d.value.questionText + ((d.value.media) ? " - " + d.value.media : "")
         })
         .call(wrap, width) // TODO fix dx by sending text element
 }
