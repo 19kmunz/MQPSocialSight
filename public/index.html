@@ -13,7 +13,7 @@
     <!-- Bootstrap JS   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- D3 and Custom Code -->
-    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="js/boxplots.js"></script>
     <link rel="stylesheet" href="css/box-compass.css">
     <title>SocialSight</title>
@@ -120,76 +120,82 @@
 </div>
 <div id="definitions" class="mx-5 my-3">
     <div class="row justify-content-between">
-            <div class="col-8">
-            </div>
-            <div class="col-2 text-end">
-                <a class="btn btn-secondary" href="#diagrams">View Table</a>
-            </div>
+        <div class="col-8">
         </div>
-    <div class="card my-3">
-        <div class="card-body">
-            <h5 class="card-title">Community</h5>
-            <div class="row" name="boxplot1">
-                <div class="col">
-                    <img class="float-right mw-100"
-                         src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png">
-                </div>
-                <div class="col mx-3">
-                    <p>Description of the box plot! In ultricies fermentum aliquet. Pellentesque dui magna, condimentum
-                        non ullamcorper at, cursus in sem. Nunc condimentum, purus ac sagittis ultricies, metus leo
-                        pharetra mi, non vehicula felis elit et nisi.</p>
-                </div>
-            </div>
+        <div class="col-2 text-end">
+            <a class="btn btn-secondary" href="#diagrams">View Table</a>
         </div>
     </div>
-    <div class="card my-3">
-        <div class="card-body">
-            <h5 class="card-title">Self</h5>
-            <div class="row" name="boxplot2">
-                <div class="col">
-                    <img class="float-right mw-100"
-                         src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png">
+    <div class="row">
+        <div class="col">
+            <h4>Analysis</h4>
+            <p>Analysis and box plots go here!</p>
+            <div class="accordion" id="boxplots">
+                <div class="accordion-item">
+                    <div id="cSummary" class="boxplot-summary h5"></div>
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Community
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="cChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col mx-3">
-                    <p>Description of the box plot! In ultricies fermentum aliquet. Pellentesque dui magna, condimentum
-                        non ullamcorper at, cursus in sem. Nunc condimentum, purus ac sagittis ultricies, metus leo
-                        pharetra mi, non vehicula felis elit et nisi.</p>
+                <div class="accordion-item">
+                    <div class="boxplot-summary h5" id="sSummary"></div>
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Self
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="sChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div id="dSummary" class="boxplot-summary h5"></div>
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Discovery
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="dChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div id="aSummary" class="boxplot-summary h5"></div>
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Agency
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="aChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div id="nothingBurger"></div>
         </div>
     </div>
-    <div class="card my-3">
-        <div class="card-body">
-            <h5 class="card-title">Agency</h5>
-            <div class="row" name="boxplot3">
-                <div class="col">
-                    <img class="float-right mw-100"
-                         src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png">
-                </div>
-                <div class="col mx-3">
-                    <p>Description of the box plot! In ultricies fermentum aliquet. Pellentesque dui magna, condimentum
-                        non ullamcorper at, cursus in sem. Nunc condimentum, purus ac sagittis ultricies, metus leo
-                        pharetra mi, non vehicula felis elit et nisi.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card my-3">
-        <div class="card-body">
-            <h5 class="card-title">Discovery</h5>
-            <div class="row" name="boxplot4">
-                <div class="col">
-                    <img class="float-right mw-100"
-                         src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png">
-                </div>
-                <div class="col mx-3">
-                    <p>Description of the box plot! In ultricies fermentum aliquet. Pellentesque dui magna, condimentum
-                        non ullamcorper at, cursus in sem. Nunc condimentum, purus ac sagittis ultricies, metus leo
-                        pharetra mi, non vehicula felis elit et nisi.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <!-- Optional JavaScript -->
@@ -201,17 +207,17 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
 <script src="js/box-compass.js"></script>
+<script src="js/boxplots.js"></script>
 
 </body>
 <script>
-    const media = "LinkedIn"
+    // const media = "LinkedIn"
     // For current media
     // For each human tag
     let humanTags = ["C", "S", "D", "A"]
     const boxplots = d3.select("#boxplots")
     humanTags.forEach(function (human) {
-        fetch('/questions?media=' + media + '&human=' + human, {
-        // fetch('/questions?human=' + human, {
+        fetch('/questionsForAllMedia?' + 'human=' + human, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"
@@ -222,6 +228,9 @@
             })
             .then(function (json) {
                 console.log(json)
+                generateBoxplotsForCombinedHuman(json, human.toLocaleLowerCase())
+
+                //TODO: Generate box plots
             })
     })
 </script>

@@ -4,11 +4,11 @@
 
 const social_media = {
     "BeReal": [5, 5, "https://upload.wikimedia.org/wikipedia/en/4/40/BeReal_logo.png"],
-    "Facebook": [70, 10, "https://play-lh.googleusercontent.com/ccWDU4A7fX1R24v-vvT480ySh26AYp97g1VrIB_FIdjRcuQB2JP2WdY7h_wVVAeSpg=w240-h480"],
+    "Facebook": [70, 10, "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png"],
     "Instagram": [23, 52.5, "https://play-lh.googleusercontent.com/LM9vBt64KdRxLFRPMpNM6OvnGTGoUFSXYV-w-cGVeUxhgFWkCsfsPSJ5GYh7x9qKqw=w240-h480"],
-    "LinkedIn": [52, 43, "https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw=w240-h480"],
+    "LinkedIn": [52, 43, "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"],
     "Reddit": [58.6, 52.1, "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Reddit_icon.svg/2048px-Reddit_icon.svg.png"],
-    "Snapchat": [10, 10, "https://play-lh.googleusercontent.com/KxeSAjPTKliCErbivNiXrd6cTwfbqUJcbSRPe_IBVK_YmwckfMRS1VIHz-5cgT09yMo=w240-h480"],
+    "Snapchat": [10, 10, "https://upload.wikimedia.org/wikipedia/fr/archive/a/ad/20190808214526%21Logo-Snapchat.png"],
     "TikTok": [20, 20, "https://play-lh.googleusercontent.com/OS-MhSWOPtlUZLt0_UP5TI4juSf0XhyHxGfJa6pA-UIYkZ1BB6QHTZwaMEzZDPqYsmk=w240-h480"],
     "Tumblr": [30, 30, "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Tumblr.svg/2048px-Tumblr.svg.png"],
     "Twitch": [40, 40, "https://nordgamesllc.com/wp-content/uploads/2020/12/app-icons-twitch.png"],
@@ -29,30 +29,6 @@ function calculate(section) {
     });
     return score;
 }
-
-$("#results-button").click(function () {
-    $("#questions").hide();
-    $("#results").show();
-
-    const xn = 15;
-    const yn = 15;
-    const zn = 15;
-
-    var xScore = (xn * 17.533 + calculate("economics")) / (xn * 17.533 * 2) * 100;
-    var yScore = (yn * 17.533 + calculate("state")) / (2 *  yn * 17.533) * 100;
-    var zScore = (zn * 17.533 + calculate("civil")) / (2 * zn * 17.533) * 100;
-
-    $("#userPin").css("left", "" + xScore + "%");
-    $("#userPin").css("top", "" + yScore + "%");
-    $("#userBar").css("top", "" + zScore  + "%");
-
-    $("#xScore").text(Math.round(xScore));
-    $("#yScore").text(100 - Math.round(yScore));
-    $("#zScore").text(100 - Math.round(zScore));
-
-    var closestMedia = closestMedia(xScore, yScore, zScore, []);
-    $("#align").text(closestMedia[0] + ", then " + closestMedia[1] + ", then " + closestMedia[2]);
-});
 
 function closestMedia(xScore, yScore, zScore, excludes) {
     var smallestMedia = "";

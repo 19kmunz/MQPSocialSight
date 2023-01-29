@@ -24,6 +24,9 @@ class DAO {
     getQuestionForAllMedia(questionTag) {
         return this.client.db("socialSight").collection("questions").find( { qTag: questionTag });
     }
+    getQuestionsForAllMediaAndHumanTag(human) {
+        return this.client.db("socialSight").collection("questions").find( {human: human} );
+    }
     getAllQuestions() {
         return this.client.db("socialSight").collection("questions").find({});
     }
