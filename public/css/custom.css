@@ -10,6 +10,10 @@
     flex-basis: 10%;
 }
 
+p {
+    text-align: justify !important;
+}
+
 .bg-accent1 {
     background-color: rgba(22, 182, 179, 0.5);
 }
