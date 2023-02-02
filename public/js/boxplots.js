@@ -313,7 +313,7 @@ function displayBoxplots(sumstat, boxplots) {
     displayTotals(sumstat, boxplots)
 
     // Add lines in between
-    displayHorizontalLine(sumstat, boxplots)
+    //displayHorizontalLine(sumstat, boxplots)
 }
 function displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, boxplots) {
     //console.log("Sumstat: ")
