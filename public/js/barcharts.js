@@ -283,11 +283,15 @@ function displayCaptions(sumstat, barcharts) {
     barcharts
         .selectAll(".barchart-row")
         .each(function () {
+            console.log(this)
             let p = d3.select(this).select("p")
-            if (p.empty()) {
+            if(p.empty()) {
                 d3.select(this).append("p")
-                    .text("We haven't written a summary for this barchart yet! Coming Soon!")
+                    .text("We haven't written a summary for this boxplot yet! Coming Soon!")
                     .classed("col", true)
+                    .classed("my-auto", true)
+            } else {
+                p.classed("my-auto", true)
             }
         })
 }
