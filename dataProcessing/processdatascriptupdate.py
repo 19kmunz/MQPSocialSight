@@ -8,8 +8,7 @@ def question_to_scale(question):
         case "C1" | "C2" | "C3" | "C6" | "D1" | "D5" | "D6" | "D7" | "D8" | "A3" | "A4":
             return ["VF", "F", "O", "R", "VR", "N"]
         case "A2":
-            return ["STR A", "A", "SLI A", "SLI D", "D", "STR D",
-                    "NO AD"]
+            return ["NO AD", "STR A", "A", "SLI A", "SLI D", "D", "STR D"]
         case "D3":
             return ["Video", "Image", "Text", "No Priority"]
         case "D2":

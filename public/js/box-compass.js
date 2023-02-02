@@ -5,7 +5,7 @@
 const social_media = {
     "BeReal": [5, 5, "https://upload.wikimedia.org/wikipedia/en/4/40/BeReal_logo.png"],
     "Facebook": [70, 10, "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png"],
-    "Instagram": [23, 52.5, "https://play-lh.googleusercontent.com/LM9vBt64KdRxLFRPMpNM6OvnGTGoUFSXYV-w-cGVeUxhgFWkCsfsPSJ5GYh7x9qKqw=w240-h480"],
+    "Instagram": [23, 52.5, "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/264px-Instagram_logo_2016.svg.png?20210403190622"],
     "LinkedIn": [52, 43, "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"],
     "Reddit": [58.6, 52.1, "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Reddit_icon.svg/2048px-Reddit_icon.svg.png"],
     "Snapchat": [10, 10, "https://upload.wikimedia.org/wikipedia/fr/archive/a/ad/20190808214526%21Logo-Snapchat.png"],
