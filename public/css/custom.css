@@ -148,7 +148,7 @@
 }
 
 .bottom {
-    bottom: 0px;
+    bottom: 0;
 }
 
 .carousel-indicators .active {
@@ -177,7 +177,18 @@
 .boxplot-summary {
     padding: 20px
 }
-
+.boxplot-children .boxplot-row {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.boxplot-children .boxplot-row:first-child {
+    padding-top: 0;
+}
+.boxplot-children .boxplot-row:last-child {
+    border-bottom: none;
+}
 .total {
     font-size: small;
     text-align: center;
