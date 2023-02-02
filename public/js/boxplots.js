@@ -375,7 +375,6 @@ function displayContainersMargin(sumstat, boxplots) {
         .join(enter =>
                 enter.append("div") // container div
                     .attr("id", function(d) {return d.key;})
-                    .classed(function(d) {return d.key;}, true)
                     .classed("row", true)
                     .classed("boxplot-row", true)
             ,
