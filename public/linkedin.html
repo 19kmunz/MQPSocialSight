@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- D3 and Custom Code -->
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script src="js/boxplots.js"></script>
+    <script src="js/barcharts.js"></script>
     <title>SocialSight</title>
 </head>
 <body>
@@ -210,7 +210,7 @@
         <div class="col">
             <h4>Analysis</h4>
             <p>Below is our analysis of Facebook based on survey data gathered by participants.</p>
-            <div class="accordion" id="boxplots">
+            <div class="accordion" id="barcharts">
                 <div class="accordion-item">
                     <div class="boxplot-summary" id="cSummary">
                         <div id="C_Summary" class="row boxplot-row">
@@ -454,6 +454,7 @@
             <div id="nothingBurger"></div>
         </div>
     </div>
+    <div id="my_dataviz"></div>
 </div>
 
 <!-- Optional JavaScript -->
@@ -473,7 +474,7 @@
     // For current media
     // For each human tag
     let humanTags = ["C", "S", "D", "A"]
-    const boxplots = d3.select("#boxplots")
+    const barcharts = d3.select("#barcharts")
     humanTags.forEach(function (human) {
         fetch('/questions?media=' + media + '&human=' + human, {
             method: 'GET',
@@ -485,7 +486,7 @@
                 return response.json()
             })
             .then(function (json) {
-                generateBoxplotsForHuman(json, human.toLocaleLowerCase())
+                generateBarchartsForHuman(json, human.toLocaleLowerCase())
             })
     })
 </script>
