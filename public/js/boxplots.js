@@ -412,6 +412,9 @@ function displayCaptions(sumstat, boxplots) {
                 d3.select(this).append("p")
                     .text("We haven't written a summary for this boxplot yet! Coming Soon!")
                     .classed("col", true)
+                    .classed("my-auto", true)
+            } else {
+                p.classed("my-auto", true)
             }
         })
 }
