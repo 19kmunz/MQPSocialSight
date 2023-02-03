@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Bootstrap JS   -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- D3 and Custom Code -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/barcharts.js"></script>
+    <title>SocialSight</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-main">
+    <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active" href="social-media.html">Social Media <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Methodology <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Future Recommendations <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="definitions.html">Definitions <span class="sr-only"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="mx-5 my-3">
+    <div class="row">
+        <div class="col-auto">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/40/BeReal_logo.png"
+                 alt="BeReal icon" style="width: 200px; height: 200px;" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <h4>BeReal</h4>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="compareButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            Compare
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="compareButton">
+                            <li><a class="dropdown-item" href="#">Social media 1</a></li>
+                            <li><a class="dropdown-item" href="#">Social media 2</a></li>
+                            <li><a class="dropdown-item" href="#">Social media 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h5><i>Authentic Friends, Once A Day</i></h5>
+            <p>Users: 21.6M<br>Annual Revenue: $0</p>
+        </div>
+        <div class="col-sm-3">
+            <div class="card" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Strengths</h5>
+                    <ol>
+                        <li>Capture Authentic Moments</li>
+                        <li>Simplistic Design</li>
+                        <li>Zero Advertisements</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card float-right" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Warnings</h5>
+                    <ol>
+                        <li>Built On Existing Connections</li>
+                        <li>Content Once Per Day</li>
+                        <li>Shares Location On Default</li>
+                    </ol>
+                    <h5 class="card-title">Relevant Sources</h5>
+                    <a href="https://www.deseret.com/2022/11/18/23465209/bereal-privacy-concern-parents-guide">Privacy Concerns</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h4>Design Overview</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Every day, all users receive an alert that it is "Time to BeReal." The aim is to post a photo of yourself within two minutes of receiving an alert. Missing the timer has no consequences, other than your post being marked as late. After you post you can see your friends' posts for the day, comment on posts, and react using photos of your face. On default, your posts include your exact location. If this feature is desired, you can see the location of every BeReal in your memories. If not, you can turn it off! <br>BeReal is currently ad-free, meaning you will never see ads or sponsored posts. Instead you will see two feeds: "Friends," the people you have added, and "Discover," people who have their BeReal set to public.</p>
+        </div>
+        <div class="col-md-6">
+            <div id="designCard" class="carousel carousel-dark slide" data-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://apps.apple.com/us/app/bereal-your-friends-for-real/"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/bereal_1.png"
+                                             alt="Camera and two minute count down">
+                                    </a>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Post Once A Day</h5>
+                                        <p class="card-text">Post a photo of yourself, using the front and back camera of your phone without filters, within two minutes of receiving a notification, to show what you are doing at a random time.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://apps.apple.com/us/app/bereal-your-friends-for-real/"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/bereal_2.png"
+                                             alt="View all friends' posts">
+                                    </a>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Simultaneous Posts By Friends</h5>
+                                        <p class="card-text">See what your friends are up to! Your friends receive a notification at the same time as you, so right after you post, you can see their posts.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://apps.apple.com/us/app/bereal-your-friends-for-real/"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/bereal_3.png"
+                                             alt="View of memories">
+                                    </a>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">View Memories</h5>
+                                        <p class="card-text">Revisit your old posts to see what you were up to in previous days, months and years!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#designCard" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#designCard" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h4>Analysis</h4>
+            <p>Below is our analysis of BeReal based on survey data gathered by participants.</p>
+            <div class="accordion" id="barcharts">
+                <div class="accordion-item">
+                    <div class="barchart-summary" id="cSummary">
+                        <div id="C_Summary" class="row barchart-row">
+                            <p class="col">!</p>
+                        </div>
+                    </div>
+                    <h2 class="accordion-header" id="headingOne">
+                        <button aria-controls="collapseOne" aria-expanded="true" class="accordion-button collapsed"
+                                data-bs-target="#collapseOne" data-bs-toggle="collapse" type="button">
+                            Community Questions
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingOne" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseOne">
+                        <div class="accordion-body">
+                            <div class="barchart-children" id="cChildren">
+                                <div class="row barchart-row" id="C1_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C2_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C3_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C4_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C5_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C6_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C7_6">
+                                    <p class="col">!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="barchart-summary" id="sSummary">
+                        <div id="S_Summary" class="row barchart-row">
+                            <p class="col">!</p>
+                        </div>
+                    </div>
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button aria-controls="collapseTwo" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseTwo" data-bs-toggle="collapse" type="button">
+                            Self Questions
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingTwo" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseTwo">
+                        <div class="accordion-body">
+                            <div class="barchart-children" id="sChildren">
+                                <div class="row barchart-row" id="S1_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="S2_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="S3_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="S4_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="S5_6">
+                                    <p class="col">!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="barchart-summary" id="dSummary">
+                        <div id="D_Summary" class="row barchart-row">
+                            <p class="col">!</p>
+                        </div>
+                    </div>
+                    <h2 class="accordion-header" id="headingThree">
+                        <button aria-controls="collapseThree" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseThree" data-bs-toggle="collapse" type="button">
+                            Discovery Questions
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingThree" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseThree">
+                        <div class="accordion-body">
+                            <div class="barchart-children" id="dChildren">
+                                <div class="row barchart-row" id="D1_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D2_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D3_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D4_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D5_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D6_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D7_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D8_6">
+                                    <p class="col">!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="barchart-summary" id="aSummary">
+                        <div id="A_Summary" class="row barchart-row">
+                            <p class="col">!</p>
+                        </div>
+                    </div>
+                    <h2 class="accordion-header" id="headingFour">
+                        <button aria-controls="collapseFour" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseFour" data-bs-toggle="collapse" type="button">
+                            Agency Questions
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingFour" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseFour">
+                        <div class="accordion-body">
+                            <div class="barchart-children" id="aChildren">
+                                <div class="row barchart-row" id="A1_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A2_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A3_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A4_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A5_6">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A6_6">
+                                    <p class="col">!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nothingBurger"></div>
+        </div>
+    </div>
+    <div id="my_dataviz"></div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    const media = "BeReal"
+    // For current media
+    // For each human tag
+    let humanTags = ["C", "S", "D", "A"]
+    const barcharts = d3.select("#barcharts")
+    humanTags.forEach(function (human) {
+        fetch('/questions?media=' + media + '&human=' + human, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (json) {
+                generateBarchartsForHuman(json, human.toLocaleLowerCase())
+            })
+    })
+</script>
+</html>
