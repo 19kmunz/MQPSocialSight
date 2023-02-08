@@ -9,6 +9,7 @@ function generateBoxplotsForHuman(json, human) {
     const humanDiv = boxplots.select("#"+human+"Summary")
     let data = json.questions
     let overall = [computeOverallData(data)]
+    console.log(data)
     var topsumstat = computeSummaryStatistics(overall)
     displayBoxplots(topsumstat, humanDiv)
 
@@ -55,7 +56,24 @@ function computeOverallData(data) {
     }
     let points = []
     data.forEach(question => {
-        points.push(question.points)
+        switch(question.reverseTag) {
+            case "reverse":
+                // Ex. 6 needs to be 1. p-1=5, mapping[5] = 1
+                const mapping = [6, 5, 4, 3, 2, 1];
+                const reversed = question.points.map(p => mapping[p - 1] || p)
+                points.push(reversed)
+                break;
+            case "ad":
+                // 1 - No ad, 2-7 STR A - STR D. Need 1-6 STR A - STR D
+                points.push(question.points.filter(p => p>1).map(p => p-1))
+                break;
+            case "info":
+                console.log(question.points)
+                break;
+            default:
+                points.push(question.points)
+        }
+        //points.push(question.points)
     })
     points = d3.merge(points).sort(d3.ascending)
     summary.points = points;

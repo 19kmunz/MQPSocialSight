@@ -1,3 +1,5 @@
+from audioop import reverse
+
 import pandas as pd
 from pymongo import MongoClient
 from dotenv import dotenv_values
@@ -15,6 +17,20 @@ def question_to_scale(question):
             return ["<10 Min", "~30 Min", "~1 Hr", ">1 Hr"]
         case _:
             return ["STR A", "A", "SLI A", "SLI D", "D", "STR D"]
+
+
+def reverse_tag(question):
+    match question:
+        case "C2" | "C5" | "D7" | "D8" | "A4":
+            return "reverse"
+        case "D2" | "D3":
+            return "info"
+        case "C3":
+            return "CtoD"
+        case "A2":
+            return "ad"
+        case _:
+            return False
 
 
 # Setup MySQL.
@@ -58,7 +74,8 @@ for questionIndex in range(numberOfQuestions):
             "human": letterTag,
             "total": total,
             "points": arrQuestionData,
-            "scale": question_to_scale(questionExportTag[:2])
+            "scale": question_to_scale(questionExportTag[:2]),
+            "reverseTag": reverse_tag(questionExportTag[:2])
         }
         print(questionObject)
         cleanQuestionData.append(questionObject)
