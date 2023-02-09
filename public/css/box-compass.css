@@ -40,13 +40,10 @@
 .pin {
     position: absolute;
     z-index: 200;
-    margin-left: -15.5px;
+    margin-left: -12px;
     margin-top: -15px;
     left: 50%;
     top: 50%;
-}
-.pin i {
-    font-size: 200%;
 }
 
 .icon-pin {
