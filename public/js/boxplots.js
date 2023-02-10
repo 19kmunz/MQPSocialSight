@@ -9,7 +9,7 @@ function generateBoxplotsForHuman(json, human) {
     const humanDiv = boxplots.select("#"+human+"Summary")
     let data = json.questions
     let overall = [computeOverallData(data)]
-    console.log(data)
+    //console.log(data)
     var topsumstat = computeSummaryStatistics(overall)
     displayBoxplots(topsumstat, humanDiv)
 
@@ -25,7 +25,7 @@ function generateBoxplotsForComparison(jsonFirst, jsonSecond, human) {
     let overallSecond = [computeOverallData(jsonSecond.questions)]
     var topsumstatSecond = computeSummaryStatistics(overallSecond)
     let topsumstat = computeComparisonSummaryStatistics(overallFirst, overallSecond)
-    console.log(topsumstat)
+    //console.log(topsumstat)
     displayTwoBoxplots(topsumstatFirst, topsumstatSecond, topsumstat, humanDiv)
 
     const contentsDiv = boxplots.select("#"+human+"Children")
@@ -68,7 +68,7 @@ function computeOverallData(data) {
                 points.push(question.points.filter(p => p>1).map(p => p-1))
                 break;
             case "info":
-                console.log(question.points)
+                //console.log(question.points)
                 break;
             default:
                 points.push(question.points)
@@ -563,7 +563,7 @@ function displayCombinedTotals(sumstatFirst, sumstatSecond, boxplots) {
     //         .attr("y", height + 35)
     // }
     let merged = Object.assign(sumstatFirst, sumstatSecond);
-    console.log(merged)
+    //console.log(merged)
     boxplots
         .selectAll(".margin")
         .data(merged)

@@ -71,51 +71,11 @@
                     <div class="bg-accent4 grid-bottom-right d-flex align-items-center justify-content-center"><p>
                         Self-Discovery</p></div>
                 </div>
-                <!--                TODO: -->
-                <!--                <div id="userPin" class="pin" style="left: 50%; top: 50%;">-->
-                <!--                    <i class="material-icons" data-toggle="tooltip" title="" data-original-title="You">my_location</i>-->
-                <!--                </div>-->
             </div>
             <div class="d-flex align-items-center flex-col"><h5 class="my-0">Discovery</h5></div>
-            <!--            This is an alignment scale if we let user take the survey-->
-            <!--            <div id="scale">-->
-            <!--                <div>-->
-            <!--                    <div id="userBar" class="bar" data-toggle="tooltip" title="" data-original-title="You"-->
-            <!--                         style="top: 50%;"></div>-->
-            <!--                    <div class="partyBar bar" style="top: 9.7%;" data-toggle="tooltip" title=""-->
-            <!--                         data-original-title="Greens"></div>-->
-            <!--                    <div class="partyBar bar" style="top: 50%;" data-toggle="tooltip" title=""-->
-            <!--                         data-original-title="Kiwi"></div>-->
-            <!--                    <div class="partyBar bar" style="top: 32.8%;" data-toggle="tooltip" title=""-->
-            <!--                         data-original-title="Liberals"></div>-->
-            <!--                    <div class="partyBar bar" style="top: 41%;" data-toggle="tooltip" title=""-->
-            <!--                         data-original-title="Labour"></div>-->
-            <!--                    <div class="partyBar bar" style="top: 75%;" data-toggle="tooltip" title=""-->
-            <!--                         data-original-title="Front"></div>-->
-            <!--                </div>-->
-            <!--            </div>-->
         </div>
         <div class="d-flex justify-content-center align-items-center"><h5 class="my-0">Self</h5></div>
         <br>
-        <!--        These are more results for the user-->
-        <!--        <table class="table table-hover">-->
-        <!--            <tbody>-->
-        <!--            <tr>-->
-        <!--                <td>Economy</td>-->
-        <!--                <td id="xScore" data-toggle="tooltip" title="" data-original-title="0 = left, 100 = right">50</td>-->
-        <!--            </tr>-->
-        <!--            <tr>-->
-        <!--                <td>Statism</td>-->
-        <!--                <td id="yScore">50</td>-->
-        <!--            </tr>-->
-        <!--            <tr>-->
-        <!--                <td>Progressivism</td>-->
-        <!--                <td id="zScore">50</td>-->
-        <!--            </tr>-->
-        <!--            </tbody>-->
-        <!--        </table>-->
-
-        <!--        <strong>You align closest with: <span id="align">Kiwi, then Liberals, then Labour</span>.</strong>-->
     </div>
 </div>
 <div id="definitions" class="mx-5 my-3">
@@ -325,7 +285,7 @@
                 return response.json()
             })
             .then(function (json) {
-                console.log(json)
+                //console.log(json)
                 generateBoxplotsForCombinedHuman(json, human.toLocaleLowerCase())
 
                 //TODO: Generate box plots
