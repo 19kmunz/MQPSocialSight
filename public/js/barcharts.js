@@ -56,7 +56,7 @@ function computeOverallData(data) {
         "qTag": data[0].human + "_Summary",
         "mediaText": data[0].mediaText,
         "title": humanTagToWord(data[0].human) + " Summary",
-        "scale": ["STR A", "A", "SLI A", "SLI D", "D", "STR D"]
+        "scale": ["Strong Support", "Support", "Some Support", "Low Support", "Inhibits", "Heavily Inhibits"]
     }
     let points = []
     data.forEach(question => {

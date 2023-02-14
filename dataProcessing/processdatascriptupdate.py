@@ -1,5 +1,3 @@
-from audioop import reverse
-
 import pandas as pd
 from pymongo import MongoClient
 from dotenv import dotenv_values
@@ -8,15 +6,15 @@ from dotenv import dotenv_values
 def question_to_scale(question):
     match question:
         case "C1" | "C2" | "C3" | "C6" | "D1" | "D5" | "D6" | "D7" | "D8" | "A3" | "A4":
-            return ["VF", "F", "O", "R", "VR", "N"]
+            return ["Very Frequently", "Frequently", "Occasionally", "Rarely", "Very Rarely", "Never"]
         case "A2":
-            return ["NO AD", "STR A", "A", "SLI A", "SLI D", "D", "STR D"]
+            return ["No Ads", "Strongly Agree", "Agree", "Slightly Agree", "Slightly Disagree", "Disagree", "Strongly Disagree"]
         case "D3":
             return ["Video", "Image", "Text", "No Priority"]
         case "D2":
             return ["<10 Min", "~30 Min", "~1 Hr", ">1 Hr"]
         case _:
-            return ["STR A", "A", "SLI A", "SLI D", "D", "STR D"]
+            return ["Strongly Agree", "Agree", "Slightly Agree", "Slightly Disagree", "Disagree", "Strongly Disagree"]
 
 
 def reverse_tag(question):
