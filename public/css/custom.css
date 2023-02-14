@@ -202,3 +202,7 @@ p {
 .tick text{
     font-size: 0.8em;
 }
+
+.label{
+    font-size: 0.5em;
+}
