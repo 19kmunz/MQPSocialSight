@@ -52,7 +52,7 @@ function computeOverallData(data) {
         "qTag" : data[0].human+"_Summary",
         "mediaText" : data[0].mediaText,
         "title": humanTagToWord(data[0].human) +" Summary",
-        "scale": ["STR A", "A", "SLI A", "SLI D", "D", "STR D"]
+        "scale": ["Strong Support", "Support", "Some Support", "Low Support", "Inhibits", "Heavily Inhibits"]
     }
     let points = []
     data.forEach(question => {
@@ -450,7 +450,7 @@ function displayAxis(sumstat, boxplots){
                 .align(0)
                 .padding(0)
             d3.select(this)
-                .call(d3.axisBottom(scale).ticks(7))
+                .call(d3.axisBottom(scale).ticks(7).tickSize(2))
         }) // TODO: dynamically set the axis labels
         .select(".domain").remove()
 }
