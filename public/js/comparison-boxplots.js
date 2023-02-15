@@ -2,7 +2,7 @@
 const margin = {top: 10, right: 30, bottom: 50, left: 30},
     width = 400 - margin.left - margin.right,
     chunk = width / 7,
-    height = 400 - margin.top - margin.bottom,
+    height = 250 - margin.top - margin.bottom,
     jitterWidth = height / 4;
 
 function generateBoxplotsForComparison(jsonFirst, jsonSecond, human) {
@@ -192,8 +192,9 @@ function displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, boxplots) {
     //console.log(sumstat)
     // From sumstat: key, questionText, min, max, q1, q3, median, outliers, total
     // Define positions
-    var y = height / 2;
-    var yBandwidth = height / 4;
+    var y = 2*height / 3;
+    var yBandwidth = height / 5;
+    var secondPosition = 75;
 
     // Make boxplot container, margin, and scale for each question
     displayContainersMargin(sumstatFirst, boxplots)
@@ -210,7 +211,10 @@ function displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, boxplots) {
     // Show the range line
     displayRange(sumstatFirst, boxplots, y, yBandwidth)
 
-    let fill = "#1178f2"
+    let fill = mediaToColor(sumstatFirst[0].value.media)
+    // Show media labels
+    displayLabel(sumstatFirst, boxplots, y, yBandwidth)
+
     // Show the rectangle for the q1, q3 box
     displayBox(fill, sumstatFirst, boxplots, y, yBandwidth)
 
@@ -220,23 +224,23 @@ function displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, boxplots) {
     // Show the outliers
     displayOutliers(sumstatFirst, boxplots, y, yBandwidth)
 
-    displayRange(sumstatSecond, boxplots, y-100, yBandwidth)
+    displayRange(sumstatSecond, boxplots, y-secondPosition, yBandwidth)
 
-    fill = "#0274b3";
+    fill = mediaToColor(sumstatSecond[0].value.media)
+    // Show media labels
+    displayLabel(sumstatSecond, boxplots, y-secondPosition, yBandwidth)
+
     // Show the rectangle for the q1, q3 box
-    displayBox(fill, sumstatSecond, boxplots, y-100, yBandwidth)
+    displayBox(fill, sumstatSecond, boxplots, y-secondPosition, yBandwidth)
 
     // Show the median line
-    displayMedian(sumstatSecond, boxplots, y-100, yBandwidth)
+    displayMedian(sumstatSecond, boxplots, y-secondPosition, yBandwidth)
 
     // Show the outliers
-    displayOutliers(sumstatSecond, boxplots, y-100, yBandwidth)
+    displayOutliers(sumstatSecond, boxplots, y-secondPosition, yBandwidth)
 
     // Show the totals
     displayTotals(sumstat, boxplots)
-
-    // Add lines in between
-    displayHorizontalLine(sumstatFirst, boxplots)
 }
 function displayContainersMargin(sumstat, boxplots) {
     let bound = boxplots
@@ -335,6 +339,15 @@ function displayRange(sumstat, boxplots, y, yBandwidth) {
         .style("width", 40)
         .classed("range", true)
 }
+function displayLabel(sumstat, boxplots, y, yBandwidth) {
+    boxplots
+        .selectAll(".margin")
+        .data(sumstat)
+        .append("text")
+        .classed("label", true)
+        .attr('y', y-5)
+        .text(sumstat[0].value.media)
+}
 function displayBox(fill, sumstat, boxplots, y, yBandwidth) {
     boxplots
         .selectAll(".margin")
@@ -397,8 +410,42 @@ function displayTotals(sumstat, boxplots) {
         .classed("total", true)
         .text(function(d) { return "# Responses: " + (d.value.total) })
         .attr("x", 0)
-        .attr("y", height + 35)
+        .attr("y", height + 40)
 }
+
+/*
+function displayLegend(mediaList, sumstat, boxplots){
+    console.log(mediaList)
+    let groups = boxplots
+        .selectAll(".margin")
+        .data(sumstat)
+        .append("g")
+        .attr("transform", "translate(" + 150 + "," + (height + 40) + ")")
+        .classed("legend", true)
+    mediaList.forEach( (media, i) => {
+        let group = groups
+            .append("g")
+            .attr("transform", (d,i) => {return "translate("+0+"," + (i * 100) + ")"})
+        group
+            .append("text")
+            .text(media)
+    })
+
+            .append("g")
+        .attr("transform", (d,i) => {return "translate("+0+"," + (i * 100) + ")"})
+        .each( (d) => {
+            console.log(d3.select(this))
+            let group = d3.select(this)
+            group
+                .append("text")
+                .text(function(d) { return d })
+            group
+                .append("circle")
+                .fill(mediaToColor(d))
+        })
+
+}
+*/
 function displayCombinedTotals(sumstatFirst, sumstatSecond, boxplots) {
     // console.log(sumstatFirst)
     // for (let i = 0; i < sumstatFirst.length && i < sumstatSecond.length; i++) {
@@ -626,5 +673,36 @@ function humanTagToWord(tag) {
             return "Self: Identity and Ego"
         case "A":
             return "Control: Agency and Comfort"
+    }
+}
+function mediaToColor(media){
+
+    switch(media) {
+        case "Twitter":
+            return "#3ab0ff";
+        case "Instagram":
+            return "#C13584";
+        case "Reddit":
+            return "#ff4300";
+        case "Tumblr":
+            return "#2d4157";
+        case "Tik Tok":
+            return "#ff0050";
+        case "BeReal":
+            return "#000000";
+        case "YouTube":
+            return "#ff0101";
+        case "Snapchat":
+            return "#f5ea1d";
+        case "Facebook":
+            return "#1977f3";
+        case "4Chan":
+            return "#42922c";
+        case "LinkedIn":
+            return "#0274b3";
+        case "Twitch":
+            return "#653da7";
+        default:
+            throw new Error("Media '" +media+"' not supported")
     }
 }
