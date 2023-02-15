@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Bootstrap JS   -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- D3 and Custom Code -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/barcharts.js"></script>
+    <title>SocialSight</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-main">
+    <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active" href="social-media.html">Social Media <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Methodology <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Future Recommendations <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="definitions.html">Definitions <span class="sr-only"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="mx-5 my-3">
+    <div class="row">
+        <div class="col-auto">
+            <img src="https://nordgamesllc.com/wp-content/uploads/2020/12/app-icons-twitch.png"
+                 alt="Twitch icon" style="width: 200px; height: 200px;" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <h4>Twitch</h4>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="compareButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            Compare
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="compareButton">
+                            <li><a class="dropdown-item" href="#">Social media 1</a></li>
+                            <li><a class="dropdown-item" href="#">Social media 2</a></li>
+                            <li><a class="dropdown-item" href="#">Social media 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h5><i>Video Streaming and Community Chat</i></h5>
+            <p>Users: 140M<br>Annual Revenue: $1.54B</p>
+        </div>
+        <div class="col-sm-3">
+            <div class="card" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Strengths</h5>
+                    <ol>
+                        <li>Creator Pay and Viewer Support</li>
+                        <li>Streams Categorized For Ease Of Discovery</li>
+                        <li>In-Depth Moderation</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card float-right" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Warnings</h5>
+                    <ol>
+                        <li>Live Video Content Only</li>
+                        <li>Parasocial Relationships May Form From Monetary Support</li>
+                        <li>Niche Gaming Content</li>
+                    </ol>
+                    <h5 class="card-title">Relevant Sources</h5>
+                    <a href="https://www.healthygamer.gg/blog/parasocial-relationships-on-twitch-a-psychiatrists-perspective">About
+                        Parasocial Relationships</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h4>Design Overview</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Twitch is a social media for live video broadcasting. Users can follow streamers for free or subscribe
+                for a monthly fee, which often comes with additional perks. Video streams have chat, so you can talk
+                with the streamer and other viewers.</p>
+        </div>
+        <div class="col-md-6">
+            <div id="designCard" class="carousel carousel-dark slide" data-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto pe-0">
+                                    <a href="https://www.twitch.tv/directory?sort=VIEWER_COUNT"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/twitch_1.png"
+                                             alt="Twitch category browsing">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 px-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Categorized Video Broadcasting</h5>
+                                        <p class="card-text">All video streams on Twitch need a category, which is often
+                                            the game being played or the general topic (such as Just Chatting or Music).
+                                            This makes it easy to find new creators.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://help.twitch.tv/s/article/how-to-subscribe?language=en_US"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="https://assets.help.twitch.tv/article/img/000002124-03.gif"
+                                             alt="Twitch subscription tiers">
+                                    </a>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Subscribe To Support Creators</h5>
+                                        <p class="card-text">Subscribe to creators to get <a
+                                                href="https://www.twitch.tv/subs" target="_blank">perks</a> as well as
+                                            zero ads on their streams. Paying for a higher tier subscription unlocks
+                                            more perks for a higher cost. Users who link their Amazon Prime accounts can
+                                            subscribe to one creator per month for free.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto pe-0">
+<!--                                    <a href="https://help.twitch.tv/s/article/chat-basics?language=en_US"-->
+<!--                                       target="_blank">-->
+<!--                                        <img class="align-center card-height card-img"-->
+<!--                                             style="object-fit: cover; object-position: 0 0"-->
+<!--                                             src="https://assets.help.twitch.tv/article/img/659011-01u2.png"-->
+<!--                                             alt="Twitch chat">-->
+<!--                                    </a>-->
+                                    <img class="align-center card-height card-img"
+                                         style="object-fit: cover; object-position: 0 0"
+                                         src="images/twitch_2.png"
+                                         alt="Twitch chat" title="Twitch chat from CaptainPuffy's channel">
+                                </div>
+                                <div class="col-sm-9 ps-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Text Chat and Custom Emoticons</h5>
+                                        <p class="card-text">While watching a Twitch stream you can view and participate
+                                            in chat, which the streamer and other viewers can see. Send text, or use
+                                            custom emotes provided by Twitch and the streamer. Twitch provides a useful
+                                            <a href="https://help.twitch.tv/s/article/chat-basics?language=en_US"
+                                               target="_blank">guide</a> to the advanced chat components.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#designCard" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#designCard" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h4>Analysis</h4>
+            <p>Below is our analysis of Twitch based on survey data gathered by participants.</p>
+            <div class="accordion" id="barcharts">
+                <div class="accordion-item">
+                    <div class="barchart-summary" id="cSummary">
+                        <div id="C_Summary" class="row barchart-row">
+                            <p class="col">!</p>
+                        </div>
+                    </div>
+                    <h2 class="accordion-header" id="headingOne">
+                        <button aria-controls="collapseOne" aria-expanded="true" class="accordion-button collapsed"
+                                data-bs-target="#collapseOne" data-bs-toggle="collapse" type="button">
+                            Community Questions
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingOne" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseOne">
+                        <div class="accordion-body">
+                            <div class="barchart-children" id="cChildren">
+                                <div class="row barchart-row" id="C1_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C2_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C3_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C4_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C5_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C6_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="C7_12">
+                                    <p class="col">!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="barchart-summary" id="sSummary">
+                        <div id="S_Summary" class="row barchart-row">
+                            <p class="col">!</p>
+                        </div>
+                    </div>
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button aria-controls="collapseTwo" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseTwo" data-bs-toggle="collapse" type="button">
+                            Self Questions
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingTwo" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseTwo">
+                        <div class="accordion-body">
+                            <div class="barchart-children" id="sChildren">
+                                <div class="row barchart-row" id="S1_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="S2_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="S3_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="S4_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="S5_12">
+                                    <p class="col">!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="barchart-summary" id="dSummary">
+                        <div id="D_Summary" class="row barchart-row">
+                            <p class="col">!</p>
+                        </div>
+                    </div>
+                    <h2 class="accordion-header" id="headingThree">
+                        <button aria-controls="collapseThree" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseThree" data-bs-toggle="collapse" type="button">
+                            Discovery Questions
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingThree" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseThree">
+                        <div class="accordion-body">
+                            <div class="barchart-children" id="dChildren">
+                                <div class="row barchart-row" id="D1_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D2_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D3_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D4_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D5_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D6_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D7_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="D8_12">
+                                    <p class="col">!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="barchart-summary" id="aSummary">
+                        <div id="A_Summary" class="row barchart-row">
+                            <p class="col">!</p>
+                        </div>
+                    </div>
+                    <h2 class="accordion-header" id="headingFour">
+                        <button aria-controls="collapseFour" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseFour" data-bs-toggle="collapse" type="button">
+                            Agency Questions
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingFour" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseFour">
+                        <div class="accordion-body">
+                            <div class="barchart-children" id="aChildren">
+                                <div class="row barchart-row" id="A1_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A2_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A3_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A4_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A5_12">
+                                    <p class="col">!</p>
+                                </div>
+                                <div class="row barchart-row" id="A6_12">
+                                    <p class="col">!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nothingBurger"></div>
+        </div>
+    </div>
+    <div id="my_dataviz"></div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    const media = "Twitch"
+    // For current media
+    // For each human tag
+    let humanTags = ["C", "S", "D", "A"]
+    const barcharts = d3.select("#barcharts")
+    humanTags.forEach(function (human) {
+        fetch('/questions?media=' + media + '&human=' + human, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (json) {
+                generateBarchartsForHuman(json, human.toLocaleLowerCase())
+            })
+    })
+</script>
+</html>
