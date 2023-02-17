@@ -6,6 +6,11 @@ var margin = {top: 30, right: 30, bottom: 70, left: 60},
     titleMargin = 65;
     chartHeight = height - titleMargin;
 
+let captions = getCaptions();
+async function getCaptions() {
+    let captions = await d3.csv("captions.csv");
+    return d3.group(captions, d => d.qTag);
+}
 function generateBarchartsForHuman(json, human) {
     // const humanDiv = barcharts.select("#"+human+"Summary")
     // let data = json.questions
@@ -296,15 +301,20 @@ function displayContainersMargin(sumstat, barcharts) {
         .classed("margin", true)
 }
 
-function displayCaptions(sumstat, barcharts) {
+async function displayCaptions(sumstat, barcharts) {
+    let caps = await captions
     barcharts
         .selectAll(".barchart-row")
-        .each(function () {
-            console.log(this)
+        .each(function (d) {
             let p = d3.select(this).select("p")
-            if(p.empty()) {
-                d3.select(this).append("p")
-                    .text("We haven't written a summary for this boxplot yet! Coming Soon!")
+            if(p.empty() || p.node().textContent === "!") {
+                let thisCaption = caps.get(d.value.questionTag) ? caps.get(d.value.questionTag)[0][d.value.media] : undefined
+                console.log(thisCaption)
+                d3.select(this)
+                    .selectAll("p")
+                    .data([null])
+                    .join("p")
+                    .text(thisCaption ? thisCaption : "We haven't written a summary for this boxplot yet! Coming Soon!")
                     .classed("col", true)
                     .classed("my-auto", true)
             } else {
