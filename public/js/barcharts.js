@@ -309,7 +309,7 @@ async function displayCaptions(sumstat, barcharts) {
             let p = d3.select(this).select("p")
             if(p.empty() || p.node().textContent === "!") {
                 let thisCaption = caps.get(d.value.questionTag) ? caps.get(d.value.questionTag)[0][d.value.media] : undefined
-                console.log(thisCaption)
+                //console.log(thisCaption)
                 d3.select(this)
                     .selectAll("p")
                     .data([null])
