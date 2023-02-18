@@ -5,6 +5,12 @@ const margin = {top: 10, right: 30, bottom: 50, left: 30},
     height = 250 - margin.top - margin.bottom,
     jitterWidth = height / 4;
 
+let captions = getCaptions();
+async function getCaptions() {
+    let captions = await d3.csv("captions.csv");
+    return d3.group(captions, d => d.qTag);
+}
+
 function generateBoxplotsForComparison(jsonFirst, jsonSecond, human) {
     const humanDiv = boxplots.select("#"+human+"Summary")
     let overallFirst = [computeOverallData(jsonFirst.questions)]
@@ -12,7 +18,7 @@ function generateBoxplotsForComparison(jsonFirst, jsonSecond, human) {
     let overallSecond = [computeOverallData(jsonSecond.questions)]
     var topsumstatSecond = computeSummaryStatistics(overallSecond)
     let topsumstat = computeComparisonSummaryStatistics(overallFirst, overallSecond)
-    console.log(topsumstat)
+    //console.log(topsumstat)
     displayTwoBoxplots(topsumstatFirst, topsumstatSecond, topsumstat, humanDiv)
 
     const contentsDiv = boxplots.select("#"+human+"Children")
@@ -43,7 +49,7 @@ function computeOverallData(data) {
                 points.push(question.points.filter(p => p > 1).map(p => p - 1))
                 break;
             case "info":
-                console.log(question.points)
+                //console.log(question.points)
                 break;
             default:
                 points.push(question.points)
@@ -195,12 +201,13 @@ function displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, boxplots) {
     var y = 2*height / 3;
     var yBandwidth = height / 5;
     var secondPosition = 75;
+    var mediaList = [sumstatFirst[0].value.media, sumstatSecond[0].value.media]
 
     // Make boxplot container, margin, and scale for each question
     displayContainersMargin(sumstatFirst, boxplots)
 
     //Make captions for boxplots
-    displayCaptions(sumstatFirst, boxplots)
+    displayCaptions(sumstatFirst, boxplots, mediaList)
 
     // Show axis labels
     displayAxis(sumstatFirst, boxplots)
@@ -279,14 +286,24 @@ function displayContainersMargin(sumstat, boxplots) {
             "translate(" + margin.left + "," + margin.top + ")")
         .classed("margin", true)
 }
-function displayCaptions(sumstat, boxplots) {
+async function displayCaptions(sumstat, boxplots, mediaList) {
+    let caps = await captions
     boxplots
         .selectAll(".boxplot-row")
-        .each(function () {
+        .each(function (d) {
             let p = d3.select(this).select("p")
-            if(p.empty()) {
-                d3.select(this).append("p")
-                    .text("We haven't written a summary for this boxplot yet! Coming Soon!")
+            if(p.empty() || p.node().textContent === "!") {
+                let boilerplate ="We haven't written a summary for this boxplot yet! Coming Soon!"
+                let firstCaption = caps.get(d.value.questionTag) ? caps.get(d.value.questionTag)[0][mediaList[0]] : undefined
+                let secondCaption = caps.get(d.value.questionTag) ? caps.get(d.value.questionTag)[0][mediaList[1]] : undefined
+                let caption = mediaList[0] + ": " + (firstCaption ? firstCaption : boilerplate) + "<br><br></br>"
+                    + mediaList[1] + ": "+ (secondCaption ? secondCaption : boilerplate)
+                console.log(d)
+                d3.select(this)
+                    .selectAll("p")
+                    .data([null])
+                    .join("p")
+                    .html(caption)
                     .classed("col", true)
             }
         })
@@ -460,7 +477,7 @@ function displayCombinedTotals(sumstatFirst, sumstatSecond, boxplots) {
     //         .attr("y", height + 35)
     // }
     let merged = Object.assign(sumstatFirst, sumstatSecond);
-    console.log(merged)
+    //console.log(merged)
     boxplots
         .selectAll(".margin")
         .data(merged)
