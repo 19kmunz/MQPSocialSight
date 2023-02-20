@@ -3,12 +3,12 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
     <!-- Custom CSS-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link href="css/custom.css" rel="stylesheet">
     <!-- Bootstrap JS   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- D3 and Custom Code -->
@@ -19,8 +19,9 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-main">
     <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -47,89 +48,125 @@
     <div class="row">
         <div class="col">
             <div class="accordion" id="accordionExample">
-                <div id="#a">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingAgency">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseAgency" aria-expanded="true" aria-controls="collapseAgency">
-                            Agency
-                        </button>
-                    </h2>
-                    <div id="collapseAgency" class="accordion-collapse collapse" aria-labelledby="headingAgency"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div id="#b" hidden></div>
-                <div id="#c" hidden></div>
+                <div id="#a"></div>
+                <div hidden id="#b"></div>
+                <div hidden id="#c"></div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingCommunity">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseCommunity" aria-expanded="false" aria-controls="collapseCommunity">
+                        <button aria-controls="collapseCommunity" aria-expanded="false"
+                                class="accordion-button collapsed"
+                                data-bs-target="#collapseCommunity" data-bs-toggle="collapse"
+                                type="button">
                             Community
                         </button>
                     </h2>
-                    <div id="collapseCommunity" class="accordion-collapse collapse" aria-labelledby="headingCommunity"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingCommunity" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseCommunity">
                         <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until
-                            the collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
+                            Community on social media measures our social tendencies to connect with others on the
+                            internet. If social media encourages empathy, talking with your friends, family, and loved
+                            ones, or enables discussion amongst a like-minded group, it encourages community. All social
+                            media will have some community, as they are all social, but some may have features that
+                            distract from connections or make it harder to stick with a community, and will score lower.
                         </div>
                     </div>
                 </div>
-                <div id="#d" hidden></div>
+                <div hidden id="#d"></div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingDiscovery">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseDiscovery" aria-expanded="false" aria-controls="collapseDiscovery">
+                        <button aria-controls="collapseDiscovery" aria-expanded="false"
+                                class="accordion-button collapsed"
+                                data-bs-target="#collapseDiscovery" data-bs-toggle="collapse"
+                                type="button">
                             Discovery
                         </button>
                     </h2>
-                    <div id="collapseDiscovery" class="accordion-collapse collapse" aria-labelledby="headingDiscovery"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingDiscovery" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseDiscovery">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
+                            The Discovery scale relates to a user’s desire to see something new. Scrolling through
+                            social media for non-social reasons often means looking for something new to entertain,
+                            educate, or fascinate. We are interested to see how satisfied users are with the content
+                            they find and if content by small creators can be discovered by other audiences on the
+                            platform. For there to be new content for a user to discover, new creators need to be
+                            encouraged by the platform.
                         </div>
                     </div>
                 </div>
-                <div id="#e" hidden></div>
-                <div id="#f" hidden></div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingAgency">
+                        <button aria-controls="collapseAgency" aria-expanded="true"
+                                class="accordion-button collapsed"
+                                data-bs-target="#collapseAgency" data-bs-toggle="collapse"
+                                type="button">
+                            Agency
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingAgency" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseAgency">
+                        <div class="accordion-body">
+                            Almost in contrast to Discovery, Agency or Control is related to user safety and comfort.
+                            Sometimes users are not looking for anything new, but instead old comfortable memories
+                            or their favorite videos from a while ago. Although users may want something new, they
+                            might find something they don't like and need tools to avoid it in the future. Social
+                            media feeds are tailored to the user, so the user needs to have some control over the
+                            space they want to create. Blocking people can protect from harassment, while muting
+                            words or tags (like on Twitter and Tumblr) can help you avoid posts that make a user
+                            uncomfortable. Moderation teams are necessary to keep content safe, and community lead
+                            moderation can create rules to fit a communities custom needs. We hope to measure how
+                            customizable, comfortable, and safe a platform is using this scale.
+                        </div>
+                    </div>
+                </div>
+                <div hidden id="#e"></div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSelf">
+                        <button aria-controls="collapseSelf" aria-expanded="true" class="accordion-button collapsed"
+                                data-bs-target="#collapseSelf" data-bs-toggle="collapse" type="button">
+                            Self
+                        </button>
+                    </h2>
+                    <div aria-labelledby="headingSelf" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseSelf">
+                        <div class="accordion-body">
+                            The Self scale relates to how social media enables self-presentation, self-exploration, and
+                            the ego. Profile customization options can allow many to create authentic or inauthentic
+                            personas. Posts are often linked with virtual “achievements” such as likes or re-shares that
+                            can affect the ego. This scale aims to measure how a platform encourages identity
+                            presentation or getting lost in the crowd.
+                        </div>
+                    </div>
+                </div>
+                <div hidden id="#f"></div>
                 <div id="#g"></div>
                 <div id="#h"></div>
                 <div id="#i"></div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingInfinite">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseInfinite" aria-expanded="true" aria-controls="collapseInfinite">
+                        <button aria-controls="collapseInfinite" aria-expanded="true" class="accordion-button collapsed"
+                                data-bs-target="#collapseInfinite" data-bs-toggle="collapse"
+                                type="button">
                             Infinite Scroll
                         </button>
                     </h2>
-                    <div id="collapseInfinite" class="accordion-collapse collapse" aria-labelledby="headingInfinite"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingInfinite" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseInfinite">
                         <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
+                            Infinite Scroll is a common feature of modern social media. Most platforms have a main page
+                            that contains a feed of posts that users can scroll through. To let users view as much
+                            content as they want, that pages are often "infinite" in nature. Instead of splitting up
+                            content between pages, the feed will continue to update the further you scroll down.
+                            Sometimes the feed is chronological and users may scroll until they see content they saw in
+                            a previous session, but often the feed is recommendation based so the user will always see
+                            new content. This design feature ensure the user has as few breaks as possible between
+                            content, which can hide how much time a user is spending on the app. We find this feature to
+                            lead to some level of addiction, and building breaks into the app can produce a healthier
+                            relationship with social media.
                         </div>
                     </div>
                 </div>
@@ -137,39 +174,22 @@
                 <div id="#k"></div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingKeyStrength">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseKeyStrength" aria-expanded="true" aria-controls="collapseKeyStrength">
-                            Key Strength
+                        <button aria-controls="collapseKeyStrength" aria-expanded="true"
+                                class="accordion-button collapsed"
+                                data-bs-target="#collapseKeyStrength" data-bs-toggle="collapse"
+                                type="button">
+                            Key Strength / Key Warnings
                         </button>
                     </h2>
-                    <div id="collapseKeyStrength" class="accordion-collapse collapse" aria-labelledby="headingKeyStrength"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingKeyStrength" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseKeyStrength">
                         <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingKeyWarning">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseKeyWarning" aria-expanded="true" aria-controls="collapseKeyWarning">
-                            Key Warning
-                        </button>
-                    </h2>
-                    <div id="collapseKeyWarning" class="accordion-collapse collapse" aria-labelledby="headingKeyWarning"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
+                            To summarize the experience on a social media, we chose 3 "key strengths" and "key warnings"
+                            for each. These are core feature that will play major roles in the experience of each
+                            platform. We do not provide much explanation for each of these weaknesses, so we are sorry
+                            if they are confusing. There are more explanations contained in the design overview and data
+                            sections.
                         </div>
                     </div>
                 </div>
@@ -181,25 +201,6 @@
                 <div id="#q"></div>
                 <div id="#r"></div>
                 <div id="#s"></div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSelf">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSelf" aria-expanded="true" aria-controls="collapseSelf">
-                            Self
-                        </button>
-                    </h2>
-                    <div id="collapseSelf" class="accordion-collapse collapse" aria-labelledby="headingSelf"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </div>
                 <div id="#t"></div>
                 <div id="#u"></div>
                 <div id="#v"></div>
@@ -210,22 +211,22 @@
 
             </div>
         </div>
-<!--        <div class="col-sm-1 text-end">-->
-<!--            <a href="#a">A</a><br>-->
-<!--            <a href="#c">C</a><br>-->
+        <!--        <div class="col-sm-1 text-end">-->
+        <!--            <a href="#a">A</a><br>-->
+        <!--            <a href="#c">C</a><br>-->
 
-<!--        </div>-->
+        <!--        </div>-->
 
     </div>
 </div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<script crossorigin="anonymous"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script crossorigin="anonymous"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 </body>
 </html>
