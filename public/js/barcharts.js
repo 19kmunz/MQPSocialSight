@@ -82,6 +82,9 @@ function computeSummaryStatistics(data) {
         let maxCount = d3.max(counts.map(d => d[1]))
         let total = question.points.length
 
+        //counts = counts.map(d => [d[0], (d[1]/total) * 100])
+        //maxCount = 100
+
         return {
             'key': id,
             value: {
