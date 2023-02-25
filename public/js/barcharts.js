@@ -204,6 +204,8 @@ function computeCombinedSummaryStatistics(data) {
 }
 
 function displayBarcharts(sumstat, barcharts) {
+    let fill = mediaToColor(sumstat[0].value.media);
+
 
     // Make barchart container, margin, and scale for each question
     displayContainersMargin(sumstat, barcharts)
@@ -219,7 +221,7 @@ function displayBarcharts(sumstat, barcharts) {
     displayTitle(sumstat, barcharts)
 
     // Show barchart
-    displayBars(sumstat, barcharts)
+    displayBars(sumstat, barcharts, fill)
 
     // Show the totals
     displayTotals(sumstat, barcharts)
@@ -238,7 +240,7 @@ function displayHorizontalLine(sumstat, barcharts) {
         })
 }
 
-function displayBars(sumstat, barcharts) {
+function displayBars(sumstat, barcharts, fill) {
     //d.value.xScale(d.value.q1)
     // Bars
     barcharts.selectAll(".margin")
@@ -256,7 +258,7 @@ function displayBars(sumstat, barcharts) {
                 .attr("y", function(d) { return p.value.yAxis(d[1]); })
                 .attr("width", p.value.xScale.bandwidth())
                 .attr("height", function(d) { return chartHeight - p.value.yAxis(d[1]); })
-                .attr("fill", "#69b3a2")
+                .attr("fill", fill)
         })
 }
 
@@ -453,5 +455,36 @@ function humanTagToWord(tag) {
             return "Self: Identity and Ego"
         case "A":
             return "Agency: Control and Comfort"
+    }
+}
+function mediaToColor(media){
+
+    switch(media) {
+        case "Twitter":
+            return "#3ab0ff";
+        case "Instagram":
+            return "#C13584";
+        case "Reddit":
+            return "#ff4300";
+        case "Tumblr":
+            return "#2d4157";
+        case "TikTok":
+            return "#ff0050";
+        case "BeReal":
+            return "#000000";
+        case "YouTube":
+            return "#ff0101";
+        case "Snapchat":
+            return "#f5ea1d";
+        case "Facebook":
+            return "#1977f3";
+        case "4Chan":
+            return "#42922c";
+        case "LinkedIn":
+            return "#0274b3";
+        case "Twitch":
+            return "#653da7";
+        default:
+            throw new Error("Media '" +media+"' not supported")
     }
 }
