@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from dotenv import dotenv_values
 
 csvQuestionData = pd.read_table('MQPSocialMediaResponses.csv', sep=',', quotechar='"')
-media = ["Twitter", "Instagram", "Reddit", "Tumblr", "Tik Tok", "BeReal", "YouTube", "Snapchat", "Facebook", "4Chan",
+media = ["Twitter", "Instagram", "Reddit", "Tumblr", "TikTok", "BeReal", "YouTube", "Snapchat", "Facebook", "4Chan",
          "LinkedIn", "Twitch"]
 cleanQuestionData = []
 

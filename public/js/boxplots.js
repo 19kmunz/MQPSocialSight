@@ -690,7 +690,7 @@ function numberToMedia(number){
         case 4:
             return "Tumblr";
         case 5:
-            return "Tik Tok";
+            return "TikTok";
         case 6:
             return "BeReal";
         case 7:
@@ -721,7 +721,7 @@ function mediaToNumber(media){
             return 3;
         case "Tumblr":
             return 4;
-        case "Tik Tok":
+        case "TikTok":
             return 5;
         case "BeReal":
             return 6;
