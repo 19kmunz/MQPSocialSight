@@ -1,0 +1,457 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Bootstrap JS   -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- D3 and Custom Code -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/comparison-boxplots.js"></script>
+    <title>SocialSight</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-main">
+    <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active" href="social-media.html">Social Media <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Methodology <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Future Recommendations <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="definitions.html">Definitions <span class="sr-only"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="mx-5 my-3">
+    <div class="row">
+        <div class="col-auto">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png"
+                 alt="LinkedIn icon" style="width: 200px; height: 200px;" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <h4>LinkedIn
+            </h4>
+            <h5><i>Individual Professional Presentation Platform</i></h5>
+            <p>Users: 310.6 million<br>Annual Revenue: $13.8 billion</p>
+        </div>
+        <div class="col float-right text-right">
+            <h4>Reddit
+            </h4>
+            <h5><i>Networks of Niche Communities</i></h5>
+            <p>Users: 430M (2020)<br>Annual Revenue: $468M</p>
+        </div>
+        <div class="col-auto float-right">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Reddit_icon.svg/1200px-Reddit_icon.svg.png"
+                 alt="Reddit icon" style="width: 200px; height: 200px;" class="img-thumbnail">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Strengths</h5>
+                    <ol>
+                        <li>Work-focused profiles for professionals</li>
+                        <li>Ease of applications for jobs</li>
+                        <li>Authentic personas</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card float-right" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Warnings</h5>
+                    <ol>
+                        <li>No financial support for creators</li>
+                        <li>Posts are mostly achievement based or for a “professional” persona</li>
+                        <li>Strongly advertiser based
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 float-right">
+            <div class="card" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Strengths</h5>
+                    <ol>
+                        <li>Easily Searchable</li>
+                        <li>Community-Led Moderation</li>
+                        <li>Post Rating System</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 float-right">
+            <div class="card float-right" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Warnings</h5>
+                    <ol>
+                        <li>"Every Community" Includes Extremism</li>
+                        <li>Inexperienced Moderators with Power Trips</li>
+                        <li>Depersonalization + Anonymity</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h4>Design Comparison</h4>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <p>LinkedIn features an infinitely scrollable feed of image, text and video posts by people you are
+                connected to and posts they have liked. This feed can be sorted by default "Top" or a sorted "Recent"
+                categories. You can find connections within your school or work organizations. All profiles will be
+                either 1st degree (your connections), 2nd degree (connected to your connections) or 3rd+ degree
+                connections (external).<br>
+                LinkedIn also features a paginated feed of jobs, including jobs recommended by your profile information
+            </p>
+        </div>
+        <div class="col">
+            <p>Reddit is a topical discussion-based social media that follows the old-school forum layout. Users post to
+                community boards called "subreddits," which follow a specific topic. This includes news, memes, video
+                games, or really anything. Community interaction is the primary focus. Although you might not find
+                long-term friends, Reddit emphasizes not only posting links, text posts, images, and videos, but also
+                commenting and continued
+                discussions.</p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div id="designCardLeft" class="carousel carousel-dark slide" data-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#designCardLeft" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#designCardLeft" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#designCardLeft" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <a href="https://www.yewbiz.com/marketing/linkedin-profile-tips/"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="https://www.yewbiz.com/media/1480/yewbiz-default-linkedin-photos.jpg?width=800"
+                                             alt="LinkedIn default profile image">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Create a Professional Profile</h5>
+                                        <p class="card-text">LinkedIn encourages you to create a detailed profile of
+                                            yourself to present to colleagues and employers. This includes a profile
+                                            picture, education, work experience, and skills.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5 d-flex align-items-center">
+                                    <a href="https://www.jobscan.co/blog/linkedin-easy-apply-employers/"
+                                       target="_blank">
+                                        <img class="align-center card-img"
+                                             src="https://static.jobscan.co/blog/uploads/Easy-Apply_1.png"
+                                             alt="LinkedIn job example with easy apply"></a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Apply To Jobs</h5>
+                                        <p class="card-text">You can search for open jobs by title, skill,
+                                            company, or location. Once you find a job, you can view the description and
+                                            apply or save the job to apply later.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5 text-center">
+                                    <a href="https://news.linkedin.com/2019/January/what-s-in-your-linkedin-feed--people-you-know--talking-about-thi"
+                                       target="_blank">
+                                        <img class="card-img align-center card-height"
+                                             style="object-fit: cover; object-position: 44% 0; width: 115px"
+                                             src="https://news.linkedin.com/content/dam/me/news/en-us/news/LinkedIn-Feed-homepage.png"
+                                             alt="LinkedIn home feed"></a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Infinitely Scrolling Feed</h5>
+                                        <p class="card-text">Your feed is infinite, meaning that there will
+                                            never be a second page. The feed combines the activity of people
+                                            you follow with content recommended by an algorithm.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#designCardLeft" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#designCardLeft" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col">
+            <div id="designCardRight" class="carousel carousel-dark slide" data-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#designCardRight" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#designCardRight" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#designCardRight" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://reddit.com/subreddits/"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/reddit_1.png"
+                                             alt="Sub-Reddit communities list">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Follow Communities</h5>
+                                        <p class="card-text">Reddit is built on a feed of countless communities called
+                                            SubReddits, denoted by r/[topic]. The <a
+                                                    href="https://www.reddit.com/subreddits/">SubReddits</a> page lists
+                                            them all, and allows users to search by topic or keyword.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-sm-1"></div>
+                                <div class="col-auto">
+                                    <a href="https://reddit.com"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/reddit_2.png"
+                                             alt="Reddit Upvote">
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="https://reddit.com"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/reddit_3.png"
+                                             alt="Reddit Downvote">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Upvote, Downvote</h5>
+                                        <p class="card-text">Rate posts and comments by giving them a +1 vote (upvote)
+                                            or -1 vote (downvote). This places a rating on the post, so more valuable
+                                            content should have higher votes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://reddit.zendesk.com/hc/en-us/articles/204511829-What-is-karma-"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/reddit_4.png"
+                                             alt="President Obama's Reddit Karma">
+                                    </a>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Karma System</h5>
+                                        <p class="card-text">Karma is a reflection of a user's contributions. A user's
+                                            Karma is displayed on their profile, and is earned when others upvote a
+                                            user's posts or comments. Some communities require high Karma to post.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#designCardRight" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#designCardRight" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h4>Analysis</h4>
+            <p>Analysis and box plots go here!</p>
+            <div class="accordion" id="boxplots">
+                <div class="accordion-item">
+                    <div id="cSummary" class="boxplot-summary h5"></div>
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Community
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="cChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="boxplot-summary h5" id="sSummary"></div>
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Self
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="sChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div id="dSummary" class="boxplot-summary h5"></div>
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Discovery
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="dChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div id="aSummary" class="boxplot-summary h5"></div>
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Agency
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="aChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nothingBurger"></div>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    let media = "LinkedIn"
+    // For current media
+    // For each human tag
+    let humanTags = ["C", "S", "D", "A"]
+    const boxplots = d3.select("#boxplots")
+    humanTags.forEach(function(human) {
+        fetch('/questions?media='+media+'&human='+human, {
+            method:'GET',
+            headers:{
+                "Content-Type": "application/json"
+            }
+        })
+            .then( function(response) {
+                return response.json()
+            })
+            .then( function(jsonFirst) {
+                media = "Reddit"
+                fetch('/questions?media='+media+'&human='+human, {
+                    method:'GET',
+                    headers:{
+                        "Content-Type": "application/json"
+                    }
+                })
+                    .then( function(response) {
+                        return response.json()
+                    })
+                    .then( function(jsonSecond) {
+                        generateBoxplotsForComparison(jsonFirst, jsonSecond, human.toLocaleLowerCase());
+                    })
+            })
+    })
+</script>
+</html>
