@@ -685,11 +685,11 @@ function humanTagToWord(tag) {
         case "D":
             return "Discovery: Creativity and Satisfaction"
         case "C":
-            return "Culture: Community and Connection"
+            return "Community: Culture and Connection"
         case "S":
             return "Self: Identity and Ego"
         case "A":
-            return "Control: Agency and Comfort"
+            return "Agency: Control and Comfort"
     }
 }
 function mediaToColor(media){
