@@ -1,10 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap JS   -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- D3 and Custom Code -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/boxplots.js"></script>
+    <link rel="stylesheet" href="css/box-compass.css">
+    <title>SocialSight</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-main">
+    <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="social-media.html">Social Media <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active" href="methodology.html">Methodology <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="future.html">Future Recommendations <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="definitions.html">Definitions <span class="sr-only"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<div class="container">
+    <h3>Future Work</h3>
+    <p>This project was aimed to compare and contrast social media, which is a new field of research that will be
+        beneficial to consumers of social media. This effort is an early exploration of tools that can provide website
+        for
+        an informed online social media experience. In future explorations of this subject, there are many action items
+        that should be done more systematically for a better final product. We have five key suggestions:</p>
+    <div class="card">
+        <div class="card-header text-center">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#survey">1. Framework and Survey Design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#data">2. Data Visualization</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#analysis">3. Social Media Analysis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#website">4. Website</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#outreach">5. Outreach</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body tab-content">
+            <div class="tab-pane active" id="survey">
+                <p class="card-text">
+                    <b></b>
+                </p>
+                <p class="card-text">
+                    Further exploration of our framework is necessary. To ensure users agree on the
+                    qualitative features and feelings of social media, the survey design should be heavily scrutinized
+                    and multiple rounds of survey distribution and re-analysis must be conducted to ensure validity of
+                    the model. Experts in the field of data analysis and psychology should be consulted to make sure
+                    best practices are followed in future survey designs.
+                    <br>
+                    A round of pre-testing on the questions should be conducted in the form of a cognitive interview to
+                    validate that the language is consistently understood by all prospective participants.
+                </p>
+                <p class="card-text">
+                    Factor analysis uses statistical analysis to determine the underlying factors that affect related
+                    variables. Our framework assumes that all the questions linked to each category actually have a
+                    statistically underlying link, but without a factor analysis, there is no proof that that is the
+                    case. A future study should be conducted with general questions decoupled from our framework to
+                    determine the best framework to compare media with each other.
+                </p>
+                <p class="card-text">
+                    Instead of measuring the platforms directly in the survey, like our current approach, an approach
+                    similar to the Quantic Foundry Gamer Motivation survey can be employed. First, researchers would run
+                    a different survey to determine user motivations for social media, then these results would be put
+                    under factor analysis.
+                </p>
+            </div>
+            <div class="tab-pane" id="data">
+                <p class="card-text">Our final website employs basic visualizations using boxplots, barcharts, and a
+                    scatterplot. In future iterations of this website, clearer visualization options are possible. </p>
+                <p class="card-text">
+                    We suggest a radar chart instead of a scatter plot to summarize the framework scales. The
+                    scatterplot does allow for quick identification of groups of similar social media, but our version
+                    necessitates contrasting two scales with each other on the same axis, implying they are of the same
+                    continuity, which may not be the case.
+                </p>
+                <p class="card-text">
+                    We suggest diverging Likert scales over boxplots for comparing social media on specific questions.
+                    Both show the distribution of data in a way that is independent of the number of responses, but the
+                    boxplot is harder to read, especially with Likert data. On continuous data, like decimal numbers,
+                    boxplots can vary greatly and summarize diverse data well, but with discrete Likert data, boxplots
+                    are capable of only a set number of configurations. Our boxplots struggle with median lines
+                    intersecting with quartile boxes, which are hard to instantly understand.
+                </p>
+                <p class="card-text">
+                    At the end of the survey, users could optionally fill out demographic information like race,
+                    ethnicity, gender, etc. This quickly became out of scope. In future versions of this website, we
+                    encourage promoting diverse opinions on social media platforms. Some platforms may struggle with
+                    prejudice more than others, and concerned users should be aware of this before being encouraged to
+                    join.
+                </p>
+            </div>
+            <div class="tab-pane" id="analysis">
+                <p class=" card-text">Social media is constantly changing and expanding. Within the scope of our
+                    project, we self-selected twelve social media to analyze in-depth. However even during our period of
+                    research, the social media we analyzed had major design changes. For example, TikTok recently
+                    released a feature called TikTok Now, mimicking the BeReal application. These features are
+                    significant and affect the culture and structure of the platforms. Any such changes affect the
+                    relevance of the information we present on our website. However, we did not have the time to stay up
+                    to date on all design changes. We suggest that future researchers re-analyze our original 12 social
+                    media, as well as track the changes to sites over time.
+                </p>
+                <p class="card-text">
+                    With a larger window of time, we believe that more diverse social media should be analyzed. In
+                    particular, we emphasize Mastodon, an open-source social media with a similar format to Twitter, as
+                    well as international social media including Chinese apps Sina Weibo and WeChat. We also wanted to
+                    examine right-wing social media such as Truth Social, Gab and Parlor, but decided that these had too
+                    small of a user base. Two other social media we considered were Pinterest and iFunny, both of which
+                    are image-focused but de-emphasize other social aspects. We also considered the Steam Community tab,
+                    messenger apps including Discord and WhatsApp, and movie review app Letterboxd, but none of these
+                    were considered mainstream or social enough.
+                </p>
+                <p class="card-text">
+                    We suggest an analysis of social media sub-communities. While some social media like BeReal do not
+                    have public communities, forum-based social media like Reddit and 4chan depend on these. The two
+                    most popular 4chan boards are /b (random) and /pol (politics), both of which allow open and
+                    unmoderated discussion. As each community will encourage different behavior, we believe that a
+                    deep-dive on any particular social media should also include the culture of popular communities,
+                    particularly the difference in user culture between hostile communities.This information can help
+                    concerned or vulnerable users keep themselves safe.
+                </p>
+            </div>
+            <div class="tab-pane" id="website">
+                <p class="card-text">Although the code powering the site is public, the survey data running the social
+                    media rankings is not. The scope of this project only allowed for a single survey run, but these
+                    platforms are constantly changing in culture, features, and more. </p>
+                <p class="card-text"> This survey should be constantly available so the website can be constantly
+                    updated as platforms change. An approach similar to IMdB or Common Sense Media where users can
+                    submit public ratings to “review” each platform. Since platforms and the media on them are so
+                    diverse, a simple 5-star system will not suffice, and would be redundant as app stores commonly
+                    include that as a feature. Instead, ratings would need to be tied to different specific scales, or
+                    obfuscated by a survey. </p>
+                <p class="card-text">
+                    This website hopes to provoke thought and conversation on social media design, so, to further
+                    facilitate that, public discussion should be embedded into the website. A public comment section on
+                    each platform page would be the simplest form of communication to implement, but struggles with
+                    searchability as the number of comments grows. A linked forum system may be enough structure to
+                    enable conversation, but is not a modern design set, so it may not be accessible to younger users.
+                    Featured conversations and case studies should be featured on each page to encourage interested
+                    parties to research further.
+                </p>
+            </div>
+            <div class="tab-pane" id="outreach">
+                <p class="card-text">Our final recommendation is to better promote the website and research. We want our
+                    website to be an outreach tool, and we feel that our outreach was less than what we originally
+                    envisioned. In particular, we suggest utilizing popular social media to promote the website and
+                    continued research.</p>
+                <p class="card-text"> Future work should utilize detailed videos posted to YouTube that demonstrate the
+                    website, or use the website to provide overviews of each social media. Smaller clips demonstrating a
+                    specific feature or fact, whether these are snippets from longer videos or filmed separately, should
+                    be posted to TikTok, Instagram and YouTube as well. Screenshots of the website should also be
+                    promoted where possible, including forums or tags related to social media and design. If funds
+                    allow, advertising findings about social media on each platform may serve as a good tool to
+                    reach users of social media.
+                </p>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="js/box-compass.js"></script>
+<script src="js/boxplots.js"></script>
 
 </body>
 </html>
