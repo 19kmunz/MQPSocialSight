@@ -3,12 +3,12 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
     <!-- Custom CSS-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link href="css/custom.css" rel="stylesheet">
     <!-- Bootstrap JS   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- D3 and Custom Code -->
@@ -19,8 +19,8 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-main">
     <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -46,8 +46,8 @@
 <div class="mx-5 my-3">
     <div class="row">
         <div class="col-auto">
-            <img src="https://play-lh.googleusercontent.com/OS-MhSWOPtlUZLt0_UP5TI4juSf0XhyHxGfJa6pA-UIYkZ1BB6QHTZwaMEzZDPqYsmk=w240-h480"
-                 alt="TikTok icon" style="width: 200px; height: 200px;" class="img-thumbnail">
+            <img alt="TikTok icon"
+                 class="img-thumbnail" src="https://play-lh.googleusercontent.com/OS-MhSWOPtlUZLt0_UP5TI4juSf0XhyHxGfJa6pA-UIYkZ1BB6QHTZwaMEzZDPqYsmk=w240-h480" style="width: 200px; height: 200px;">
         </div>
         <div class="col">
             <div class="row">
@@ -56,14 +56,14 @@
                 </div>
                 <div class="col">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="compareButton"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                id="compareButton" type="button">
                             Compare
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="compareButton">
-                            <li><a class="dropdown-item" href="#">Social media 1</a></li>
-                            <li><a class="dropdown-item" href="#">Social media 2</a></li>
-                            <li><a class="dropdown-item" href="#">Social media 3</a></li>
+                        <ul aria-labelledby="compareButton" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tiktok-youtube.html">YouTube</a></li>
+                            <li><a class="dropdown-item" href="tiktok-instagram.html">Instagram</a></li>
+                            <li><a class="dropdown-item" href="snapchat-tiktok.html">Snapchat</a></li>
                         </ul>
                     </div>
                 </div>
@@ -105,18 +105,23 @@
     </div>
     <div class="row">
         <div class="col">
-            <p>TikTok is a video application that features videos of a maximum of 3 minutes, which you can watch or post. These videos vary vastly in subject, and a recommendation algorithm will attempt to show you videos you are interested in. If you view a video multiple times or like it, you are more likely to be recommended videos like it. You can follow creators and see them in your "Following" feed.<br>TikTok also features a live video functionality. You can go live or watch other creators, and buy TikTok coins to send to your favorites.
+            <p>TikTok is a video application that features videos of a maximum of 3 minutes, which you can watch or
+                post. These videos vary vastly in subject, and a recommendation algorithm will attempt to show you
+                videos you are interested in. If you view a video multiple times or like it, you are more likely to be
+                recommended videos like it. You can follow creators and see them in your "Following" feed.<br>TikTok
+                also features a live video functionality. You can go live or watch other creators, and buy TikTok coins
+                to send to your favorites.
             </p>
         </div>
         <div class="col-md-6">
-            <div id="designCard" class="carousel carousel-dark slide" data-ride="carousel">
+            <div class="carousel carousel-dark slide" data-ride="carousel" id="designCard">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#designCard" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+                    <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                            data-bs-target="#designCard" type="button"></button>
+                    <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#designCard"
+                            type="button"></button>
+                    <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#designCard"
+                            type="button"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -150,19 +155,19 @@
                                 <div class="col-auto pe-0">
                                     <a href="https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically&hl=en_US&gl=US"
                                        target="_blank">
-                                        <img class="align-center card-height card-img"
-                                             style="object-fit: cover; object-position: 0 0"
+                                        <img alt="Screenshot from a recipe TikTok"
+                                             class="align-center card-height card-img"
                                              src="images/tiktok_2.png"
-                                             alt="Screenshot from a recipe TikTok">
+                                             style="object-fit: cover; object-position: 0 0">
                                     </a>
                                 </div>
                                 <div class="col-auto pe-0">
                                     <a href="https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically&hl=en_US&gl=US"
                                        target="_blank">
-                                        <img class="align-center card-height card-img"
-                                             style="object-fit: cover; object-position: 0 0"
+                                        <img alt="Screenshot from a fashion TikTok"
+                                             class="align-center card-height card-img"
                                              src="images/tiktok_3.png"
-                                             alt="Screenshot from a fashion TikTok">
+                                             style="object-fit: cover; object-position: 0 0">
                                     </a>
                                 </div>
 
@@ -184,16 +189,20 @@
                                 <div class="col-auto">
                                     <a href="https://www.alphr.com/edit-video-tik-tok/"
                                        target="_blank">
-                                        <img class="align-center card-height card-img"
-                                             style="object-fit: cover; object-position: 0 0"
+                                        <img alt="TikTok recording screen"
+                                             class="align-center card-height card-img"
                                              src="https://i0.wp.com/www.techjunkie.com/wp-content/uploads/2019/02/Screenshot_2019-04-29-15-27-59.png?ssl=1"
-                                             alt="TikTok recording screen">
+                                             style="object-fit: cover; object-position: 0 0">
                                     </a>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="card-body">
                                         <h5 class="card-title">Record And Post</h5>
-                                        <p class="card-text">TikTok makes it easy to record your own videos with a handy set of tools, including timers and filters. You can use pre-existing sounds from a large library, or even <a href="https://www.nytimes.com/2022/01/11/arts/music/sadie-jean-wyd-now-lil-yachty.html">duet</a> someone else's video and post yours side-by-side. </p>
+                                        <p class="card-text">TikTok makes it easy to record your own videos with a handy
+                                            set of tools, including timers and filters. You can use pre-existing sounds
+                                            from a large library, or even <a
+                                                    href="https://www.nytimes.com/2022/01/11/arts/music/sadie-jean-wyd-now-lil-yachty.html">duet</a>
+                                            someone else's video and post yours side-by-side. </p>
                                     </div>
                                 </div>
                             </div>
@@ -201,12 +210,12 @@
                     </div>
 
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#designCard" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#designCard" type="button">
+                    <span aria-hidden="true" class="carousel-control-prev-icon"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#designCard" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#designCard" type="button">
+                    <span aria-hidden="true" class="carousel-control-next-icon"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
@@ -220,7 +229,7 @@
             <div class="accordion" id="barcharts">
                 <div class="accordion-item">
                     <div class="barchart-summary" id="cSummary">
-                        <div id="C_Summary" class="row barchart-row">
+                        <div class="row barchart-row" id="C_Summary">
                             <p class="col">!</p>
                         </div>
                     </div>
@@ -262,7 +271,7 @@
                 </div>
                 <div class="accordion-item">
                     <div class="barchart-summary" id="sSummary">
-                        <div id="S_Summary" class="row barchart-row">
+                        <div class="row barchart-row" id="S_Summary">
                             <p class="col">!</p>
                         </div>
                     </div>
@@ -298,7 +307,7 @@
                 </div>
                 <div class="accordion-item">
                     <div class="barchart-summary" id="dSummary">
-                        <div id="D_Summary" class="row barchart-row">
+                        <div class="row barchart-row" id="D_Summary">
                             <p class="col">!</p>
                         </div>
                     </div>
@@ -343,7 +352,7 @@
                 </div>
                 <div class="accordion-item">
                     <div class="barchart-summary" id="aSummary">
-                        <div id="A_Summary" class="row barchart-row">
+                        <div class="row barchart-row" id="A_Summary">
                             <p class="col">!</p>
                         </div>
                     </div>
@@ -389,18 +398,18 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<script crossorigin="anonymous"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script crossorigin="anonymous"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 </body>
 <script>
-    const media = "Tik Tok"
+    const media = "TikTok"
     // For current media
     // For each human tag
     let humanTags = ["C", "S", "D", "A"]

@@ -1,0 +1,475 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Bootstrap JS   -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- D3 and Custom Code -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/comparison-boxplots.js"></script>
+    <title>SocialSight</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-main">
+    <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active" href="social-media.html">Social Media <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Methodology <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Future Recommendations <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="definitions.html">Definitions <span class="sr-only"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="mx-5 my-3">
+    <div class="row">
+        <div class="col-auto">
+            <img src="https://play-lh.googleusercontent.com/OS-MhSWOPtlUZLt0_UP5TI4juSf0XhyHxGfJa6pA-UIYkZ1BB6QHTZwaMEzZDPqYsmk=w240-h480"
+                 alt="TikTok icon" style="width: 200px; height: 200px;" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <h4>TikTok
+            </h4>
+            <h5><i>Short Recommended Videos</i></h5>
+            <p>Users: 1.2B<br>Annual Revenue: $4.6B</p>
+        </div>
+        <div class="col float-right text-right">
+            <h4>Instagram
+            </h4>
+            <h5><i>Photos From Friends And Sponsors</i></h5>
+            <p>Users: 2B<br>Annual Revenue: $26.46B</p>
+        </div>
+        <div class="col-auto float-right">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/264px-Instagram_logo_2016.svg.png?20210403190622"
+                 alt="Instagram icon" style="width: 200px; height: 200px;" class="img-thumbnail">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Strengths</h5>
+                    <ol>
+                        <li>Content For Every Interest</li>
+                        <li>View A Lot In Little Time</li>
+                        <li>Recommended "For You" Feed</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card float-right" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Warnings</h5>
+                    <ol>
+                        <li>Addicting Scroll Format</li>
+                        <li>Unsupervised Algorithm Leads To Harmful Content</li>
+                        <li>Little Searchability Or Revisiting</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 float-right">
+            <div class="card" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Strengths</h5>
+                    <ol>
+                        <li>Post Photos With Filters</li>
+                        <li>Ease of Use</li>
+                        <li>Frequent New Features</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 float-right">
+            <div class="card float-right" style="width: min(18rem, 100%); height: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Key Warnings</h5>
+                    <ol>
+                        <li>Appearance and Image-Based Perception</li>
+                        <li>Features "Borrowed" From Others</li>
+                        <li>Advertisement-Heavy</li>
+                    </ol>
+                    <h5 class="card-title">Relevant Sources</h5>
+                    <a href="https://www.91mobiles.com/hub/7-instagram-features-copied-from-other-apps/">Copied Features</a>
+                    <br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8834897/">Body Image Issues</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h4>Design Comparison</h4>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <p>TikTok is a video application that features videos of a maximum of 3 minutes, which you can watch or
+                post. These videos vary vastly in subject, and a recommendation algorithm will attempt to show you
+                videos you are interested in. If you view a video multiple times or like it, you are more likely to be
+                recommended videos like it. You can follow creators and see them in your "Following" feed.<br>TikTok
+                also features a live video functionality. You can go live or watch other creators, and buy TikTok coins
+                to send to your favorites.
+            </p>
+        </div>
+        <div class="col">
+            <p>Instagram began as a photo-sharing app, and has become a frankenstein of endless features: Post, like, comment,
+                message, explore, shop, and more, it's all possible! You can still post photos (one at a time or multiple) as
+                well as videos with captions to build a profile. Follow users and view their posts and stories in a home page,
+                check out the Explore page to search and find new content to watch and follow.</p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div id="designCardLeft" class="carousel carousel-dark slide" data-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#designCardLeft" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#designCardLeft" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#designCardLeft" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://apps.apple.com/us/app/tiktok/id835599320?platform=iphone"
+                                       target="_blank">
+                                        <video alt="TikTok infinite scroll" autoplay
+                                               class="card-img align-center card-height" loop
+                                               muted
+                                               src="images/tiktok_1.mp4"
+                                               type="video/mp4"></video>
+                                    </a>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Infinitely Scrolling Feed</h5>
+                                        <p class="card-text">TikTok's home feed, called the "For You" page, utilizes a
+                                            recommendation algorithm of videos. No need to follow topics or users, the
+                                            algorithm will suggest other videos based on the ones you view and like.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto pe-0">
+                                    <a href="https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically&hl=en_US&gl=US"
+                                       target="_blank">
+                                        <img alt="Screenshot from a recipe TikTok"
+                                             class="align-center card-height card-img"
+                                             src="images/tiktok_2.png"
+                                             style="object-fit: cover; object-position: 0 0">
+                                    </a>
+                                </div>
+                                <div class="col-auto pe-0">
+                                    <a href="https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically&hl=en_US&gl=US"
+                                       target="_blank">
+                                        <img alt="Screenshot from a fashion TikTok"
+                                             class="align-center card-height card-img"
+                                             src="images/tiktok_3.png"
+                                             style="object-fit: cover; object-position: 0 0">
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Short Video Content</h5>
+                                        <p class="card-text">TikTok videos are a maximum of three minutes, with most
+                                            running less than one minute. This makes it easy to watch videos like DIYs,
+                                            recipes or makeup in a short period of time.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://www.alphr.com/edit-video-tik-tok/"
+                                       target="_blank">
+                                        <img alt="TikTok recording screen"
+                                             class="align-center card-height card-img"
+                                             src="https://i0.wp.com/www.techjunkie.com/wp-content/uploads/2019/02/Screenshot_2019-04-29-15-27-59.png?ssl=1"
+                                             style="object-fit: cover; object-position: 0 0">
+                                    </a>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Record And Post</h5>
+                                        <p class="card-text">TikTok makes it easy to record your own videos with a handy
+                                            set of tools, including timers and filters. You can use pre-existing sounds
+                                            from a large library, or even <a
+                                                    href="https://www.nytimes.com/2022/01/11/arts/music/sadie-jean-wyd-now-lil-yachty.html">duet</a>
+                                            someone else's video and post yours side-by-side. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#designCardLeft" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#designCardLeft" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col">
+            <div id="designCardRight" class="carousel carousel-dark slide" data-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#designCardRight" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#designCardRight" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#designCardRight" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto pe-1">
+                                    <a href="https://apps.apple.com/us/app/instagram/id389801252"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/instagram_1.png"
+                                             alt="Instagram home feed">
+                                    </a>
+                                </div>
+                                <div class="col-auto pe-1">
+                                    <a href="https://apps.apple.com/us/app/instagram/id389801252"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/instagram_2.png"
+                                             alt="Instagram explore feed">
+                                    </a>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Infinitely Scrolling Feed</h5>
+                                        <p class="card-text">Your feed is infinite, meaning that there will never be a second page. The Home feed shows you posts by people you follow with ads, and the Explore feed shows content recommended by an algorithm.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://apps.apple.com/us/app/instagram/id389801252"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/instagram_3.png"
+                                             alt="Instagram profile">
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="https://apps.apple.com/us/app/instagram/id389801252"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/instagram_4.png"
+                                             alt="Video post">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Photo/Video Based Posts</h5>
+                                        <p class="card-text">Post and view both photos and videos! These posts can disappear within 24 hours (as Stories), or stay on your profile, like a public photo album!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card card-height">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <a href="https://apps.apple.com/us/app/instagram/id389801252"
+                                       target="_blank">
+                                        <img class="align-center card-height card-img"
+                                             style="object-fit: cover; object-position: 0 0"
+                                             src="images/instagram_5.png"
+                                             alt="Instagram Messenger">
+                                    </a>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Share and Message</h5>
+                                        <p class="card-text">With direct messages, you can share photos and videos with your friends, and communicate privately! You can also enter "vanish mode," where messages disappear after view.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#designCardRight" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#designCardRight" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h4>Analysis</h4>
+            <p>Analysis and box plots go here!</p>
+            <div class="accordion" id="boxplots">
+                <div class="accordion-item">
+                    <div id="cSummary" class="boxplot-summary h5"></div>
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Community
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="cChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="boxplot-summary h5" id="sSummary"></div>
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Self
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="sChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div id="dSummary" class="boxplot-summary h5"></div>
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Discovery
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="dChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div id="aSummary" class="boxplot-summary h5"></div>
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Agency
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div id="aChildren" class="boxplot-children"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nothingBurger"></div>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    let media = "TikTok"
+    // For current media
+    // For each human tag
+    let humanTags = ["C", "S", "D", "A"]
+    const boxplots = d3.select("#boxplots")
+    humanTags.forEach(function(human) {
+        fetch('/questions?media='+media+'&human='+human, {
+            method:'GET',
+            headers:{
+                "Content-Type": "application/json"
+            }
+        })
+            .then( function(response) {
+                return response.json()
+            })
+            .then( function(jsonFirst) {
+                media = "Instagram"
+                fetch('/questions?media='+media+'&human='+human, {
+                    method:'GET',
+                    headers:{
+                        "Content-Type": "application/json"
+                    }
+                })
+                    .then( function(response) {
+                        return response.json()
+                    })
+                    .then( function(jsonSecond) {
+                        generateBoxplotsForComparison(jsonFirst, jsonSecond, human.toLocaleLowerCase());
+                    })
+            })
+    })
+</script>
+</html>
