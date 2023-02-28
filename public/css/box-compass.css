@@ -26,23 +26,23 @@
 
 
     .grid-top-left {
-        border-right: black solid .05rem !important;
-        border-bottom: black solid .05rem !important;
+        border-right: black solid .08rem !important;
+        border-bottom: black solid .08rem !important;
     }
 
     .grid-top-right {
-        border-left: black solid .05rem !important;
-        border-bottom: black solid .05rem !important;
+        border-left: black solid .08rem !important;
+        border-bottom: black solid .08rem !important;
     }
 
     .grid-bottom-left {
-        border-right: black solid .05rem !important;
-        border-top: black solid .05rem !important;
+        border-right: black solid .08rem !important;
+        border-top: black solid .08rem !important;
     }
 
     .grid-bottom-right {
-        border-left: black solid .05rem !important;
-        border-top: black solid .05rem !important;
+        border-left: black solid .08rem !important;
+        border-top: black solid .08rem !important;
     }
 }
 
