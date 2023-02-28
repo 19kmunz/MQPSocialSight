@@ -34,6 +34,14 @@
         font-size: .7rem;
     }
 
+    li {
+        font-size: .7rem;
+    }
+
+    a.nav-link {
+        font-size: .8rem;
+    }
+
     text.title {
         font-size: 1rem !important;
     }
@@ -50,6 +58,7 @@
     .accordion-body {
         padding: 2% !important;
         padding-bottom: .5rem !important;
+        font-size: .7rem;
     }
 
     .boxplot-summary {
@@ -96,14 +105,26 @@
         padding: 5px !important;
     }
 
+    .nav {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
 
-    /*text.title  {*/
-    /*    font-size: .8rem;*/
-    /*}*/
+    .nav li {
+        display: block !important;
+        width: 100%;
+        margin: 0px;
+    }
 
-    /*text.total  {*/
-    /*    font-size: .6rem;*/
-    /*}*/
+    .card .nav-link.active {
+        border-bottom: 1px solid #dee2e6  !important;
+        border-radius: .25rem !important;
+        margin: 0px;
+    }
+
+    .btn-group {
+        margin-bottom: 2%;
+    }
 
 }
 
@@ -217,6 +238,19 @@
         color: #eee;
         background: #121212;
     }
+}
+
+@media only screen and (max-width: 900px) and (prefers-color-scheme: dark) {
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #eee  !important;
+        border-radius: .25rem !important;
+        margin: 0px;
+    }
+
+    .nav-tabs .nav-link {
+        border-radius: 0;
+    }
+
 }
 
 .boxplot-summary {
