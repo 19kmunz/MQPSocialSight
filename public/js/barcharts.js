@@ -247,7 +247,6 @@ function displayBars(sumstat, barcharts, fill) {
         .append("g")
         .classed("bars", true)
         .attr("transform", "translate(0," + titleMargin + ")")
-        .data(sumstat)
         .each(function (p, i) {
             d3.select(this)
                 .selectAll("mybar")
