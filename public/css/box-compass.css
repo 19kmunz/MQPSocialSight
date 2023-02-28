@@ -17,6 +17,11 @@
         width: 7.5rem !important;
     }
 
+    .pin {
+        margin-left: -5px !important;
+        margin-top: -15px !important;
+    }
+
     .icon-pin {
         border-radius: .4rem !important;
         width: 0.625rem !important;
