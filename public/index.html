@@ -3,27 +3,28 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
     <!-- Custom CSS-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link href="css/custom.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Bootstrap JS   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- D3 and Custom Code -->
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="js/boxplots.js"></script>
-    <link rel="stylesheet" href="css/box-compass.css">
+    <link href="css/box-compass.css" rel="stylesheet">
     <title>SocialSight</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-main">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">SocialSight</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -52,7 +53,7 @@
         <div class="d-flex justify-content-center align-items-center"><h5 class="my-0">Community</h5></div>
         <div class="d-flex justify-content-center">
             <div class="d-flex align-items-center flex-col justify-content-end"><h5 class="my-0">Agency</h5></div>
-            <div id="axes" class="justify-content-center">
+            <div class="justify-content-center" id="axes">
                 <div>
                     <div class="bg-accent1 grid-top-left d-flex align-items-center justify-content-center"><p>
                         Community-Agency</p></div>
@@ -71,8 +72,16 @@
         <div class="d-flex justify-content-center align-items-center"><h5 class="my-0">Self</h5></div>
         <br>
     </div>
+    <div id="diagram-explanation">
+        <p>
+            The above chart is a representation of our summary scales. We are interested in how social media affect
+            community and self-expression. We are also interested in how much discovery and agency users have access
+            too. We conducted a survey with questions linked to these ideas. This chart juxtaposes pairs of the scales
+            to show whether a social media is strong on community or self, as well as discovery or agency.
+        </p>
+    </div>
 </div>
-<div id="definitions" class="mx-5 my-3">
+<div class="mx-5 my-3" id="definitions">
     <div class="row">
         <div class="col">
             <h4>Analysis Overview</h4>
@@ -81,22 +90,23 @@
                 categories:</p>
             <div class="accordion" id="boxplots">
                 <div class="accordion-item">
-                    <div id="cSummary" class="boxplot-summary h5">
-                        <div id="C_Summary" class="row boxplot-row">
+                    <div class="boxplot-summary h5" id="cSummary">
+                        <div class="row boxplot-row" id="C_Summary">
                             <p class="col">This section seeks to understand social media's ability to support user
                                 culture, such as connecting with new friends and communicating with said friends.</p>
                         </div>
                     </div>
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button aria-controls="collapseOne" aria-expanded="true" class="accordion-button collapsed"
+                                data-bs-target="#collapseOne" data-bs-toggle="collapse" type="button">
                             Community Questions
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingOne" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseOne">
                         <div class="accordion-body">
-                            <div id="cChildren" class="boxplot-children">
+                            <div class="boxplot-children" id="cChildren">
                                 <div class="row boxplot-row" id="C1">
                                     <p class="col">This question aims to understand the frequency of positive
                                         environments on social media. In general, people do frequently see positive
@@ -136,21 +146,22 @@
                 </div>
                 <div class="accordion-item">
                     <div class="boxplot-summary h5" id="sSummary">
-                        <div id="S_Summary" class="row boxplot-row">
+                        <div class="row boxplot-row" id="S_Summary">
                             <p class="col">This section seeks to understand social media's ability to promote unique,
                                 individual identities. Click the dropdown to see specifics.</p>
                         </div>
                     </div>
                     <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button aria-controls="collapseTwo" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseTwo" data-bs-toggle="collapse" type="button">
                             Self Questions
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingTwo" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseTwo">
                         <div class="accordion-body">
-                            <div id="sChildren" class="boxplot-children">
+                            <div class="boxplot-children" id="sChildren">
                                 <div class="row boxplot-row" id="S1">
                                     <p class="col">This question was aimed to touch on the feeling that the internet
                                         "isn't real" and that other users may be bots or not. In general, people do
@@ -180,23 +191,24 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <div id="dSummary" class="boxplot-summary h5">
-                        <div id="D_Summary" class="row boxplot-row">
+                    <div class="boxplot-summary h5" id="dSummary">
+                        <div class="row boxplot-row" id="D_Summary">
                             <p class="col">This section seeks to understand how well social media promotes discovery of
                                 new content, and how valuable that new content is. Click the dropdown to see
                                 specifics.</p>
                         </div>
                     </div>
                     <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button aria-controls="collapseThree" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseThree" data-bs-toggle="collapse" type="button">
                             Discovery Questions
                         </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingThree" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseThree">
                         <div class="accordion-body">
-                            <div id="dChildren" class="boxplot-children">
+                            <div class="boxplot-children" id="dChildren">
                                 <div class="row boxplot-row" id="D1">
                                     <p class="col">Most people say that they see posts by small creators on social media
                                         occasionally, with many seeing this content frequently.</p>
@@ -234,23 +246,24 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <div id="aSummary" class="boxplot-summary h5">
-                        <div id="A_Summary" class="row boxplot-row">
+                    <div class="boxplot-summary h5" id="aSummary">
+                        <div class="row boxplot-row" id="A_Summary">
                             <p class="col">This section seeks to understand how much control social media users have in
                                 their content, including moderation and visibility of advertisements. Click the dropdown
                                 to see specifics.</p>
                         </div>
                     </div>
                     <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <button aria-controls="collapseFour" aria-expanded="false" class="accordion-button collapsed"
+                                data-bs-target="#collapseFour" data-bs-toggle="collapse" type="button">
                             Agency Questions
                         </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                         data-bs-parent="#accordionExample">
+                    <div aria-labelledby="headingFour" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionExample"
+                         id="collapseFour">
                         <div class="accordion-body">
-                            <div id="aChildren" class="boxplot-children">
+                            <div class="boxplot-children" id="aChildren">
                                 <div class="row boxplot-row" id="A1">
                                     <p class="col">Social media will always be tied to the content a user cultivates,
                                         whether that's from following creators or from trying to tune their
@@ -296,12 +309,12 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<script crossorigin="anonymous"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script crossorigin="anonymous"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 <script src="js/box-compass.js"></script>
 <script src="js/boxplots.js"></script>
 
