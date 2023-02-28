@@ -20,29 +20,31 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-main">
-    <a class="navbar-brand mx-3" href="index.html">SocialSight</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link active" href="index.html">Home <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="social-media.html">Social Media <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="methodology.html">Methodology <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="future.html">Future Recommendations <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="definitions.html">Definitions <span class="sr-only"></span></a>
-            </li>
-        </ul>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="index.html">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="social-media.html">Social Media <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="methodology.html">Methodology <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="future.html">Future Recommendations <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="definitions.html">Definitions <span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 <div class="mx-5 my-3" id="grid">
@@ -74,12 +76,15 @@
     <div class="row">
         <div class="col">
             <h4>Analysis Overview</h4>
-            <p>Our analysis of social media features was conducted via a survey of social media users. Each question was grouped into four categories, with the goal of assessing whether social media supports the following categories:</p>
+            <p>Our analysis of social media features was conducted via a survey of social media users. Each question was
+                grouped into four categories, with the goal of assessing whether social media supports the following
+                categories:</p>
             <div class="accordion" id="boxplots">
                 <div class="accordion-item">
                     <div id="cSummary" class="boxplot-summary h5">
                         <div id="C_Summary" class="row boxplot-row">
-                            <p class="col">This section seeks to understand social media's ability to support user culture, such as connecting with new friends and communicating with said friends.</p>
+                            <p class="col">This section seeks to understand social media's ability to support user
+                                culture, such as connecting with new friends and communicating with said friends.</p>
                         </div>
                     </div>
                     <h2 class="accordion-header" id="headingOne">
@@ -93,25 +98,37 @@
                         <div class="accordion-body">
                             <div id="cChildren" class="boxplot-children">
                                 <div class="row boxplot-row" id="C1">
-                                    <p class="col">This question aims to understand the frequency of positive environments on social media. In general, people do frequently see positive conversation on social media, more frequently than negative conversation.</p>
+                                    <p class="col">This question aims to understand the frequency of positive
+                                        environments on social media. In general, people do frequently see positive
+                                        conversation on social media, more frequently than negative conversation.</p>
                                 </div>
                                 <div class="row boxplot-row" id="C2">
-                                    <p class="col">This question aims to understand the frequency of negative environments on social media. In general, people do often see negative conversation on social media, less frequently than positive conversation.</p>
+                                    <p class="col">This question aims to understand the frequency of negative
+                                        environments on social media. In general, people do often see negative
+                                        conversation on social media, less frequently than positive conversation.</p>
                                 </div>
                                 <div class="row boxplot-row" id="C3">
-                                    <p class="col">Seeing different opinions is both good and bad, as it prevents echo chambers but may cause discomfort. In general people occasionally see opinions that differ from theirs.</p>
+                                    <p class="col">Seeing different opinions is both good and bad, as it prevents echo
+                                        chambers but may cause discomfort. In general people occasionally see opinions
+                                        that differ from theirs.</p>
                                 </div>
                                 <div class="row boxplot-row" id="C4">
-                                    <p class="col">Overall, social media was built on friendly connections, but, in recent years, sponsored and recommended content is making waves.</p>
+                                    <p class="col">Overall, social media was built on friendly connections, but, in
+                                        recent years, sponsored and recommended content is making waves.</p>
                                 </div>
                                 <div class="row boxplot-row" id="C5">
-                                    <p class="col">This question aims to understand whether user communities and their posts are prioritized over advertisements and sponsorships.</p>
+                                    <p class="col">This question aims to understand whether user communities and their
+                                        posts are prioritized over advertisements and sponsorships.</p>
                                 </div>
                                 <div class="row boxplot-row" id="C6">
-                                    <p class="col">In general, people say they occasionally see two-way discussion on social media. </p>
+                                    <p class="col">In general, people say they occasionally see two-way discussion on
+                                        social media. </p>
                                 </div>
                                 <div class="row boxplot-row" id="C7">
-                                    <p class="col">This question was aimed whether users are able to exand their community by making new personal connections. In general, social media users tend to slightly disagree, thus making new friends on social media tends to be somewhat difficult.</p>
+                                    <p class="col">This question was aimed whether users are able to exand their
+                                        community by making new personal connections. In general, social media users
+                                        tend to slightly disagree, thus making new friends on social media tends to be
+                                        somewhat difficult.</p>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +137,8 @@
                 <div class="accordion-item">
                     <div class="boxplot-summary h5" id="sSummary">
                         <div id="S_Summary" class="row boxplot-row">
-                            <p class="col">This section seeks to understand social media's ability to promote unique, individual identities. Click the dropdown to see specifics.</p>
+                            <p class="col">This section seeks to understand social media's ability to promote unique,
+                                individual identities. Click the dropdown to see specifics.</p>
                         </div>
                     </div>
                     <h2 class="accordion-header" id="headingTwo">
@@ -134,19 +152,28 @@
                         <div class="accordion-body">
                             <div id="sChildren" class="boxplot-children">
                                 <div class="row boxplot-row" id="S1">
-                                    <p class="col">This question was aimed to touch on the feeling that the internet "isn't real" and that other users may be bots or not. In general, people do agree that they are interacting with other individuals.</p>
+                                    <p class="col">This question was aimed to touch on the feeling that the internet
+                                        "isn't real" and that other users may be bots or not. In general, people do
+                                        agree that they are interacting with other individuals.</p>
                                 </div>
                                 <div class="row boxplot-row" id="S2">
-                                    <p class="col">This question aims at how identity-focused a social media is. In general, people agree that social media encourages identity.</p>
+                                    <p class="col">This question aims at how identity-focused a social media is. In
+                                        general, people agree that social media encourages identity.</p>
                                 </div>
                                 <div class="row boxplot-row" id="S3">
-                                    <p class="col">This question aims to identify whether people believe they are being themselves on social media. Most people agree, with many strongly agreeing that they are authentic.</p>
+                                    <p class="col">This question aims to identify whether people believe they are being
+                                        themselves on social media. Most people agree, with many strongly agreeing that
+                                        they are authentic.</p>
                                 </div>
                                 <div class="row boxplot-row" id="S4">
-                                    <p class="col">In general, people agree that social media allows profile customization. However, the more customization, the more the social media promotes self identity.</p>
+                                    <p class="col">In general, people agree that social media allows profile
+                                        customization. However, the more customization, the more the social media
+                                        promotes self identity.</p>
                                 </div>
                                 <div class="row boxplot-row" id="S5">
-                                    <p class="col">This question aims to emphasize how much time is spent on profile customization. There is high variance, but in general uses do not curate or view profiles.</p>
+                                    <p class="col">This question aims to emphasize how much time is spent on profile
+                                        customization. There is high variance, but in general uses do not curate or view
+                                        profiles.</p>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +182,9 @@
                 <div class="accordion-item">
                     <div id="dSummary" class="boxplot-summary h5">
                         <div id="D_Summary" class="row boxplot-row">
-                            <p class="col">This section seeks to understand how well social media promotes discovery of new content, and how valuable that new content is. Click the dropdown to see specifics.</p>
+                            <p class="col">This section seeks to understand how well social media promotes discovery of
+                                new content, and how valuable that new content is. Click the dropdown to see
+                                specifics.</p>
                         </div>
                     </div>
                     <h2 class="accordion-header" id="headingThree">
@@ -169,28 +198,36 @@
                         <div class="accordion-body">
                             <div id="dChildren" class="boxplot-children">
                                 <div class="row boxplot-row" id="D1">
-                                    <p class="col">Most people say that they see posts by small creators on social media occasionally, with many seeing this content frequently.</p>
+                                    <p class="col">Most people say that they see posts by small creators on social media
+                                        occasionally, with many seeing this content frequently.</p>
                                 </div>
                                 <div class="row boxplot-row" id="D2">
-                                    <p class="col">People overwhelmingly spend less than 10 minutes on social media, with higher time periods becoming significantly less frequent.</p>
+                                    <p class="col">People overwhelmingly spend less than 10 minutes on social media,
+                                        with higher time periods becoming significantly less frequent.</p>
                                 </div>
                                 <div class="row boxplot-row" id="D3">
-                                    <p class="col">In general, social media prioritizes video more than text or image content.</p>
+                                    <p class="col">In general, social media prioritizes video more than text or image
+                                        content.</p>
                                 </div>
                                 <div class="row boxplot-row" id="D4">
-                                    <p class="col">People agree that making their own content in social media is easy.</p>
+                                    <p class="col">People agree that making their own content in social media is
+                                        easy.</p>
                                 </div>
                                 <div class="row boxplot-row" id="D5">
-                                    <p class="col">Most people are entertained by social media! A majority of responses are between very frequent entertainment and occasional entertainment.</p>
+                                    <p class="col">Most people are entertained by social media! A majority of responses
+                                        are between very frequent entertainment and occasional entertainment.</p>
                                 </div>
                                 <div class="row boxplot-row" id="D6">
-                                    <p class="col">In general, users are occasionally educated by content on their social media platforms.</p>
+                                    <p class="col">In general, users are occasionally educated by content on their
+                                        social media platforms.</p>
                                 </div>
                                 <div class="row boxplot-row" id="D7">
-                                    <p class="col">Although you'd expect entertainment based platforms to rarely leave users unsatisfied, overall, users are occasionally unsatisfied.</p>
+                                    <p class="col">Although you'd expect entertainment based platforms to rarely leave
+                                        users unsatisfied, overall, users are occasionally unsatisfied.</p>
                                 </div>
                                 <div class="row boxplot-row" id="D8">
-                                    <p class="col">Misinformation is a problem for all platforms, but it is more well known on some than others.</p>
+                                    <p class="col">Misinformation is a problem for all platforms, but it is more well
+                                        known on some than others.</p>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +236,9 @@
                 <div class="accordion-item">
                     <div id="aSummary" class="boxplot-summary h5">
                         <div id="A_Summary" class="row boxplot-row">
-                            <p class="col">This section seeks to understand how much control social media users have in their content, including moderation and visibility of advertisements. Click the dropdown to see specifics.</p>
+                            <p class="col">This section seeks to understand how much control social media users have in
+                                their content, including moderation and visibility of advertisements. Click the dropdown
+                                to see specifics.</p>
                         </div>
                     </div>
                     <h2 class="accordion-header" id="headingFour">
@@ -213,22 +252,36 @@
                         <div class="accordion-body">
                             <div id="aChildren" class="boxplot-children">
                                 <div class="row boxplot-row" id="A1">
-                                    <p class="col">Social media will always be tied to the content a user cultivates, whether that's from following creators or from trying to tune their recommendation algorithm. This isn't always a process that the user will always have minute control of, but the user will play at least a minimal roll.</p>
+                                    <p class="col">Social media will always be tied to the content a user cultivates,
+                                        whether that's from following creators or from trying to tune their
+                                        recommendation algorithm. This isn't always a process that the user will always
+                                        have minute control of, but the user will play at least a minimal roll.</p>
                                 </div>
                                 <div class="row boxplot-row" id="A2">
                                     <p class="col">Most social media platforms use ads as a primary revenue source.</p>
                                 </div>
                                 <div class="row boxplot-row" id="A3">
-                                    <p class="col">Social media wants to entertain you, so, overall, all platforms will tend to show you things you are interested in.</p>
+                                    <p class="col">Social media wants to entertain you, so, overall, all platforms will
+                                        tend to show you things you are interested in.</p>
                                 </div>
                                 <div class="row boxplot-row" id="A4">
-                                    <p class="col">Sometimes the internet will show you content that feels like a waste of time or is actively painful or annoying to think about. In general, this will happen occasionally across all platforms, but some have more shock prone cultures than others.</p>
+                                    <p class="col">Sometimes the internet will show you content that feels like a waste
+                                        of time or is actively painful or annoying to think about. In general, this will
+                                        happen occasionally across all platforms, but some have more shock prone
+                                        cultures than others.</p>
                                 </div>
                                 <div class="row boxplot-row" id="A5">
-                                    <p class="col">Although many social media strive to encourage a safe environment for all, success varies widely. User culture tends to determine how safe a platform feels, but some recommendation algorithms can lead to dangerous rabbit holes with harmful rhetoric.</p>
+                                    <p class="col">Although many social media strive to encourage a safe environment for
+                                        all, success varies widely. User culture tends to determine how safe a platform
+                                        feels, but some recommendation algorithms can lead to dangerous rabbit holes
+                                        with harmful rhetoric.</p>
                                 </div>
                                 <div class="row boxplot-row" id="A6">
-                                    <p class="col">Users tend to revisit content on social media, as they might want to review content they found entertaining, but it varies greatly. This question hoped to illuminate the searchability of certain websites, as you cannot revisit content if you cannot find it, as well as the value of revisiting content on certain sites.</p>
+                                    <p class="col">Users tend to revisit content on social media, as they might want to
+                                        review content they found entertaining, but it varies greatly. This question
+                                        hoped to illuminate the searchability of certain websites, as you cannot revisit
+                                        content if you cannot find it, as well as the value of revisiting content on
+                                        certain sites.</p>
                                 </div>
                             </div>
                         </div>
