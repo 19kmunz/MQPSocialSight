@@ -1,3 +1,51 @@
+@media only screen and (max-width: 600px) {
+
+    #axes, #scale {
+        width: 15rem !important;
+        height: 15rem !important;
+    }
+
+    #axes {
+        width: 15rem !important;
+        height: 15rem !important;
+        margin-right: 1px;
+        margin-left: 1px;
+    }
+
+    #axes div div {
+        height: 7.5rem !important;
+        width: 7.5rem !important;
+    }
+
+    .icon-pin {
+        border-radius: .4rem !important;
+        width: 0.625rem !important;
+        height: 0.625rem !important;
+        background-color: white;
+    }
+
+
+    .grid-top-left {
+        border-right: black solid .05rem !important;
+        border-bottom: black solid .05rem !important;
+    }
+
+    .grid-top-right {
+        border-left: black solid .05rem !important;
+        border-bottom: black solid .05rem !important;
+    }
+
+    .grid-bottom-left {
+        border-right: black solid .05rem !important;
+        border-top: black solid .05rem !important;
+    }
+
+    .grid-bottom-right {
+        border-left: black solid .05rem !important;
+        border-top: black solid .05rem !important;
+    }
+}
+
 .btn .material-icons {
     font-size: 20px;
     vertical-align: bottom;
@@ -9,8 +57,8 @@
 }
 
 #axes, #scale {
-    min-width: 600px;
-    min-height: 600px;
+    width: 37.5rem;
+    height: 37.5rem;
     position: relative;
     border-right: 1px solid grey;
     border-bottom: 1px solid grey;
@@ -19,21 +67,17 @@
 }
 
 #axes {
-    width: 600px;
-    height: 600px;
+    width: 37.5rem;
+    height: 37.5rem;
     margin-right: 5px;
     margin-left: 5px;
     background-size: 5% 5%;
     background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
 }
 
-#axes .auth, #axes .lib {
-    height: 300px;
-}
-
 #axes div div {
-    height: 300px;
-    width: 300px;
+    height: 18.75rem;
+    width: 18.75rem;
     float: left;
 }
 
@@ -53,53 +97,33 @@
     background-color: white;
 }
 
+
+.grid-top-left {
+    border-right: black solid 2px;
+    border-bottom: black solid 2px;
+}
+
+.grid-top-right {
+    border-left: black solid 2px;
+    border-bottom: black solid 2px;
+}
+
+.grid-bottom-left {
+    border-right: black solid 2px;
+    border-top: black solid 2px;
+}
+
+.grid-bottom-right {
+    border-left: black solid 2px;
+    border-top: black solid 2px;
+}
+
 .pin a {
     color: #000000;
     text-decoration: none;
 }
 
-#scale {
-    background-size: 100% 5%;
-    background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
-}
-
-#scale, #scale > div {
-    height: 600px;
-    width: 90px;
-}
-
-#scale > div {
-    background: linear-gradient(0deg, rgba(0,0,255,0.5) 0%, rgba(0,255,0,0.5) 100%);
-}
-
-.bar {
-    position: absolute;
-    z-index: 200;
-    height: 4px;
-    width: 90px;
-    background: rgba(255, 116, 0, 1);
-    top: 50%;
-    margin-top: -2px;
-}
-
-.partyBar {
-    opacity: 0.5;
-    background: #000;
-}
-
 .tooltip-inner {
     max-width: 300px;
-}
-
-.card .list-group {
-    counter-reset: q-counter;
-}
-
-.card .list-group li p:before {
-    content: counter(q-counter);
-    counter-increment: q-counter;
-    font-weight: bold;
-    color: rgba(0,0,0,0.5);
-    margin-right: 5px;
 }
 
