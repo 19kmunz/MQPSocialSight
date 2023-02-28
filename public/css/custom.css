@@ -1,10 +1,133 @@
-/*TODO: Test dark mode*/
-/*@media (prefers-color-scheme: dark) {*/
-/*    body {*/
-/*        color: #eee;*/
-/*        background: #121212;*/
-/*    }*/
-/*}*/
+@media (prefers-color-scheme: dark) {
+
+    body {
+        color: #eee;
+        background: #121212;
+    }
+
+    .card {
+        border-color: #eee;
+    }
+
+    .bg-accent1 {
+        color: #eee;
+    }
+
+    a.btn.bg-accent1:hover {
+        color: #d0d0d0;
+    }
+
+    button.bg-accent1:hover {
+        color: #d0d0d0;
+    }
+
+    .card-header {
+        background: #121212;
+        border-bottom-color: #eee;
+    }
+
+    .card-header-tabs a {
+        background: #121212 !important;
+    }
+
+    .nav-tabs .nav-link {
+        border-bottom-color: #eee;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: #eee !important;
+        border-bottom-color: #121212 !important;
+        background: #121212 !important;
+    }
+
+    .boxplot-summary {
+        color: #eee;
+        background: #121212;
+    }
+
+    .barchart-summary {
+        color: #eee;
+        background: #121212;
+    }
+
+    .title {
+        color: #eee;
+        background: #121212;
+    }
+
+    .total {
+        fill: #eee;
+        background: #121212;
+    }
+
+    text {
+        color: #eee;
+    }
+
+    tspan {
+        fill: #eee;
+    }
+
+    .range {
+        stroke: #eee;
+    }
+
+    .median {
+        stroke: #eee;
+    }
+    circle {
+        fill: #eee;
+    }
+
+    .h5 {
+        color: #eee;
+    }
+
+    .card-body {
+        color: #eee;
+        background: #121212;
+    }
+
+    .card {
+        color: #eee;
+        background: #121212;
+    }
+
+    .accordion {
+        color: #eee;
+        background: #121212;
+    }
+
+    .accordion-button {
+        color: #eee;
+        background: #121212 !important;
+    }
+
+    .accordion-body {
+        color: #eee;
+        background: #121212;
+    }
+}
+
+.boxplot-summary {
+    margin-bottom: 0px;
+}
+
+.barchart-summary {
+    margin-bottom: 0px;
+}
+
+.carousel-indicators button {
+    background-color: #eee !important;
+}
+
+.carousel-control-prev-icon {
+    filter: none !important;
+}
+
+.carousel-control-next-icon {
+    filter: none !important;
+}
 
 .flex-col {
     flex-basis: 10%;
@@ -17,12 +140,23 @@ p {
 .bg-accent1 {
     background-color: rgba(22, 182, 179, 0.5);
 }
+
+a.btn.bg-accent1:hover {
+    background-color: rgba(13, 154, 151, 0.5);
+}
+
+button.bg-accent1:hover {
+    background-color: rgba(13, 154, 151, 0.5);
+}
+
 .bg-accent2 {
     background-color: rgba(186, 237, 69, 0.5);
 }
+
 .bg-accent3 {
     background-color: rgba(252, 139, 74, 0.5);
 }
+
 .bg-accent4 {
     background-color: rgba(228, 58, 114, 0.5);
 }
@@ -112,7 +246,7 @@ p {
 }
 
 .tumblr {
-    color: #34526f  !important;
+    color: #34526f !important;
 }
 
 .bg-twitch {
@@ -166,7 +300,8 @@ p {
 .card,
 .card::before,
 .card::after {
-    box-sizing: unset; !important;
+    box-sizing: unset;
+!important;
 }
 
 
@@ -181,28 +316,32 @@ p {
 .boxplot-summary {
     padding: 20px
 }
+
 .boxplot-children .boxplot-row {
-    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
     margin: auto;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
 .boxplot-children .boxplot-row:first-child {
     padding-top: 0;
 }
+
 .boxplot-children .boxplot-row:last-child {
     border-bottom: none;
 }
+
 .total {
     font-size: small;
     text-align: center;
     width: 200px;
 }
 
-.tick text{
+.tick text {
     font-size: 0.8em;
 }
 
-.label{
+.label {
     font-size: 0.5em;
 }
