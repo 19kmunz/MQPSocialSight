@@ -1,3 +1,112 @@
+@media only screen and (max-width: 900px) {
+
+    .mx-5 {
+        margin-bottom: .5rem !important;
+        margin-top: .5rem !important;
+    }
+
+    .my-3 {
+        margin-left: .5rem !important;
+        margin-right: .5rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h2.accordion-header * {
+        font-size: .7rem !important;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    h5 {
+        font-size: .8rem;
+    }
+
+    p {
+        font-size: .7rem;
+    }
+
+    text.title {
+        font-size: 1rem !important;
+    }
+
+    text.total {
+        font-size: .6rem !important;
+    }
+
+    .accordion-button {
+        padding: 2% !important;
+        padding-bottom: .5rem !important;
+    }
+
+    .accordion-body {
+        padding: 2% !important;
+        padding-bottom: .5rem !important;
+    }
+
+    .boxplot-summary {
+        padding: 5px !important;
+    }
+
+    .barchart-summary {
+        padding: 5px !important;
+    }
+
+    .boxplot-summary svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(80%);
+        transform-origin: 10%;
+    }
+
+    .barchart-summary svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(80%);
+        transform-origin: 15%;
+    }
+
+    .boxplot-children svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(80%);
+        transform-origin: -10%;
+    }
+
+    .barchart-children svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(80%);
+        transform-origin: -10%;
+    }
+
+    .boxplot-row {
+        padding: 5px !important;
+    }
+
+    .barchart-row {
+        padding: 5px !important;
+    }
+
+
+    /*text.title  {*/
+    /*    font-size: .8rem;*/
+    /*}*/
+
+    /*text.total  {*/
+    /*    font-size: .6rem;*/
+    /*}*/
+
+}
+
 @media (prefers-color-scheme: dark) {
 
     body {
@@ -75,6 +184,7 @@
     .median {
         stroke: #eee;
     }
+
     circle {
         fill: #eee;
     }
@@ -159,26 +269,6 @@ button.bg-accent1:hover {
 
 .bg-accent4 {
     background-color: rgba(228, 58, 114, 0.5);
-}
-
-.grid-top-left {
-    border-right: black solid 2px;
-    border-bottom: black solid 2px;
-}
-
-.grid-top-right {
-    border-left: black solid 2px;
-    border-bottom: black solid 2px;
-}
-
-.grid-bottom-left {
-    border-right: black solid 2px;
-    border-top: black solid 2px;
-}
-
-.grid-bottom-right {
-    border-left: black solid 2px;
-    border-top: black solid 2px;
 }
 
 .bg-main {
