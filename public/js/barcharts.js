@@ -328,7 +328,6 @@ async function displayCaptions(sumstat, barcharts) {
 function displayXAxis(sumstat, barcharts) {
     barcharts
         .selectAll(".margin")
-        .data(sumstat)
         .append("g") // bottom axis
         .attr("transform", "translate(0," + height + ")")
         .classed("bottomAxis", true)
@@ -357,7 +356,6 @@ function displayYAxis(sumstat, barcharts, y) {
 function displayTitle(sumstat, barcharts) {
     barcharts
         .selectAll(".margin")
-        .data(sumstat)
         .append("text")
         .attr("x", 0)
         .attr("y", margin.top)
@@ -371,7 +369,6 @@ function displayTitle(sumstat, barcharts) {
 function displayTotals(sumstat, barcharts) {
     barcharts
         .selectAll(".margin")
-        .data(sumstat)
         .append("text")
         .classed("total", true)
         .text(function (d) {
