@@ -97,10 +97,10 @@ function computeSummaryStatistics(data) {
                 outliers: outliers,
                 total: total,
                 points: question.points,
-                scale: question.scale,
+                scale: question.scale.reverse(),
                 xScale : d3.scaleLinear()
                     .domain([1, question.scale.length])
-                    .range([0, width])
+                    .range([width, 0])
             }
         }
     });
@@ -247,7 +247,7 @@ function displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, boxplots) {
     displayOutliers(sumstatSecond, boxplots, y-secondPosition, yBandwidth)
 
     // Show the totals
-    displayTotals(sumstat, boxplots)
+    displayTotals(sumstatFirst, sumstatSecond, boxplots)
 }
 function displayContainersMargin(sumstat, boxplots) {
     let bound = boxplots
@@ -298,7 +298,7 @@ async function displayCaptions(sumstat, boxplots, mediaList) {
                 let secondCaption = caps.get(d.value.questionTag) ? caps.get(d.value.questionTag)[0][mediaList[1]] : undefined
                 let caption = mediaList[0] + ": " + (firstCaption ? firstCaption : boilerplate) + "<br><br></br>"
                     + mediaList[1] + ": "+ (secondCaption ? secondCaption : boilerplate)
-                console.log(d)
+                //console.log(d)
                 d3.select(this)
                     .selectAll("p")
                     .data([null])
@@ -372,10 +372,10 @@ function displayBox(fill, sumstat, boxplots, y, yBandwidth) {
         .append("rect")
         .classed(sumstat[0].value.media, true)
         .attr("x", function (d) {
-            return d.value.xScale(d.value.q1)
+            return d.value.xScale(d.value.q3)
         })
         .attr("width", function (d) {
-            return (d.value.xScale(d.value.q3) - d.value.xScale(d.value.q1))
+            return (d.value.xScale(d.value.q1) - d.value.xScale(d.value.q3))
         })
         .attr("y", y)
         .attr("height", yBandwidth)
@@ -420,14 +420,25 @@ function displayOutliers(sumstat, boxplots, y) {
                 .attr("opacity", 0.2)
         })
 }
-function displayTotals(sumstat, boxplots) {
+function displayTotals(sumstatFirst, sumstatSecond, boxplots) {
     boxplots
         .selectAll(".margin")
-        .data(sumstat)
+        .data(sumstatFirst)
         .append("text")
         .classed("total", true)
-        .text(function(d) { return "# Responses: " + (d.value.total) })
+        .classed("first", true)
+        .text(function(d) { return "# " + (d.value.media) + " Responses: " + (d.value.total); })
         .attr("x", 0)
+        .attr("y", height + 40)
+
+    boxplots
+        .selectAll(".margin")
+        .data(sumstatSecond)
+        .append("text")
+        .classed("total", true)
+        .classed("first", true)
+        .text(function(d) { return "# " + (d.value.media) + " Responses: " + (d.value.total); })
+        .attr("x", 200)
         .attr("y", height + 40)
 }
 
