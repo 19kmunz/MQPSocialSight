@@ -253,6 +253,7 @@ function displayBars(sumstat, barcharts, fill) {
                 .data(p.value.counts)
                 .enter()
                 .append("rect")
+                .classed(sumstat[0].value.media, true)
                 .attr("x", function(d) { return p.value.xScale(d[0]); })
                 .attr("y", function(d) { return p.value.yAxis(d[1]); })
                 .attr("width", p.value.xScale.bandwidth())

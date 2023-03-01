@@ -370,6 +370,7 @@ function displayBox(fill, sumstat, boxplots, y, yBandwidth) {
         .selectAll(".margin")
         .data(sumstat)
         .append("rect")
+        .classed(sumstat[0].value.media, true)
         .attr("x", function (d) {
             return d.value.xScale(d.value.q1)
         })

@@ -237,6 +237,10 @@
         background: #121212;
     }
 
+    .BeReal {
+        fill: #fff !important;
+    }
+
     .card {
         border-color: #eee;
     }
