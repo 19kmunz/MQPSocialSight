@@ -114,10 +114,10 @@ function computeSummaryStatistics(data) {
                 maxCount: maxCount,
                 total: total,
                 points: question.points,
-                scale: question.scale,
+                scale: question.scale.reverse(),
                 xScale: d3.scaleBand()
                     .domain([...Array(question.scale.length).keys()].map(v => v+1))
-                    .range([0, width])
+                    .range([width, 0])
                     .padding(0.2)
             }
         }
