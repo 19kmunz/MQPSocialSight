@@ -116,10 +116,10 @@ function computeSummaryStatistics(data) {
                 outliers: outliers,
                 total: total,
                 points: question.points,
-                scale: question.scale.reverse(),
+                scale: question.scale,
                 xScale : d3.scaleLinear()
                     .domain([1, question.scale.length])
-                    .range([width, 0])
+                    .range([0, width])
             }
         }
     });
@@ -240,10 +240,10 @@ function computeCombinedSummaryStatistics(data) {
                 outliers: outliers,
                 total: total,
                 points: question.points.concat(oldPoints),
-                scale: question.scale.reverse(),
+                scale: question.scale,
                 xScale: d3.scaleLinear()
                     .domain([1, question.scale.length])
-                    .range([width, 0])
+                    .range([0, width])
             });
         }
         else {
@@ -272,10 +272,10 @@ function computeCombinedSummaryStatistics(data) {
                     outliers: outliers,
                     total: total,
                     points: question.points,
-                    scale: question.scale.reverse(),
+                    scale: question.scale,
                     xScale: d3.scaleLinear()
                         .domain([1, question.scale.length])
-                        .range([width, 0])
+                        .range([0, width])
                 });
             }
         });
@@ -489,12 +489,11 @@ function displayBox(fill, sumstat, boxplots, y, yBandwidth) {
         .selectAll(".margin")
         .data(sumstat)
         .append("rect")
-        .classed(sumstat[0].value.media, true)
         .attr("x", function (d) {
-            return d.value.xScale(d.value.q3)
+            return d.value.xScale(d.value.q1)
         })
         .attr("width", function (d) {
-            return (d.value.xScale(d.value.q1) - d.value.xScale(d.value.q3))
+            return (d.value.xScale(d.value.q3) - d.value.xScale(d.value.q1))
         })
         .attr("y", y)
         .attr("height", yBandwidth)

@@ -77,14 +77,14 @@
     .boxplot-summary svg {
         width: max-content !important;
         max-width: 300% !important;
-        transform: scale(80%);
+        transform: scale(75%);
         transform-origin: 10%;
     }
 
     .boxplot-children svg {
         width: max-content !important;
         max-width: 300% !important;
-        transform: scale(80%);
+        transform: scale(75%);
         transform-origin: -10%;
     }
 
@@ -189,14 +189,14 @@
     .barchart-summary svg {
         width: max-content !important;
         max-width: 300% !important;
-        transform: scale(80%);
+        transform: scale(75%);
         transform-origin: -20%;
     }
 
     .barchart-children svg {
         width: max-content !important;
         max-width: 300% !important;
-        transform: scale(80%);
+        transform: scale(75%);
         transform-origin: -25%;
     }
 
@@ -206,6 +206,75 @@
 
     .carousel-item .card-text {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+    .img-thumbnail {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .boxplot-summary svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(60%);
+        transform-origin: 10%;
+    }
+
+    .boxplot-children svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(60%);
+        transform-origin: 10%;
+    }
+
+    .barchart-summary svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(70%);
+        transform-origin: -10%;
+    }
+
+    .barchart-children svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(70%);
+        transform-origin: -15%;
+    }
+
+    .col-sm-3 {
+        margin-bottom: 1rem;
+    }
+
+    .carousel-item .card-text {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+
+    #designCardLeft {
+        display: none;
+    }
+
+    #designCardRight {
+        display: none;
+    }
+
+    #designCard {
+        display: none;
+    }
+
+    #mobile-warning {
+        padding-left: 1%;
+        text-align: center;
+        display: block !important;
+    }
+
+    .col-md-6 {
+        max-width: 0%;
     }
 }
 
@@ -228,7 +297,6 @@
     }
 
 }
-
 
 @media (prefers-color-scheme: dark) {
 
@@ -309,6 +377,10 @@
     .total {
         fill: #eee;
         background: #121212;
+    }
+
+    .label {
+        fill: #eee;
     }
 
     text {

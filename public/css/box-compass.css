@@ -51,6 +51,59 @@
     }
 }
 
+@media only screen and (max-width: 350px) {
+
+    #axes, #scale {
+        width: 10rem !important;
+        height: 10rem !important;
+    }
+
+    #axes {
+        width: 10rem !important;
+        height: 10rem !important;
+        margin-right: 1px;
+        margin-left: 1px;
+    }
+
+    #axes div div {
+        height: 5rem !important;
+        width: 5rem !important;
+    }
+
+    .pin {
+        margin-left: -5px !important;
+        margin-top: -15px !important;
+    }
+
+    .icon-pin {
+        border-radius: .4rem !important;
+        width: 0.5rem !important;
+        height: 0.5rem !important;
+        background-color: white;
+    }
+
+
+    .grid-top-left {
+        border-right: black solid .05rem !important;
+        border-bottom: black solid .05rem !important;
+    }
+
+    .grid-top-right {
+        border-left: black solid .05rem !important;
+        border-bottom: black solid .05rem !important;
+    }
+
+    .grid-bottom-left {
+        border-right: black solid .05rem !important;
+        border-top: black solid .05rem !important;
+    }
+
+    .grid-bottom-right {
+        border-left: black solid .05rem !important;
+        border-top: black solid .05rem !important;
+    }
+}
+
 .btn .material-icons {
     font-size: 20px;
     vertical-align: bottom;
