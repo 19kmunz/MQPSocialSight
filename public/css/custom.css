@@ -1,13 +1,18 @@
 @media only screen and (max-width: 900px) {
 
     .mx-5 {
+        margin-left: .5rem !important;
+        margin-right: .5rem !important;
+    }
+
+    .my-3 {
         margin-bottom: .5rem !important;
         margin-top: .5rem !important;
     }
 
-    .my-3 {
-        margin-left: .5rem !important;
-        margin-right: .5rem !important;
+    .my-5 {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
     }
 
     h2 {
@@ -23,6 +28,10 @@
     }
 
     h4 {
+        font-size: 1rem;
+    }
+
+    a.btn {
         font-size: 1rem;
     }
 
@@ -65,10 +74,6 @@
         padding: 5px !important;
     }
 
-    .barchart-summary {
-        padding: 5px !important;
-    }
-
     .boxplot-summary svg {
         width: max-content !important;
         max-width: 300% !important;
@@ -76,21 +81,7 @@
         transform-origin: 10%;
     }
 
-    .barchart-summary svg {
-        width: max-content !important;
-        max-width: 300% !important;
-        transform: scale(80%);
-        transform-origin: 15%;
-    }
-
     .boxplot-children svg {
-        width: max-content !important;
-        max-width: 300% !important;
-        transform: scale(80%);
-        transform-origin: -10%;
-    }
-
-    .barchart-children svg {
         width: max-content !important;
         max-width: 300% !important;
         transform: scale(80%);
@@ -117,16 +108,127 @@
     }
 
     .card .nav-link.active {
-        border-bottom: 1px solid #dee2e6  !important;
+        border-bottom: 1px solid #dee2e6 !important;
         border-radius: .25rem !important;
         margin: 0px;
     }
 
-    .btn-group {
+    .button-list .col {
+        padding: 2%;
+        max-width: 40%;
+    }
+
+    .card {
         margin-bottom: 2%;
     }
 
+    .col-sm-3 {
+        margin-left: 1rem;
+    }
+
 }
+
+@media only screen and (max-width: 770px) {
+
+    .img-thumbnail {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .col-sm-3 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .col-auto {
+        margin-right: 1rem;
+    }
+
+    .col h4 {
+        margin-left: .3rem;
+    }
+
+    .col {
+        padding-left: .5rem;
+    }
+
+    ol {
+        margin-bottom: 0;
+    }
+
+    .card {
+        width: 99% !important;
+    }
+
+    .card-body {
+        padding: 2%;
+        max-height: max-content;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .img-thumbnail {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    #compareButton {
+        margin-left: 3rem;
+        max-width: 6rem;
+        max-height: 3rem;
+        font-size: .6rem;
+    }
+
+
+    .barchart-summary {
+        padding: 5px !important;
+    }
+
+    .barchart-summary svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(80%);
+        transform-origin: -20%;
+    }
+
+    .barchart-children svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(80%);
+        transform-origin: -25%;
+    }
+
+    .col-sm-3 {
+        margin-bottom: 1rem;
+    }
+
+    .carousel-item .card-text {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+
+    h5.card-title {
+        font-size: .9rem;
+    }
+
+    p.card-text {
+        font-size: .8rem;
+    }
+
+    .card-body {
+        font-size: .8rem;
+    }
+
+    .card-img {
+        float: right !important;
+    }
+
+}
+
 
 @media (prefers-color-scheme: dark) {
 
@@ -137,6 +239,21 @@
 
     .card {
         border-color: #eee;
+    }
+
+    .dropdown-menu {
+        background: #121212;
+        border: solid 1px #eee;
+    }
+
+    .dropdown-menu * {
+        background: #121212;
+        color: #eee;
+    }
+
+    .dropdown-menu *:hover {
+        background: #000000;
+        color: #eee;
     }
 
     .bg-accent1 {
@@ -242,7 +359,7 @@
 
 @media only screen and (max-width: 900px) and (prefers-color-scheme: dark) {
     .nav-tabs .nav-link.active {
-        border-bottom: 1px solid #eee  !important;
+        border-bottom: 1px solid #eee !important;
         border-radius: .25rem !important;
         margin: 0px;
     }
@@ -251,6 +368,10 @@
         border-radius: 0;
     }
 
+}
+
+p.col {
+    padding-right: 5%;
 }
 
 .boxplot-summary {
