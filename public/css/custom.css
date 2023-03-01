@@ -209,6 +209,30 @@
     }
 }
 
+@media only screen and (max-width: 1150px) {
+
+    #designCardLeft {
+        display: none;
+    }
+
+    #designCardRight {
+        display: none;
+    }
+
+    #designCard {
+        display: none;
+    }
+
+    #mobile-warning {
+        display: block !important;
+    }
+
+    .col-md-6 {
+        max-width: 0%;
+    }
+}
+
+
 @media only screen and (max-width: 1300px) {
 
     h5.card-title {
@@ -228,7 +252,6 @@
     }
 
 }
-
 
 @media (prefers-color-scheme: dark) {
 
