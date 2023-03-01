@@ -322,6 +322,21 @@
 
 }
 
+.boxplot-children .boxplot-row {
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.boxplot-children .boxplot-row:first-child {
+    padding-top: 0;
+}
+
+.boxplot-children .boxplot-row:last-child {
+    border-bottom: none;
+}
+
 @media (prefers-color-scheme: dark) {
 
     body {
@@ -455,6 +470,10 @@
         color: #eee;
         background: #121212;
     }
+
+    .boxplot-children .boxplot-row {
+        border-bottom: 1px solid rgba(256, 256, 256, .125);
+    }
 }
 
 @media only screen and (max-width: 900px) and (prefers-color-scheme: dark) {
@@ -468,6 +487,10 @@
         border-radius: 0;
     }
 
+}
+
+.accordion-item {
+    border-width: 5px !important;
 }
 
 p.col {
@@ -660,21 +683,6 @@ button.bg-accent1:hover {
 
 .boxplot-summary {
     padding: 20px
-}
-
-.boxplot-children .boxplot-row {
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-    margin: auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.boxplot-children .boxplot-row:first-child {
-    padding-top: 0;
-}
-
-.boxplot-children .boxplot-row:last-child {
-    border-bottom: none;
 }
 
 .total {
