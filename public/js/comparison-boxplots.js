@@ -201,7 +201,7 @@ function displayTwoBoxplots(sumstatFirst, sumstatSecond, sumstat, boxplots) {
     var y = 2*height / 3;
     var yBandwidth = height / 5;
     var secondPosition = 75;
-    var mediaList = [sumstatFirst[0].value.media, sumstatSecond[0].value.media]
+    var mediaList = [sumstatSecond[0].value.media, sumstatFirst[0].value.media]
 
     // Make boxplot container, margin, and scale for each question
     displayContainersMargin(sumstatFirst, boxplots)
