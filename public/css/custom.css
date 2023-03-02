@@ -758,3 +758,7 @@ button.bg-accent1:hover {
 .label {
     font-size: 0.5em;
 }
+
+.text-end p {
+    text-align: right !important;
+}
