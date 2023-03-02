@@ -301,7 +301,6 @@
     }
 }
 
-
 @media only screen and (max-width: 1300px) {
 
     h5.card-title {
@@ -321,6 +320,67 @@
     }
 
 }
+
+@media only screen and (min-width: 1500px) {
+
+    /*.img-thumbnail {*/
+    /*    width: 25px !important;*/
+    /*    height: 25px !important;*/
+    /*}*/
+
+    .title {
+        font-size: 1rem !important;
+    }
+
+    .boxplot-summary svg {
+        padding-top: 1%;
+        width:600px !important;
+        max-width: 300% !important;
+        transform: scale(150%);
+        transform-origin: -10%;
+    }
+
+    .boxplot-children svg {
+        width:600px !important;
+        max-width: 300% !important;
+        transform: scale(120%);
+        transform-origin: -50%;
+    }
+
+    .boxplot-children .boxplot-row {
+        height: max-content !important;
+        margin-bottom: 1% !important;
+        margin-top: 1% !important;
+    }
+
+    .barchart-summary svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(120%);
+        transform-origin: -10%;
+    }
+
+    .barchart-children svg {
+        width: max-content !important;
+        max-width: 300% !important;
+        transform: scale(120%);
+        transform-origin: -15%;
+    }
+
+    p.my-auto {
+        padding-left: 5%;
+    }
+
+    div.dropdown {
+        left: -40%;
+        overflow: visible !important;
+    }
+
+    /*.carousel-item .card-text {*/
+    /*    display: none;*/
+    /*}*/
+}
+
 
 .boxplot-children .boxplot-row {
     border-bottom: 1px solid rgba(0, 0, 0, .125);
