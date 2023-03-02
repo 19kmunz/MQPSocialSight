@@ -2,3 +2,4 @@
 /node_modules/
 /dataProcessing/MQPSocialMediaResponses.csv
 /dataProcessing/.env
+package-lock.json
