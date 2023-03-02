@@ -309,11 +309,12 @@ async function displayCaptions(sumstat, boxplots, mediaList) {
         })
 }
 function displayAxis(sumstat, boxplots){
+    let axisHeight = height - 10;
     boxplots
         .selectAll(".margin")
         .data(sumstat)
         .append("g") // bottom axis
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + axisHeight + ")")
         .classed("bottomAxis", true)
         .each(function(s){
             let scale = d3.scalePoint()

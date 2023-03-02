@@ -328,15 +328,19 @@
     /*    height: 25px !important;*/
     /*}*/
 
+    .card {
+        width: 99% !important;
+    }
+
     .title {
         font-size: 1rem !important;
     }
 
     .boxplot-summary svg {
-        padding-top: 1%;
+        padding-top: .8%;
         width:600px !important;
         max-width: 300% !important;
-        transform: scale(150%);
+        transform: scale(140%);
         transform-origin: -10%;
     }
 
@@ -379,22 +383,6 @@
     /*.carousel-item .card-text {*/
     /*    display: none;*/
     /*}*/
-}
-
-
-.boxplot-children .boxplot-row {
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-    margin: auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.boxplot-children .boxplot-row:first-child {
-    padding-top: 0;
-}
-
-.boxplot-children .boxplot-row:last-child {
-    border-bottom: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -547,6 +535,21 @@
         border-radius: 0;
     }
 
+}
+
+.boxplot-children .boxplot-row {
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.boxplot-children .boxplot-row:first-child {
+    padding-top: 0;
+}
+
+.boxplot-children .boxplot-row:last-child {
+    border-bottom: none;
 }
 
 .accordion-item {
